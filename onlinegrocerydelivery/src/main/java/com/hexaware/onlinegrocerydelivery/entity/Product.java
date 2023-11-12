@@ -2,8 +2,10 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Product {
@@ -13,9 +15,12 @@ public class Product {
 	private int productId;
 	@NotBlank
 	private String productName;
+	
 	private String category;
+	@PositiveOrZero
 	private String brand;
 	private float price;
+	@Min(value=0)
 	private int quantity;
 	
 	public Product() {

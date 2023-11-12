@@ -3,6 +3,8 @@ package com.hexaware.onlinegrocerydelivery.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="Admin")
@@ -11,7 +13,10 @@ public class Admin {
 	
 	@Id
 	private int adminId;
+	@NotNull
+	 @Size(min = 1, max = 50)
 	private String userName;
+	 @Size(min = 6, max = 50)
 	private String password;
 	
 	

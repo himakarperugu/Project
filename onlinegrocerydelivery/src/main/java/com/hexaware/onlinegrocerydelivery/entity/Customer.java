@@ -3,6 +3,10 @@ package com.hexaware.onlinegrocerydelivery.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="Customer")
@@ -11,9 +15,16 @@ public class Customer {
 	
 	@Id
 	private int customerId;
+	@NotNull
+	@Size(min = 1, max = 255)
 	private String customerName;
+	@NotNull
+	@Pattern(regexp = "[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]")
 	private String email;
+	
+	@Pattern(regexp = "\\d{10}")
 	private String phoneNumber;
+	@NotBlank
 	private String deliveryAddress;
 	
 	

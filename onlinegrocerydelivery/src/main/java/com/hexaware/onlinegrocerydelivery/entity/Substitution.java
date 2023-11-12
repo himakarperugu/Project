@@ -2,12 +2,14 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Substitution {
 	
 	@Id
 	private int substitutionId;
+	@Positive
 	private int orderId;
 	private int productId;
 	private int substituteProductId;
