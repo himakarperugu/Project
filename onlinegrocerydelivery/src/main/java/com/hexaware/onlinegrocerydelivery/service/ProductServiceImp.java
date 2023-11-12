@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
+import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.AdminRepository;
 import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
@@ -38,6 +39,8 @@ public class ProductServiceImp implements IProductService {
 	public ProductDTO getById(int productId) {
 		
 		Product product = repo.findById(productId).orElse(null);
+		
+		
 		
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setProductId(product.getProductId());

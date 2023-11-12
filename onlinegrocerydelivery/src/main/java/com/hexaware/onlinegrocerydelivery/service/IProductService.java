@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
+import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 
 
 
@@ -14,7 +15,7 @@ public interface IProductService {
 	
 	public Product addProduct(ProductDTO productDTO);
 
-	public ProductDTO getById(int productId);
+	public ProductDTO getById(int productId) throws ProductNotFoundException;
 
 	public List<Product> getAllProduct();
 

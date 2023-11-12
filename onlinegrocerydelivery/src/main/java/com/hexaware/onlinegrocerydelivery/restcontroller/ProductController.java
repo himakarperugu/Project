@@ -3,6 +3,8 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
+import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.service.IProductService;
 
 @RestController
@@ -31,10 +34,10 @@ public class ProductController {
 
 	@GetMapping("/getById/{productId}")
 	public ProductDTO getById(@PathVariable int productId) {
+		
 
 		return service.getById(productId);
 	}
-
 	@GetMapping("/getAllProduct")
 	public List<Product> getAllProduct() {
 

@@ -2,12 +2,16 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Product {
 	
 	@Id
+	@NotNull
 	private int productId;
+	@NotBlank
 	private String productName;
 	private String category;
 	private String brand;
