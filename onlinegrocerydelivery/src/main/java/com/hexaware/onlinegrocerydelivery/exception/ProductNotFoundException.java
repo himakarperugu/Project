@@ -1,7 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.exception;
 
-public class ProductNotFoundException extends RuntimeException {
-	public ProductNotFoundException(String message) {
-		super(message);
+import org.springframework.http.HttpStatusCode;
+import org.springframework.web.server.ResponseStatusException;
+
+public class ProductNotFoundException extends ResponseStatusException {
+	public ProductNotFoundException(HttpStatusCode status, String message) {
+		
+		super(status, message);
 	}
 }

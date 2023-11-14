@@ -10,8 +10,15 @@ import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.repository.SubstitutionRepository;
 @Service
 public class SubstitutionServiceImp implements ISubstitutionService {
+	
+	private SubstitutionRepository repo;
+	
+	
 	@Autowired
-	SubstitutionRepository repo;
+	public SubstitutionServiceImp(SubstitutionRepository repo) {
+		super();
+		this.repo = repo;
+	}
 
 	@Override
 	public Substitution addSubstitution(SubstitutionDTO substitutionDTO) {

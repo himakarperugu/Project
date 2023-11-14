@@ -6,6 +6,14 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+/* Author:Himakar
+ * @UpdatedOn:09-11-2023
+ */
+
+
+
+
+
 @Entity
 @Table(name="Admin")
 public class Admin {
@@ -13,10 +21,12 @@ public class Admin {
 	
 	@Id
 	private int adminId;
+	
 	@NotNull
-	 @Size(min = 1, max = 50)
+	@Size(min = 1, max = 50)
 	private String userName;
-	 @Size(min = 6, max = 50)
+	
+	@Size(min = 6, max = 50)
 	private String password;
 	
 	

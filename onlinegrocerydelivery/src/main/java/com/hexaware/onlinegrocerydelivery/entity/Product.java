@@ -2,16 +2,24 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
+
+
+/*Author:Himakar
+ * Updated:09-11-2023
+ */
+
 @Entity
 public class Product {
 	
 	@Id
-	@NotNull
+	
 	private int productId;
 	@NotBlank
 	private String productName;
@@ -20,8 +28,14 @@ public class Product {
 	@PositiveOrZero
 	private String brand;
 	private float price;
-	@Min(value=0)
+	@Min(value=1)
 	private int quantity;
+	
+	
+	
+	@ManyToOne
+	@JoinColumn(name="orderId")
+	private Orders orders;
 	
 	public Product() {
 		super();

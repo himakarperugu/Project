@@ -20,10 +20,16 @@ import com.hexaware.onlinegrocerydelivery.service.IOrderService;
 @RequestMapping("/api/order")
 public class OrderController {
 	
+	
+	private IOrderService service;
+	
 	@Autowired
-	IOrderService service;
-	
-	
+	public OrderController(IOrderService service) {
+		super();
+		this.service = service;
+	}
+
+
 	@PostMapping("/addOrder")
 	public Orders addOrder(@RequestBody OrderDTO orderDTO) {
 		

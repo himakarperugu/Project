@@ -15,7 +15,7 @@ public interface IProductService {
 	
 	public Product addProduct(ProductDTO productDTO);
 
-	public ProductDTO getById(int productId) throws ProductNotFoundException;
+	public ProductDTO getById(int productId);
 
 	public List<Product> getAllProduct();
 

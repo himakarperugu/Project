@@ -21,9 +21,16 @@ import com.hexaware.onlinegrocerydelivery.service.ICustomerService;
 public class CustomerController {
 
 	
-	@Autowired
-	ICustomerService service;
 	
+	private ICustomerService service;
+	
+	
+	@Autowired
+	public CustomerController(ICustomerService service) {
+		super();
+		this.service = service;
+	}
+
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody CustomerDTO customerDTO) {
 		

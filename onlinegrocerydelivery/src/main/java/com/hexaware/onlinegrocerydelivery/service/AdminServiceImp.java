@@ -12,9 +12,14 @@ import com.hexaware.onlinegrocerydelivery.repository.AdminRepository;
 public class AdminServiceImp implements IAdminService {
 	
 	
+
+	private AdminRepository repo;
 	@Autowired
-	AdminRepository repo;
-	
+	public AdminServiceImp(AdminRepository repo) {
+		super();
+		this.repo = repo;
+	}
+
 	@Override
 	public Admin addAdmin(AdminDTO adminDTO) {
 		Admin admin =new Admin();

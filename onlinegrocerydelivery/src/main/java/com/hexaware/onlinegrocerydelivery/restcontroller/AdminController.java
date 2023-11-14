@@ -18,10 +18,16 @@ import com.hexaware.onlinegrocerydelivery.service.IAdminService;
 @RestController
 @RequestMapping("/api/Admin")
 public class AdminController {
+	
+	
+	private IAdminService service;
+	
 	@Autowired
-	IAdminService service;
-	
-	
+	public AdminController(IAdminService service) {
+		super();
+		this.service = service;
+	}
+
 	@PostMapping("/addAdmin")
 	public Admin addAdmin(@RequestBody AdminDTO adminDTO) {
 		

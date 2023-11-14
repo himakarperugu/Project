@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +24,16 @@ import com.hexaware.onlinegrocerydelivery.service.IProductService;
 @RequestMapping("/api/product")
 public class ProductController {
 	
-	@Autowired
-	IProductService service;
 	
+	private IProductService service;
+	
+	
+	@Autowired
+	public ProductController(IProductService service) {
+		super();
+		this.service = service;
+	}
+
 	@PostMapping("/addProduct")
 	public Product addProduct(@RequestBody ProductDTO productDTO) {
 		
@@ -33,9 +41,9 @@ public class ProductController {
 	}
 
 	@GetMapping("/getById/{productId}")
-	public ProductDTO getById(@PathVariable int productId) {
+	public ProductDTO getById(@PathVariable int productId)throws ProductNotFoundException {
 		
-
+		
 		return service.getById(productId);
 	}
 	@GetMapping("/getAllProduct")
@@ -73,5 +81,14 @@ public class ProductController {
 		
 		return service.getByProductName(productName);
 	}
-
+	
+	@ExceptionHandler({ProductNotFoundException.class})
+	public ResponseEntity<String> ProductException(ProductNotFoundException productexception)
+	{
+		return new ResponseEntity<String>(productexception.getMessage(),HttpStatus.BAD_REQUEST);
+		
+	}
+	
+	
+	
 }

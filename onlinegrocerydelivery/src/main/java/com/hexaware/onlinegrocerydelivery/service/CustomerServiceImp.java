@@ -13,9 +13,14 @@ import com.hexaware.onlinegrocerydelivery.repository.CustomerRepository;
 public class CustomerServiceImp implements ICustomerService {
 
 	
-	@Autowired
-	CustomerRepository repo;
 	
+	private CustomerRepository repo;
+	@Autowired
+	public CustomerServiceImp(CustomerRepository repo) {
+		super();
+		this.repo = repo;
+	}
+
 	@Override
 	public Customer addCustomer(CustomerDTO customerDTO) {
 		

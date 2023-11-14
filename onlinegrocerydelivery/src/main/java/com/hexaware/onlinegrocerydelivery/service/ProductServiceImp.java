@@ -15,9 +15,16 @@ import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
 public class ProductServiceImp implements IProductService {
 	
-	@Autowired
-	ProductRepository repo;
 	
+	private ProductRepository productrepository;
+	
+	
+	
+	@Autowired
+	public ProductServiceImp(ProductRepository repo) {
+		super();
+		this.productrepository = productrepository;
+	}
 
 	@Override
 	public Product addProduct(ProductDTO productDTO) {
@@ -32,13 +39,13 @@ public class ProductServiceImp implements IProductService {
 		product.setPrice(productDTO.getPrice());
 		product.setQuantity(productDTO.getQuantity());
 		
-		return repo.save(product);
+		return productrepository.save(product);
 	}
 
 	@Override
 	public ProductDTO getById(int productId) {
 		
-		Product product = repo.findById(productId).orElse(null);
+		Product product = productrepository.findById(productId).orElse(null);
 		
 		
 		
@@ -55,7 +62,7 @@ public class ProductServiceImp implements IProductService {
 
 	@Override
 	public List<Product> getAllProduct() {
-		return repo.findAll();
+		return productrepository.findAll();
 	}
 
 	@Override
@@ -70,20 +77,20 @@ public class ProductServiceImp implements IProductService {
 		product.setPrice(productDTO.getPrice());
 		product.setQuantity(productDTO.getQuantity());
 		
-		return repo.save(product);	
+		return productrepository.save(product);	
 		}
 
 	@Override
 	public void deleteById(int productId) {
 		
-	Product product=repo.findById(productId).orElse(null);
-	repo.deleteById(product.getProductId());
+	Product product=productrepository.findById(productId).orElse(null);
+	productrepository.deleteById(product.getProductId());
 
 	}
 
 	@Override
 	public List<ProductDTO> getByCategory(String category) {
-		 List<Product> products = repo.getByCategory(category);
+		 List<Product> products = productrepository.getByCategory(category);
 
 		    List<ProductDTO> productDTOs = products.stream()
 		            .map(product -> {
@@ -104,7 +111,7 @@ public class ProductServiceImp implements IProductService {
 
 	@Override
 	public List<ProductDTO> getByBrand(String brand) {
-		 List<Product> products = repo.getByBrand(brand);
+		 List<Product> products = productrepository.getByBrand(brand);
 
 	 
 	        List<ProductDTO> productDTOs = products.stream()
@@ -123,7 +130,7 @@ public class ProductServiceImp implements IProductService {
 	        return productDTOs;
 	}
 	public List<ProductDTO> getByProductName(String productName) {
-	    List<Product> products = repo.getByProductName(productName);
+	    List<Product> products = productrepository.getByProductName(productName);
 
 	    return products.stream()
 	            .map(product -> new ProductDTO(

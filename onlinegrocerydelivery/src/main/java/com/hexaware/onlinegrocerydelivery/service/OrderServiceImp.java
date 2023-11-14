@@ -12,8 +12,15 @@ import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 @Service
 public class OrderServiceImp implements IOrderService {
 	
-	@Autowired
+	
 	OrderRepository repo;
+	
+	
+	@Autowired
+	public OrderServiceImp(OrderRepository repo) {
+		super();
+		this.repo = repo;
+	}
 
 	@Override
 	public Orders addOrder(OrderDTO orderDTO) {

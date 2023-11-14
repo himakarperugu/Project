@@ -19,15 +19,22 @@ import com.hexaware.onlinegrocerydelivery.service.ISubstitutionService;
 @RequestMapping("/api/substitution")
 public class SubstitutionController {
 	
-	@Autowired
-	ISubstitutionService service;
 	
+	private ISubstitutionService service;
+	
+	@Autowired
+	public SubstitutionController(ISubstitutionService service) {
+		super();
+		this.service = service;
+	}
 	
 	@PostMapping("/addSubstitution")
 	public Substitution addSubstitution(SubstitutionDTO substitutionDTO) {
 		
 		return service.addSubstitution(substitutionDTO);
 	}
+
+	
 
 	@GetMapping("/getById/{substitutionId}")
 	public SubstitutionDTO getById(int substituteProductId) {
