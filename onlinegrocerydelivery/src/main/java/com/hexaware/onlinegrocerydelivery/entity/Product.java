@@ -33,9 +33,7 @@ public class Product {
 	
 	
 	
-	@ManyToOne
-	@JoinColumn(name="orderId")
-	private Orders orders;
+
 	
 	public Product() {
 		super();

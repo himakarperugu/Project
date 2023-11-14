@@ -45,8 +45,6 @@ public class Customer {
 	private String deliveryAddress;
 	
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="customer")
-	private List<Orders> orders;
 	
 	
 

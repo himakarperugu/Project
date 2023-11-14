@@ -30,12 +30,9 @@ public class Orders {
 	@PositiveOrZero
 	private double totalAmount;
 	
-	@ManyToOne
-	@JoinColumn(name="customerId")
-	private Customer customer;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="orders")
-	private List<Product> product;
+	
+	
 	
 	
 	public Orders() {

@@ -42,9 +42,12 @@ public class ProductController {
 
 	@GetMapping("/getById/{productId}")
 	public ProductDTO getById(@PathVariable int productId)throws ProductNotFoundException {
+		ProductDTO productDTO=service.getById(productId);
+		if (productDTO.getProductId()==0) {
+			throw new ProductNotFoundException(HttpStatus.BAD_REQUEST, "Product Not Found for productId:"+productId);
+		}
 		
-		
-		return service.getById(productId);
+		return productDTO;
 	}
 	@GetMapping("/getAllProduct")
 	public List<Product> getAllProduct() {
