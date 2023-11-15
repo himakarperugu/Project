@@ -20,29 +20,31 @@ import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.service.IProductService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/product")
 public class ProductController {
 	
 	
-	private IProductService service;
+	private IProductService productservice;
 	
 	
 	@Autowired
-	public ProductController(IProductService service) {
+	public ProductController(IProductService productservice) {
 		super();
-		this.service = service;
+		this.productservice = productservice;
 	}
 
 	@PostMapping("/addProduct")
-	public Product addProduct(@RequestBody ProductDTO productDTO) {
+	public ResponseEntity<Product> addProduct(@RequestBody @Valid ProductDTO productDTO) {
 		
-		return service.addProduct(productDTO);
+		return new ResponseEntity<>(productservice.addProduct(productDTO), HttpStatus.CREATED);
 	}
 
 	@GetMapping("/getById/{productId}")
 	public ProductDTO getById(@PathVariable int productId)throws ProductNotFoundException {
-		ProductDTO productDTO=service.getById(productId);
+		ProductDTO productDTO=productservice.getById(productId);
 		if (productDTO.getProductId()==0) {
 			throw new ProductNotFoundException(HttpStatus.BAD_REQUEST, "Product Not Found for productId:"+productId);
 		}
@@ -52,37 +54,37 @@ public class ProductController {
 	@GetMapping("/getAllProduct")
 	public List<Product> getAllProduct() {
 
-		return service.getAllProduct();
+		return productservice.getAllProduct();
 	}
 
 	@PutMapping("/updateProduct")
 	public Product updateProduct(@RequestBody ProductDTO productDTO) {
 		
-		return service.updateProduct(productDTO);
+		return productservice.updateProduct(productDTO);
 	}
 
 	@DeleteMapping("/deleteById/{productId}")
 	public void deleteById(int productId) {
 		
-		service.deleteById(productId);
+		productservice.deleteById(productId);
 
 	}
 
 	@GetMapping("/getByCategory/{category}")
 	public List<ProductDTO> getByCategory(@PathVariable String category) {
 		
-		return service.getByCategory(category);
+		return productservice.getByCategory(category);
 	}
 
 	@GetMapping("/getByBrand/{brand}")
 	public List<ProductDTO> getByBrand(@PathVariable String brand) {
 		
-		return service.getByBrand(brand);
+		return productservice.getByBrand(brand);
 	}
 	@GetMapping("/getByProductName/{productName}")
 	public List<ProductDTO> getByProductName(@PathVariable String productName) {
 		
-		return service.getByProductName(productName);
+		return productservice.getByProductName(productName);
 	}
 	
 	@ExceptionHandler({ProductNotFoundException.class})

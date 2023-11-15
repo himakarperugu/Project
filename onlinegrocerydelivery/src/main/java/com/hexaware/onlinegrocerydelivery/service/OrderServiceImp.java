@@ -13,13 +13,13 @@ import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 public class OrderServiceImp implements IOrderService {
 	
 	
-	OrderRepository repo;
+	private OrderRepository orderrepository;
 	
 	
 	@Autowired
-	public OrderServiceImp(OrderRepository repo) {
+	public OrderServiceImp(OrderRepository orderrepository) {
 		super();
-		this.repo = repo;
+		this.orderrepository = orderrepository;
 	}
 
 	@Override
@@ -35,12 +35,12 @@ public class OrderServiceImp implements IOrderService {
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
 	
-			return repo.save(orders);
+			return orderrepository.save(orders);
 	}
 
 	@Override
 	public OrderDTO getById(int orderId) {
-		Orders orders = repo.findById(orderId).orElse(null);
+		Orders orders = orderrepository.findById(orderId).orElse(null);
 		OrderDTO orderDTO = new OrderDTO();
 		orders.setOrderId(orderDTO.getOrderId());
 		orders.setCustomerId(orderDTO.getCustomerId());
@@ -56,7 +56,7 @@ public class OrderServiceImp implements IOrderService {
 	@Override
 	public List<Orders> getAllOrder() {
 		
-		return repo.findAll();
+		return orderrepository.findAll();
 	}
 
 	@Override
@@ -73,14 +73,14 @@ public class OrderServiceImp implements IOrderService {
 		
 		
 		
-		return repo.save(orders);
+		return orderrepository.save(orders);
 		
 	}
 
 	@Override
 	public void deleteById(int orderId) {
-		Orders orders=repo.findById(orderId).orElse(null);
-		repo.deleteById(orders.getOrderId());
+		Orders orders=orderrepository.findById(orderId).orElse(null);
+		orderrepository.deleteById(orders.getOrderId());
 
 	}
 

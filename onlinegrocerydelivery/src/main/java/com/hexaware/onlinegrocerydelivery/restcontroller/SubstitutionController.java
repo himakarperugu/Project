@@ -20,18 +20,18 @@ import com.hexaware.onlinegrocerydelivery.service.ISubstitutionService;
 public class SubstitutionController {
 	
 	
-	private ISubstitutionService service;
+	private ISubstitutionService substitutionservice;
 	
 	@Autowired
-	public SubstitutionController(ISubstitutionService service) {
+	public SubstitutionController(ISubstitutionService substitutionservice) {
 		super();
-		this.service = service;
+		this.substitutionservice = substitutionservice;
 	}
 	
 	@PostMapping("/addSubstitution")
 	public Substitution addSubstitution(SubstitutionDTO substitutionDTO) {
 		
-		return service.addSubstitution(substitutionDTO);
+		return substitutionservice.addSubstitution(substitutionDTO);
 	}
 
 	
@@ -39,26 +39,26 @@ public class SubstitutionController {
 	@GetMapping("/getById/{substitutionId}")
 	public SubstitutionDTO getById(int substituteProductId) {
 	
-		return service.getById(substituteProductId);
+		return substitutionservice.getById(substituteProductId);
 	}
 
 	@GetMapping("/getAllSubstitution")
 	public List<Substitution> getAllSubstitution() {
 	
-		return service.getAllSubstitution();
+		return substitutionservice.getAllSubstitution();
 	}
 
 	@PutMapping("/updateSubstitution")
 	public Substitution updateSubstitution(SubstitutionDTO substitutionDTO) {
 		
-		return service.updateSubstitution(substitutionDTO);
+		return substitutionservice.updateSubstitution(substitutionDTO);
 	}
 
 
 	@DeleteMapping("/deleteById/{substituteProductId}")
 	public void deleteById(int substituteProductId) {
 		
-		service.deleteById(substituteProductId);
+		substitutionservice.deleteById(substituteProductId);
 
 	}
 

@@ -21,26 +21,26 @@ import com.hexaware.onlinegrocerydelivery.service.IOrderService;
 public class OrderController {
 	
 	
-	private IOrderService service;
+	private IOrderService orderservice;
 	
 	@Autowired
 	public OrderController(IOrderService service) {
 		super();
-		this.service = service;
+		this.orderservice = orderservice;
 	}
 
 
 	@PostMapping("/addOrder")
 	public Orders addOrder(@RequestBody OrderDTO orderDTO) {
 		
-		return service.addOrder(orderDTO);
+		return orderservice.addOrder(orderDTO);
 	}
 
 	
 	@GetMapping("/getById/{orderId}")
 	public OrderDTO getById(@PathVariable int orderId) {
 		
-		return service.getById(orderId);
+		return orderservice.getById(orderId);
 		
 	}
 	
@@ -48,19 +48,19 @@ public class OrderController {
 	@GetMapping("/getAllOrder")
 	public List<Orders> getAllOrder() {
 		
-		return service.getAllOrder();
+		return orderservice.getAllOrder();
 	}
 	
 	@PutMapping("/updateOrder")
 	public Orders updateOrder(@RequestBody OrderDTO OrderDTO) {
 		
-		return service.updateOrder(OrderDTO);
+		return orderservice.updateOrder(OrderDTO);
 	}
 	
 	@DeleteMapping("/deleteById/{orderId}")
 	public void deleteById(int orderId) {
 		
-		service.deleteById(orderId);
+		orderservice.deleteById(orderId);
 	}
 
 

@@ -14,11 +14,11 @@ public class CustomerServiceImp implements ICustomerService {
 
 	
 	
-	private CustomerRepository repo;
+	private CustomerRepository customerrepository;
 	@Autowired
-	public CustomerServiceImp(CustomerRepository repo) {
+	public CustomerServiceImp(CustomerRepository customerrepository) {
 		super();
-		this.repo = repo;
+		this.customerrepository = customerrepository;
 	}
 
 	@Override
@@ -34,12 +34,12 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 	
 		
-		return repo.save(customer);
+		return customerrepository.save(customer);
 	}
 
 	@Override
 	public CustomerDTO getById(int customerId) {
-		Customer customer = repo.findById(customerId).orElse(null);
+		Customer customer = customerrepository.findById(customerId).orElse(null);
 		
 		CustomerDTO customerDTO = new CustomerDTO();
 		customerDTO.setCustomerId(customer.getCustomerId());
@@ -55,7 +55,7 @@ public class CustomerServiceImp implements ICustomerService {
 	@Override
 	public List<Customer> getAllCustomer() {
 		
-		return repo.findAll();
+		return customerrepository.findAll();
 	}
 
 	@Override
@@ -69,19 +69,19 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 		
-		return repo.save(customer);	
+		return customerrepository.save(customer);	
 	}
 
 	@Override
 	public void deleteById(int customerId) {
-		Customer customer=repo.findById(customerId).orElse(null);
-		repo.deleteById(customer.getCustomerId());
+		Customer customer=customerrepository.findById(customerId).orElse(null);
+		customerrepository.deleteById(customer.getCustomerId());
 
 	}
 
 	@Override
 	public List<CustomerDTO> getByCustomerName(String customerName) {
-		 List<Customer> customers = repo.getByCustomerName(customerName);
+		 List<Customer> customers = customerrepository.getByCustomerName(customerName);
 
 		    return customers.stream()
 		            .map(customer -> new CustomerDTO(

@@ -22,50 +22,50 @@ public class CustomerController {
 
 	
 	
-	private ICustomerService service;
+	private ICustomerService customerservice;
 	
 	
 	@Autowired
-	public CustomerController(ICustomerService service) {
+	public CustomerController(ICustomerService customerservice) {
 		super();
-		this.service = service;
+		this.customerservice = customerservice;
 	}
 
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody CustomerDTO customerDTO) {
 		
-		return service.addCustomer(customerDTO);
+		return customerservice.addCustomer(customerDTO);
 	}
 
 	@GetMapping("/getById/{customerId}")
 	public CustomerDTO getById(@PathVariable int customerId) {
 		
-		return service.getById(customerId);
+		return customerservice.getById(customerId);
 		
 	}
 
 	@GetMapping("/getAllCustomer")
 	public List<Customer> getAllCustomer() {
 		
-		return service.getAllCustomer();
+		return customerservice.getAllCustomer();
 	}
 
 	@PutMapping("/updateCustomer")
 	public Customer updateCustomer(@RequestBody CustomerDTO customerDTO) {
 		
-		return service.updateCustomer(customerDTO);
+		return customerservice.updateCustomer(customerDTO);
 	}
 
 	@DeleteMapping("/deleteById/{customerId}")
 	public void deleteById(int customerId) {
 		
-		service.deleteById(customerId);
+		customerservice.deleteById(customerId);
 
 	}
 	@GetMapping("/getByCustomerName/{customerName}")
 	public List<CustomerDTO> getByCustomerName(@PathVariable String customerName) {
 	
-		return service.getByCustomerName(customerName);
+		return customerservice.getByCustomerName(customerName);
 	}
 	
 }

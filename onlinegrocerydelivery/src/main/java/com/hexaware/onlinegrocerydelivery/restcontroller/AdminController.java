@@ -20,39 +20,39 @@ import com.hexaware.onlinegrocerydelivery.service.IAdminService;
 public class AdminController {
 	
 	
-	private IAdminService service;
+	private IAdminService adminservice;
 	
 	@Autowired
-	public AdminController(IAdminService service) {
+	public AdminController(IAdminService adminservice) {
 		super();
-		this.service = service;
+		this.adminservice = adminservice;
 	}
 
 	@PostMapping("/addAdmin")
 	public Admin addAdmin(@RequestBody AdminDTO adminDTO) {
 		
-		return service.addAdmin(adminDTO);
+		return adminservice.addAdmin(adminDTO);
 	}
 
 	@GetMapping("/getById/{adminId}")
 	public AdminDTO getById(@PathVariable int adminId) {
 		
-		return service.getById(adminId);
+		return adminservice.getById(adminId);
 	}
 
 	@GetMapping("/getAllAdmin")
 	public List<Admin> getAllAdmin() {
-		return service.getAllAdmin();
+		return adminservice.getAllAdmin();
 	}
 
 	@PutMapping("/updateAdmin")
 	public Admin updateAdmin(@RequestBody AdminDTO adminDTO) {
-		return service.updateAdmin(adminDTO);
+		return adminservice.updateAdmin(adminDTO);
 	}
 
 	@DeleteMapping("/deleteById/{adminId}")
 	public void deleteById(@PathVariable int adminId) {
-		service.deleteById(adminId);
+		adminservice.deleteById(adminId);
 
 	}
 

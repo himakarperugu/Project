@@ -11,13 +11,13 @@ import com.hexaware.onlinegrocerydelivery.repository.SubstitutionRepository;
 @Service
 public class SubstitutionServiceImp implements ISubstitutionService {
 	
-	private SubstitutionRepository repo;
+	private SubstitutionRepository substitutionrepository;
 	
 	
 	@Autowired
-	public SubstitutionServiceImp(SubstitutionRepository repo) {
+	public SubstitutionServiceImp(SubstitutionRepository substitutionrepository) {
 		super();
-		this.repo = repo;
+		this.substitutionrepository = substitutionrepository;
 	}
 
 	@Override
@@ -31,14 +31,14 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
-		return repo.save(substitution);
+		return substitutionrepository.save(substitution);
 	}
 
 	@Override
 	public SubstitutionDTO getById(int substituteProductId) {
 		
 		
-		Substitution substitution = repo.findById(substituteProductId).orElse(null);
+		Substitution substitution = substitutionrepository.findById(substituteProductId).orElse(null);
 		SubstitutionDTO substitutionDTO = new SubstitutionDTO();
 		substitution.setSubstitutionId(substitutionDTO.getSubstitutionId());
 		substitution.setOrderId(substitutionDTO.getOrderId());
@@ -51,7 +51,7 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	@Override
 	public List<Substitution> getAllSubstitution() {
 		
-		return repo.findAll();
+		return substitutionrepository.findAll();
 	}
 
 	@Override
@@ -63,13 +63,13 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
-		return repo.save(substitution);
+		return substitutionrepository.save(substitution);
 	}
 
 	@Override
 	public void deleteById(int substituteProductId) {
-		Substitution substitution=repo.findById(substituteProductId).orElse(null);
-		repo.deleteById(substitution.getSubstituteProductId());
+		Substitution substitution=substitutionrepository.findById(substituteProductId).orElse(null);
+		substitutionrepository.deleteById(substitution.getSubstituteProductId());
 
 	}
 

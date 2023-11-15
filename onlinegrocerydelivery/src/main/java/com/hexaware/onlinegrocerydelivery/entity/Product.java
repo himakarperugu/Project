@@ -19,13 +19,13 @@ import jakarta.validation.constraints.PositiveOrZero;
 public class Product {
 	
 	@Id
-	
+	@NotNull(message="productId should not be null")
 	private int productId;
-	@NotBlank
+	@NotBlank(message="productName should not be empty")
 	private String productName;
-	
+	@NotBlank(message="category should not be empty")
 	private String category;
-	@PositiveOrZero
+	@PositiveOrZero(message="brand should not be empty")
 	private String brand;
 	private float price;
 	@Min(value=1)

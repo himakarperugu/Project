@@ -13,11 +13,11 @@ public class AdminServiceImp implements IAdminService {
 	
 	
 
-	private AdminRepository repo;
+	private AdminRepository adminrepository;
 	@Autowired
-	public AdminServiceImp(AdminRepository repo) {
+	public AdminServiceImp(AdminRepository adminrepository) {
 		super();
-		this.repo = repo;
+		this.adminrepository = adminrepository;
 	}
 
 	@Override
@@ -29,12 +29,12 @@ public class AdminServiceImp implements IAdminService {
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
 		
-		return repo.save(admin);
+		return adminrepository.save(admin);
 	}
 
 	@Override
 	public AdminDTO getById(int adminId) {
-		Admin admin = repo.findById(adminId).orElse(null);
+		Admin admin = adminrepository.findById(adminId).orElse(null);
 		
 		AdminDTO adminDTO = new AdminDTO();
 		adminDTO.setAdminId(admin.getAdminId());
@@ -50,7 +50,7 @@ public class AdminServiceImp implements IAdminService {
 	@Override
 	public List<Admin> getAllAdmin() {
 		
-		return repo.findAll();
+		return adminrepository.findAll();
 		
 	}
 
@@ -61,13 +61,13 @@ public class AdminServiceImp implements IAdminService {
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
 		
-		return repo.save(admin);
+		return adminrepository.save(admin);
 	}
 
 	@Override
 	public void deleteById(int adminId) {
-		Admin admin=repo.findById(adminId).orElse(null);
-		repo.deleteById(admin.getAdminId());
+		Admin admin=adminrepository.findById(adminId).orElse(null);
+		adminrepository.deleteById(admin.getAdminId());
 	}
 
 }
