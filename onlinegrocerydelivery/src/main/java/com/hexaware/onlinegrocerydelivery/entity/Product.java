@@ -1,8 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -19,17 +22,15 @@ import jakarta.validation.constraints.PositiveOrZero;
 public class Product {
 	
 	@Id
-	@NotNull(message="productId should not be null")
+	
 	private int productId;
-	@NotBlank(message="productName should not be empty")
 	private String productName;
-	@NotBlank(message="category should not be empty")
 	private String category;
-	@PositiveOrZero(message="brand should not be empty")
 	private String brand;
 	private float price;
-	@Min(value=1)
 	private int quantity;
+	
+	
 	
 	
 	

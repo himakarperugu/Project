@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
-import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.service.IProductService;
 
 import jakarta.validation.Valid;
@@ -43,11 +42,8 @@ public class ProductController {
 	}
 
 	@GetMapping("/getById/{productId}")
-	public ProductDTO getById(@PathVariable int productId)throws ProductNotFoundException {
+	public ProductDTO getById(@PathVariable int productId) {
 		ProductDTO productDTO=productservice.getById(productId);
-		if (productDTO.getProductId()==0) {
-			throw new ProductNotFoundException(HttpStatus.BAD_REQUEST, "Product Not Found for productId:"+productId);
-		}
 		
 		return productDTO;
 	}
@@ -87,13 +83,13 @@ public class ProductController {
 		return productservice.getByProductName(productName);
 	}
 	
-	@ExceptionHandler({ProductNotFoundException.class})
-	public ResponseEntity<String> ProductException(ProductNotFoundException productexception)
-	{
-		return new ResponseEntity<String>(productexception.getMessage(),HttpStatus.BAD_REQUEST);
-		
-	}
-	
+//	@ExceptionHandler({ProductNotFoundException.class})
+//	public ResponseEntity<String> ProductException(ProductNotFoundException productexception)
+//	{
+//		return new ResponseEntity<String>(productexception.getMessage(),HttpStatus.BAD_REQUEST);
+//		
+//	}
+//	
 	
 	
 }

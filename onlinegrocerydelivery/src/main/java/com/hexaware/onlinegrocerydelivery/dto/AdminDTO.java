@@ -1,7 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class AdminDTO {
 	private int adminId;
+	@NotBlank(message="should not be null")
 	private String userName;
 	private String password;
 

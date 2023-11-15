@@ -9,7 +9,7 @@ public class Substitution {
 	
 	@Id
 	private int substitutionId;
-	@Positive
+	
 	private int orderId;
 	private int productId;
 	private int substituteProductId;

@@ -23,13 +23,13 @@ public class Orders {
 	@Id
 	private int orderId;
 	private int customerId;
-	@NotNull
+	
 	private LocalDate orderDate;
-	@NotBlank
+
 	private String deliveryAddress;
-	@NotBlank
+
 	private String paymentMethod;
-	@PositiveOrZero
+	
 	private double totalAmount;
 	
 	

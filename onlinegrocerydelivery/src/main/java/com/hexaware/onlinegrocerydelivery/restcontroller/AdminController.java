@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.onlinegrocerydelivery.dto.AdminDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.service.IAdminService;
+
+import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/Admin")
 public class AdminController {
@@ -29,7 +31,7 @@ public class AdminController {
 	}
 
 	@PostMapping("/addAdmin")
-	public Admin addAdmin(@RequestBody AdminDTO adminDTO) {
+	public Admin addAdmin(@Valid @RequestBody AdminDTO adminDTO) {
 		
 		return adminservice.addAdmin(adminDTO);
 	}
