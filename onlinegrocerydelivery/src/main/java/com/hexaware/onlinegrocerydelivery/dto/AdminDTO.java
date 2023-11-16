@@ -1,9 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class AdminDTO {
+	@NotNull(message="Id should not be null")
 	private int adminId;
 	@NotBlank(message="Username should not be blank")
 	@Size(min=8,max=20,message="Username should be between 8-20 characters")
@@ -17,6 +19,7 @@ public class AdminDTO {
         @Pattern(regexp = "(?=.*[!@#$%^&*()\\-_=+{};:',.<>?/]).+", message = "Password must contain at least one special character")
     })*/
 	private String password;
+	private String role;
 
 	
 	public AdminDTO() {
@@ -24,12 +27,22 @@ public class AdminDTO {
 	}
 
 
-	public AdminDTO(int adminId, String userName, String password) {
+	
+
+
+	public AdminDTO(@NotNull(message = "Id should not be null") int adminId,
+			@NotBlank(message = "Username should not be blank") @Size(min = 8, max = 20, message = "Username should be between 8-20 characters") String userName,
+			@NotBlank(message = "Password should not be blank") @Size(min = 6, message = "Password must be at least 8 characters long") String password,
+			String role) {
 		super();
 		this.adminId = adminId;
 		this.userName = userName;
 		this.password = password;
+		this.role = role;
 	}
+
+
+
 
 
 	public int getAdminId() {
@@ -62,10 +75,26 @@ public class AdminDTO {
 	}
 
 
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
+
+
+
 	@Override
 	public String toString() {
-		return "AdminDTO [adminId=" + adminId + ", userName=" + userName + ", password=" + password + "]";
+		return "AdminDTO [adminId=" + adminId + ", userName=" + userName + ", password=" + password + ", role=" + role
+				+ "]";
 	}
+	
+	
 
 
 	

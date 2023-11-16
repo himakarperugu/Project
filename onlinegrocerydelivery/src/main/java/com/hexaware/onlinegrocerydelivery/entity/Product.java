@@ -27,7 +27,7 @@ public class Product {
 	private String productName;
 	private String category;
 	private String brand;
-	private float price;
+	private int price;
 	private int quantity;
 	
 	
@@ -40,7 +40,7 @@ public class Product {
 		super();
 	}
 
-	public Product(int productId, String productName, String category, String brand, float price, int quantity) {
+	public Product(int productId, String productName, String category, String brand, int price, int quantity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -82,11 +82,11 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

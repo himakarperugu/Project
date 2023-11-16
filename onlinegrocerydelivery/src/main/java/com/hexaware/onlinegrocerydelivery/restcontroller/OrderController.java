@@ -16,6 +16,8 @@ import com.hexaware.onlinegrocerydelivery.dto.OrderDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.service.IOrderService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
@@ -31,7 +33,7 @@ public class OrderController {
 
 
 	@PostMapping("/addOrder")
-	public Orders addOrder(@RequestBody OrderDTO orderDTO) {
+	public Orders addOrder(@Valid @RequestBody OrderDTO orderDTO) {
 		
 		return orderservice.addOrder(orderDTO);
 	}

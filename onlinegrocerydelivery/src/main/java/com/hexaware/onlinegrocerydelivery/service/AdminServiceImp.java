@@ -28,6 +28,7 @@ public class AdminServiceImp implements IAdminService {
 		admin.setAdminId(adminDTO.getAdminId());
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
+		admin.setRole(adminDTO.getRole());
 		
 		return adminrepository.save(admin);
 	}
@@ -40,6 +41,7 @@ public class AdminServiceImp implements IAdminService {
 		adminDTO.setAdminId(admin.getAdminId());
 		adminDTO.setUserName(admin.getUserName());
 		adminDTO.setPassword(admin.getPassword());
+		admin.setRole(adminDTO.getRole());
 		
 		
 
@@ -60,6 +62,7 @@ public class AdminServiceImp implements IAdminService {
 		admin.setAdminId(adminDTO.getAdminId());
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
+		admin.setRole(adminDTO.getRole());
 		
 		return adminrepository.save(admin);
 	}

@@ -2,13 +2,24 @@ package com.hexaware.onlinegrocerydelivery.dto;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class OrderDTO {
 	
 	private int orderId;
+	@NotNull(message = "Customer ID cannot be null")
 	private int customerId;
+	@NotNull(message = "Order date cannot be null")
+    @Future(message = "Order date must be in the future")
 	private LocalDate orderDate;
+    @NotBlank(message = "Delivery address should not be blank")
 	private String deliveryAddress;
+    @NotBlank(message = "Payment method should not be blank")
 	private String paymentMethod;
+    @Min(value = 0, message = "Total amount must be a positive number")
 	private double totalAmount;
 	
 	

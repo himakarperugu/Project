@@ -1,11 +1,21 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
 public class ProductDTO {
+	
+	@Positive(message = "Product ID should be a positive number")
 	private int productId;
+	@NotBlank(message = "Product name is required")
 	private String productName;
+	@NotBlank(message = "Category is required")
 	private String category;
+	@NotBlank(message = "Brand is required")
 	private String brand;
-	private float price;
+	@Positive(message = "Price should be a positive number")
+	private int price;
+	@Positive(message = "Quantity should be a positive number")
 	private int quantity;
 	
 	
@@ -14,7 +24,7 @@ public class ProductDTO {
 	}
 
 
-	public ProductDTO(int productId, String productName, String category, String brand, float price, int quantity) {
+	public ProductDTO(int productId, String productName, String category, String brand, int price, int quantity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -65,12 +75,12 @@ public class ProductDTO {
 	}
 
 
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
 
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

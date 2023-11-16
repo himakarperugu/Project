@@ -29,18 +29,27 @@ public class Admin {
 
    
     private String password;
+    
+    private String role;
 	
 	public Admin() {
 		super();
 	}
 
 
-	public Admin(int adminId, String userName, String password) {
+	
+
+
+	public Admin(int adminId, String userName, String password, String role) {
 		super();
 		this.adminId = adminId;
 		this.userName = userName;
 		this.password = password;
+		this.role = role;
 	}
+
+
+
 
 
 	public int getAdminId() {
@@ -73,10 +82,26 @@ public class Admin {
 	}
 
 
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
+
+
+
 	@Override
 	public String toString() {
-		return "Admin [adminId=" + adminId + ", userName=" + userName + ", password=" + password + "]";
+		return "Admin [adminId=" + adminId + ", userName=" + userName + ", password=" + password + ", role=" + role
+				+ "]";
 	}
+	
+	
 
 
 	
