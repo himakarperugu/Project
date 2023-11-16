@@ -1,7 +1,13 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import com.hexaware.onlinegrocerydelivery.entity.Customer;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -20,9 +26,24 @@ public class OrderDTO {
 	private String paymentMethod;
     @Min(value = 1, message = "Total amount must be a positive number")
 	private double totalAmount;
+    
+    /*@OneToMany(cascade = CascadeType.ALL)
+	private List<Customer>customer;
 	
 	
 	
+	public List<Customer> getCustomer() {
+		return customer;
+	}
+
+
+
+	public void setCustomer(List<Customer> customer) {
+		this.customer = customer;
+	}*/
+
+
+
 	public OrderDTO() {
 		super();
 	}

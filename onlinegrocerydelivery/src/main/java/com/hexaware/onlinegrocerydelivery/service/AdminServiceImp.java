@@ -2,12 +2,15 @@ package com.hexaware.onlinegrocerydelivery.service;
 
 import java.util.List;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.AdminDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.repository.AdminRepository;
+
+import ch.qos.logback.classic.Logger;
 @Service
 public class AdminServiceImp implements IAdminService {
 	
@@ -19,7 +22,7 @@ public class AdminServiceImp implements IAdminService {
 		super();
 		this.adminrepository = adminrepository;
 	}
-
+	//Logger logger= LoggerFactory.getLogger(AdminServiceImp.class);
 	@Override
 	public Admin addAdmin(AdminDTO adminDTO) {
 		Admin admin =new Admin();
@@ -29,7 +32,7 @@ public class AdminServiceImp implements IAdminService {
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
 		admin.setRole(adminDTO.getRole());
-		
+		//logger.info("addAdmin method is implemented");
 		return adminrepository.save(admin);
 	}
 

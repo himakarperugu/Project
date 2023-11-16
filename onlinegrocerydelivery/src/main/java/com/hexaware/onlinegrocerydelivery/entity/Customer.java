@@ -32,23 +32,26 @@ public class Customer {
 	
 	@Id
 	private int customerId;
-	
 	private String customerName;
-	
 	private String email;
-	
-	
 	private String phoneNumber;
-	
-	
 	private String deliveryAddress;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Orders>order;
 	
 	
 	
-	
-	
-	
+	public List<Orders> getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(List<Orders> order) {
+		this.order = order;
+	}
+
+
 	public Customer() {
 		super();
 	}

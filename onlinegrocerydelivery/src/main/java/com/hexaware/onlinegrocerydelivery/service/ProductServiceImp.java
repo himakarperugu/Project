@@ -37,6 +37,7 @@ public class ProductServiceImp implements IProductService {
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
 		product.setQuantity(productDTO.getQuantity());
+		product.setOrders(productDTO.getOrders());
 		
 		return productrepository.save(product);
 	}

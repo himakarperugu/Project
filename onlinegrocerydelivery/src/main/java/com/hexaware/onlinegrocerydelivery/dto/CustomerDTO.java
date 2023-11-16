@@ -1,5 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import java.util.List;
+
+import com.hexaware.onlinegrocerydelivery.entity.Orders;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -18,7 +24,20 @@ public class CustomerDTO {
 	@NotBlank(message="Delivery address is required")
 	private String deliveryAddress;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Orders>order;
 	
+	
+	public List<Orders> getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(List<Orders> order) {
+		this.order = order;
+	}
+
+
 	public CustomerDTO() {
 		super();
 	}

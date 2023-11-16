@@ -2,6 +2,7 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -32,10 +33,21 @@ public class Product {
 	
 	
 	
-	
+	@ManyToMany(cascade = CascadeType.ALL)
+	List<Orders>orders;
 	
 
 	
+
+	
+	public List<Orders> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Orders> orders) {
+		this.orders = orders;
+	}
+
 	public Product() {
 		super();
 	}

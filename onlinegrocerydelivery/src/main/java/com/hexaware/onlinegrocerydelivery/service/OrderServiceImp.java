@@ -34,6 +34,7 @@ public class OrderServiceImp implements IOrderService {
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
+			orders.setCustomer(orderDTO.getCustomer());
 	
 			return orderrepository.save(orders);
 	}

@@ -1,5 +1,11 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import java.util.List;
+
+import com.hexaware.onlinegrocerydelivery.entity.Orders;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -19,6 +25,20 @@ public class ProductDTO {
 	private int quantity;
 	
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+		List<Orders>orders;
+	
+	
+	public List<Orders> getOrders() {
+		return orders;
+	}
+
+
+	public void setOrders(List<Orders> orders) {
+		this.orders = orders;
+	}
+
+
 	public ProductDTO() {
 		super();
 	}
