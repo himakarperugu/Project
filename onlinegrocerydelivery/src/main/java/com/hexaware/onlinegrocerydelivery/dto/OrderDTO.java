@@ -13,13 +13,12 @@ public class OrderDTO {
 	@NotNull(message = "Customer ID cannot be null")
 	private int customerId;
 	@NotNull(message = "Order date cannot be null")
-    @Future(message = "Order date must be in the future")
 	private LocalDate orderDate;
     @NotBlank(message = "Delivery address should not be blank")
 	private String deliveryAddress;
     @NotBlank(message = "Payment method should not be blank")
 	private String paymentMethod;
-    @Min(value = 0, message = "Total amount must be a positive number")
+    @Min(value = 1, message = "Total amount must be a positive number")
 	private double totalAmount;
 	
 	

@@ -26,7 +26,7 @@ public class OrderController {
 	private IOrderService orderservice;
 	
 	@Autowired
-	public OrderController(IOrderService service) {
+	public OrderController(IOrderService  orderservice) {
 		super();
 		this.orderservice = orderservice;
 	}

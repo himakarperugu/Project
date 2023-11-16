@@ -20,7 +20,7 @@ public class ProductServiceImp implements IProductService {
 	
 	
 	@Autowired
-	public ProductServiceImp(ProductRepository repo) {
+	public ProductServiceImp(ProductRepository productrepository) {
 		super();
 		this.productrepository = productrepository;
 	}
