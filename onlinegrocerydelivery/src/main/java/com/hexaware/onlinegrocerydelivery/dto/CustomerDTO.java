@@ -1,11 +1,21 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
+
 public class CustomerDTO {
 
+	@Positive(message ="CustomerID should be a positive number")
 	private int customerId;
+	@NotBlank(message ="Customer name is required")
 	private String customerName;
+	@Email(message="Invalid email format")
 	private String email;
+	@Pattern(regexp="\\d{10}",message="Phone number must be 10 digits")
 	private String phoneNumber;
+	@NotBlank(message="Delivery address is required")
 	private String deliveryAddress;
 	
 	
