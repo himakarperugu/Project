@@ -37,6 +37,8 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
+		logger.info("Inserted Substitution Data Into Table " +substitutionDTO);
+		
 		return substitutionrepository.save(substitution);
 	}
 
@@ -51,11 +53,15 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
+		logger.info("Fetched Substitution Data Using Substitution ID " + substituteProductId);
+		
 		return substitutionDTO;
 	}
 
 	@Override
 	public List<Substitution> getAllSubstitution() {
+		
+		logger.info(" Fetched All The Substitution Data ");
 		
 		return substitutionrepository.findAll();
 	}
@@ -69,6 +75,8 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
+		logger.info("  Updated Substitution Data Into Table " + substitutionDTO);
+		
 		return substitutionrepository.save(substitution);
 	}
 
@@ -76,6 +84,8 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	public void deleteById(int substituteProductId) {
 		Substitution substitution=substitutionrepository.findById(substituteProductId).orElse(null);
 		substitutionrepository.deleteById(substitution.getSubstituteProductId());
+		logger.info(" Deleting the Substitution Record Using Substitution ID "+substituteProductId);
+		
 
 	}
 

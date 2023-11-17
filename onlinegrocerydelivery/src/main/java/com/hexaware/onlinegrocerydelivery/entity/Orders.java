@@ -8,6 +8,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
@@ -32,8 +33,21 @@ public class Orders {
 	
 	private double totalAmount;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	List<Product>product;
 	
 	
+	
+
+	public List<Product> getProduct() {
+		return product;
+	}
+
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
 
 	public Orders() {
 		super();

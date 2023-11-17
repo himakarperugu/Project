@@ -4,8 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
+import com.hexaware.onlinegrocerydelivery.entity.Product;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Future;
@@ -27,6 +29,23 @@ public class OrderDTO {
     @Min(value = 1, message = "Total amount must be a positive number")
 	private double totalAmount;
   
+
+    
+    
+	@ManyToMany(cascade = CascadeType.ALL)
+	List<Product>product;
+	
+
+	public List<Product> getProduct() {
+		return product;
+	}
+
+
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
 
 
 	public OrderDTO() {

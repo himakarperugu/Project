@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
-import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
-import com.hexaware.onlinegrocerydelivery.repository.AdminRepository;
 import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
 public class ProductServiceImp implements IProductService {
@@ -42,6 +40,8 @@ public class ProductServiceImp implements IProductService {
 		product.setQuantity(productDTO.getQuantity());
 		product.setOrders(productDTO.getOrders());
 		
+		logger.info("Inserted Product Data Into Table " +productDTO);
+
 		return productrepository.save(product);
 	}
 
@@ -59,12 +59,16 @@ public class ProductServiceImp implements IProductService {
 		productDTO.setBrand(product.getBrand());
 		productDTO.setPrice(product.getPrice());
 		productDTO.setQuantity(product.getQuantity());
-		
+		logger.info("Fetched Product Data Using Product ID " + productId);
 		return productDTO;
 	}
 
 	@Override
 	public List<Product> getAllProduct() {
+		
+		
+		logger.info(" Fetched All The Product Data ");
+		
 		return productrepository.findAll();
 	}
 
@@ -79,12 +83,14 @@ public class ProductServiceImp implements IProductService {
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
 		product.setQuantity(productDTO.getQuantity());
-		
+		logger.info("  Updated Product Data Into Table " + productDTO);
 		return productrepository.save(product);	
 		}
 
 	@Override
 	public void deleteById(int productId) {
+		
+	logger.info(" Deleting the Product Record Using Product ID "+productId);
 		
 	Product product=productrepository.findById(productId).orElse(null);
 	productrepository.deleteById(product.getProductId());
@@ -107,7 +113,7 @@ public class ProductServiceImp implements IProductService {
 		                return productDTO;
 		            })
 		            .collect(Collectors.toList());
-
+		    logger.info("Fetched Product Data Using Product Category " + category);
 		    return productDTOs;
 		}
 	
@@ -129,12 +135,14 @@ public class ProductServiceImp implements IProductService {
 	                    return productDTO;
 	                })
 	                .collect(Collectors.toList());
-
+	        logger.info("Fetched Product Data Using Product Brand " + brand);
 	        return productDTOs;
 	}
 	public List<ProductDTO> getByProductName(String productName) {
 	    List<Product> products = productrepository.getByProductName(productName);
-
+	    
+	    logger.info("Fetched Product Data Using Product Name " + productName);
+	    
 	    return products.stream()
 	            .map(product -> new ProductDTO(
 	                    product.getProductId(),

@@ -5,10 +5,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.OrderDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
+import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
+import com.hexaware.onlinegrocerydelivery.exception.OrderNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 
 @Service
@@ -37,7 +40,10 @@ public class OrderServiceImp implements IOrderService {
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
-			logger.info("addOrder method is implemented");
+			
+			orders.setProduct(orderDTO.getProduct());
+			
+			logger.info("Inserted Orders Data Into Table " +orderDTO);
 		
 	
 			return orderrepository.save(orders);
@@ -45,15 +51,21 @@ public class OrderServiceImp implements IOrderService {
 
 	@Override
 	public OrderDTO getById(int orderId) {
-		Orders orders = orderrepository.findById(orderId).orElse(null);
+		Orders orders = orderrepository.findById(orderId).orElse(new Orders());
 		OrderDTO orderDTO = new OrderDTO();
+		
+		if (orders.getOrderId()==0) {
+			throw new OrderNotFoundException(HttpStatus.NOT_FOUND," Orders with OrderId : " + orderId + " Not Found " );
+
+		}
+		
 		orders.setOrderId(orderDTO.getOrderId());
 		orders.setCustomerId(orderDTO.getCustomerId());
 		orders.setOrderDate(orderDTO.getOrderDate());
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
 		orders.setTotalAmount(orderDTO.getTotalAmount());
-		logger.info("getById method is implemented");
+		logger.info("Fetched Orders Data Using Orders ID " + orderId);
 
 		
 		return orderDTO;
@@ -61,6 +73,9 @@ public class OrderServiceImp implements IOrderService {
 
 	@Override
 	public List<Orders> getAllOrder() {
+		
+		
+		logger.info(" Fetched All The Orders Data ");
 		
 		return orderrepository.findAll();
 	}
@@ -75,7 +90,7 @@ public class OrderServiceImp implements IOrderService {
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
 		orders.setTotalAmount(orderDTO.getTotalAmount());
-		logger.info(" updateOrder method is implemented");
+		logger.info("  Updated Orders Data Into Table " + orderDTO);
 
 		
 		
@@ -88,7 +103,7 @@ public class OrderServiceImp implements IOrderService {
 	public void deleteById(int orderId) {
 		Orders orders=orderrepository.findById(orderId).orElse(null);
 		orderrepository.deleteById(orders.getOrderId());
-		logger.info(" deleteById method is implemented");
+		logger.info(" Deleting the Orders Record Using Orders ID "+orderId);
 		
 
 	}
