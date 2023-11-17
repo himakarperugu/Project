@@ -2,6 +2,8 @@ package com.hexaware.onlinegrocerydelivery.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,8 @@ import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 @Service
 public class OrderServiceImp implements IOrderService {
 	
-	
+	Logger logger = LoggerFactory.getLogger(OrderServiceImp.class);
+
 	private OrderRepository orderrepository;
 	
 	
@@ -34,7 +37,7 @@ public class OrderServiceImp implements IOrderService {
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
-			orders.setCustomer(orderDTO.getCustomer());
+			//orders.setCustomer(orderDTO.getCustomer());
 	
 			return orderrepository.save(orders);
 	}
