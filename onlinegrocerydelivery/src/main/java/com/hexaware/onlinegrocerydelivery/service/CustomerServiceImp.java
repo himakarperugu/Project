@@ -35,7 +35,8 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 	
-		customer.setOrder( customerDTO.getOrder());;
+		customer.setOrder( customerDTO.getOrder());
+		logger.info("addCustomer method is implemented");
 		return customerrepository.save(customer);
 	}
 
@@ -49,6 +50,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customerDTO.setEmail(customer.getEmail());
 		customerDTO.setPhoneNumber(customer.getPhoneNumber());
 		customerDTO.setDeliveryAddress(customer.getDeliveryAddress());
+		logger.info("getById method is implemented");
 		
 		
 		return customerDTO;
@@ -70,6 +72,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setEmail(customerDTO.getEmail());
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
+		logger.info("updateCustomer method is implemented");
 		
 		return customerrepository.save(customer);	
 	}
@@ -78,6 +81,7 @@ public class CustomerServiceImp implements ICustomerService {
 	public void deleteById(int customerId) {
 		Customer customer=customerrepository.findById(customerId).orElse(null);
 		customerrepository.deleteById(customer.getCustomerId());
+		logger.info("deleteById method is implemented");
 
 	}
 

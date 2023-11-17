@@ -33,6 +33,7 @@ public class AdminServiceImp implements IAdminService {
 		admin.setPassword(adminDTO.getPassword());
 		admin.setRole(adminDTO.getRole());
 		logger.info("addAdmin method is implemented");
+		
 		return adminrepository.save(admin);
 	}
 
@@ -45,7 +46,7 @@ public class AdminServiceImp implements IAdminService {
 		adminDTO.setUserName(admin.getUserName());
 		adminDTO.setPassword(admin.getPassword());
 		admin.setRole(adminDTO.getRole());
-		
+		logger.info("getById method is implemented");
 		
 
 		
@@ -66,6 +67,7 @@ public class AdminServiceImp implements IAdminService {
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(adminDTO.getPassword());
 		admin.setRole(adminDTO.getRole());
+		logger.info("updateAdmin method is implemented");
 		
 		return adminrepository.save(admin);
 	}
@@ -74,6 +76,7 @@ public class AdminServiceImp implements IAdminService {
 	public void deleteById(int adminId) {
 		Admin admin=adminrepository.findById(adminId).orElse(null);
 		adminrepository.deleteById(admin.getAdminId());
+		logger.info("deleteById method is implemented");
 	}
 
 }

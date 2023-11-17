@@ -33,21 +33,7 @@ public class Orders {
 	private double totalAmount;
 	
 	
-//	@OneToMany(cascade = CascadeType.ALL)
-//	private List<Customer>customer;
-//	
-//	
-//	
-//	
-//	public List<Customer> getCustomer() {
-//		return customer;
-//	}
-//
-//
-//	public void setCustomer(List<Customer> customer) {
-//		this.customer = customer;
-//	}
-
+	
 
 	public Orders() {
 		super();

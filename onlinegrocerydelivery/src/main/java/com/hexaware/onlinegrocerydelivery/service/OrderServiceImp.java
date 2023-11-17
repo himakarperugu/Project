@@ -37,7 +37,8 @@ public class OrderServiceImp implements IOrderService {
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
-			//orders.setCustomer(orderDTO.getCustomer());
+			logger.info("addOrder method is implemented");
+		
 	
 			return orderrepository.save(orders);
 	}
@@ -52,6 +53,7 @@ public class OrderServiceImp implements IOrderService {
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
 		orders.setTotalAmount(orderDTO.getTotalAmount());
+		logger.info("getById method is implemented");
 
 		
 		return orderDTO;
@@ -73,6 +75,7 @@ public class OrderServiceImp implements IOrderService {
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
 		orders.setTotalAmount(orderDTO.getTotalAmount());
+		logger.info(" updateOrder method is implemented");
 
 		
 		
@@ -85,6 +88,8 @@ public class OrderServiceImp implements IOrderService {
 	public void deleteById(int orderId) {
 		Orders orders=orderrepository.findById(orderId).orElse(null);
 		orderrepository.deleteById(orders.getOrderId());
+		logger.info(" deleteById method is implemented");
+		
 
 	}
 
