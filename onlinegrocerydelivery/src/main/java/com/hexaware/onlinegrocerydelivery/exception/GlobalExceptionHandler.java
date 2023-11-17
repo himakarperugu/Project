@@ -10,7 +10,9 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler({
 	AdminNotFoundException.class,
 	CustomerNotFoundException.class,
-	OrderNotFoundException.class
+	OrderNotFoundException.class,
+	ProductNotFoundException.class,
+	SubstitutionNotFoundException.class
 	
 	})
 public ResponseEntity<String> handleAnyExpection(Exception e) {

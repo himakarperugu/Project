@@ -6,10 +6,12 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
+import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
 public class ProductServiceImp implements IProductService {
@@ -48,9 +50,12 @@ public class ProductServiceImp implements IProductService {
 	@Override
 	public ProductDTO getById(int productId) {
 		
-		Product product = productrepository.findById(productId).orElse(null);
+		Product product = productrepository.findById(productId).orElse(new Product());
 		
-		
+		if (product.getProductId()==0) {
+			throw new ProductNotFoundException(HttpStatus.NOT_FOUND,"Product with Product Id : " +productId+ " Not Found");
+
+		}
 		
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setProductId(product.getProductId());

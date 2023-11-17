@@ -5,10 +5,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.SubstitutionDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
+import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
+import com.hexaware.onlinegrocerydelivery.exception.SubstitutionNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.SubstitutionRepository;
 @Service
 public class SubstitutionServiceImp implements ISubstitutionService {
@@ -46,7 +49,14 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	public SubstitutionDTO getById(int substituteProductId) {
 		
 		
-		Substitution substitution = substitutionrepository.findById(substituteProductId).orElse(null);
+		
+		
+		Substitution substitution = substitutionrepository.findById(substituteProductId).orElse( new Substitution());
+		
+		if (substitution.getSubstituteProductId()==0) {
+			throw new SubstitutionNotFoundException(HttpStatus.NOT_FOUND,"Substitution with substituteProduct Id : " +substituteProductId+ " Not Found");
+
+		}
 		SubstitutionDTO substitutionDTO = new SubstitutionDTO();
 		substitution.setSubstitutionId(substitutionDTO.getSubstitutionId());
 		substitution.setOrderId(substitutionDTO.getOrderId());
