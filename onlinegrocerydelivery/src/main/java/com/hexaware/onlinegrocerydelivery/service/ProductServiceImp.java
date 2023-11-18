@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
+import com.hexaware.onlinegrocerydelivery.exception.CustomerNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
@@ -105,6 +106,10 @@ public class ProductServiceImp implements IProductService {
 	@Override
 	public List<ProductDTO> getByCategory(String category) {
 		 List<Product> products = productrepository.getByCategory(category);
+		 
+		 if (products.isEmpty()) {
+		        throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product with  Product Category  Name: " + category + " Not Found");
+		    }
 
 		    List<ProductDTO> productDTOs = products.stream()
 		            .map(product -> {
@@ -126,6 +131,12 @@ public class ProductServiceImp implements IProductService {
 	@Override
 	public List<ProductDTO> getByBrand(String brand) {
 		 List<Product> products = productrepository.getByBrand(brand);
+		 
+		 
+		 if (products.isEmpty()) {
+		        throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product with  Product Brand  Name: " + brand + " Not Found");
+		    }
+
 
 	 
 	        List<ProductDTO> productDTOs = products.stream()
@@ -145,6 +156,13 @@ public class ProductServiceImp implements IProductService {
 	}
 	public List<ProductDTO> getByProductName(String productName) {
 	    List<Product> products = productrepository.getByProductName(productName);
+	    
+	    
+		 if (products.isEmpty()) {
+		        throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product with Product Name: " + productName + " Not Found");
+		    }
+
+		 
 	    
 	    logger.info("Fetched Product Data Using Product Name " + productName);
 	    
