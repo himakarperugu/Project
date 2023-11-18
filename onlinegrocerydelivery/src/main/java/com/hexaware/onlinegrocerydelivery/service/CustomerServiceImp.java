@@ -1,5 +1,6 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -95,32 +96,26 @@ public class CustomerServiceImp implements ICustomerService {
 
 	}
 
-	/*@Override
-	public CustomerDTO getByCustomerName(String customerName) {
-		
-		Customer customer=customerrepository.findByCustomerName(customerName);
-		if (customer.isEmpty()) {
-	        throw new CustomerNotFoundException(HttpStatus.NOT_FOUND, "Customers with customerName: " + customerName + " not found");
-		}
-		
-		CustomerDTO customerDTO=new CustomerDTO();
-		if(customer!=null) {
-			customerDTO.setCustomerId(customer.getCustomerId());
-			customerDTO.setCustomerName(customer.getCustomerName());
-			customerDTO.setEmail(customer.getEmail());
-			customerDTO.setPhoneNumber(customer.getPhoneNumber());
-			customerDTO.setDeliveryAddress(customer.getDeliveryAddress());
-			logger.info("Fetching customer by name" +customer.getCustomerName());
+	@Override
+	public List<CustomerDTO> getByCustomerName(String customerName) {
+		 List<Customer> customers = customerrepository.getByCustomerName(customerName);
+		 
+		 if (customers.isEmpty()) {
+		        throw new CustomerNotFoundException(HttpStatus.NOT_FOUND, "Customer with Customer Name: " + customerName + " Not Found");
+		    }
 
-		}
-		
-		return customerDTO;
-		
-		
-		
-	}*/
-
-
+		 
+		 
+		    return customers.stream()
+		            .map(customer -> new CustomerDTO(
+		            		customer.getCustomerId(),
+		            		customer.getCustomerName(),
+		            		customer.getEmail(),
+		            		customer.getPhoneNumber(),
+		            		customer.getDeliveryAddress()
+		                   
+		            ))
+		            .collect(Collectors.toList());
 	}
-
+}
 
