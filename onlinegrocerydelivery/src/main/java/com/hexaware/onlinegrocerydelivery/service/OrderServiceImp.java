@@ -41,7 +41,7 @@ public class OrderServiceImp implements IOrderService {
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
 			
-			orders.setProduct(orderDTO.getProduct());
+		
 			
 			logger.info("Inserted Orders Data Into Table " +orderDTO);
 		
@@ -55,7 +55,7 @@ public class OrderServiceImp implements IOrderService {
 		OrderDTO orderDTO = new OrderDTO();
 		
 		if (orders.getOrderId()==0) {
-			throw new OrderNotFoundException(HttpStatus.NOT_FOUND," Orders with OrderId : " + orderId + " Not Found " );
+			throw new OrderNotFoundException(HttpStatus.NOT_FOUND," Orders with Order Id : " + orderId + " Not Found " );
 
 		}
 		

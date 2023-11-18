@@ -2,6 +2,10 @@ package com.hexaware.onlinegrocerydelivery.dto;
 
 import jakarta.validation.constraints.Positive;
 
+/*Author: Sakitha
+ * Updated:09-11-2023
+ *  Description: This is a  Substitution DTO Class
+ */
 public class SubstitutionDTO {
 	
 	@Positive(message = "Substitution ID should be a positive number")

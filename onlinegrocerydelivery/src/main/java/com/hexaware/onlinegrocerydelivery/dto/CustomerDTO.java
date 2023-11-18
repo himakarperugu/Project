@@ -11,6 +11,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 
+
+
+
+/*Author: Himakar
+ * Updated:09-11-2023
+ *  Description: This is a  Customer DTO Class
+ */
+
 public class CustomerDTO {
 
 	@Positive(message ="CustomerID should be a positive number")
@@ -24,19 +32,7 @@ public class CustomerDTO {
 	@NotBlank(message="Delivery address is required")
 	private String deliveryAddress;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Orders>order;
 	
-	
-	public List<Orders> getOrder() {
-		return order;
-	}
-
-
-	public void setOrder(List<Orders> order) {
-		this.order = order;
-	}
-
 
 	public CustomerDTO() {
 		super();

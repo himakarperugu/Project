@@ -39,7 +39,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 	
-		customer.setOrder( customerDTO.getOrder());
+
 		logger.info("Inserted Customer Data Into Table "+ customerDTO);
 		return customerrepository.save(customer);
 	}

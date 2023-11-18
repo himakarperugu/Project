@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Size;
 
 /* Author:Himakar
  * @UpdatedOn:09-11-2023
+ * Description: This is a Admin Entity Class
  */
 
 
@@ -20,16 +21,9 @@ public class Admin {
 	
 	
 	@Id
-	
 	private int adminId;
-	
-	
-
     private String userName;
-
-   
     private String password;
-    
     private String role;
 	
 	public Admin() {

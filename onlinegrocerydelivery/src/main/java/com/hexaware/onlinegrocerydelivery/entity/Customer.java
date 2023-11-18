@@ -22,6 +22,7 @@ import jakarta.validation.constraints.Size;
 
 /*Author:Himakar
  * Updated:09-11-2023
+ * Description: This is a Customer Entity Class
  */
 
 
@@ -37,19 +38,6 @@ public class Customer {
 	private String phoneNumber;
 	private String deliveryAddress;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Orders>order;
-	
-	
-	
-	public List<Orders> getOrder() {
-		return order;
-	}
-
-
-	public void setOrder(List<Orders> order) {
-		this.order = order;
-	}
 
 
 	public Customer() {

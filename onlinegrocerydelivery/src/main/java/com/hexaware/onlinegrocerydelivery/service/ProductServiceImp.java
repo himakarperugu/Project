@@ -41,7 +41,6 @@ public class ProductServiceImp implements IProductService {
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
 		product.setQuantity(productDTO.getQuantity());
-		product.setOrders(productDTO.getOrders());
 		
 		logger.info("Inserted Product Data Into Table " +productDTO);
 

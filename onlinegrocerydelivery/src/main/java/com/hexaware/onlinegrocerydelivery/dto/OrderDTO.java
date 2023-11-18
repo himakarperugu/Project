@@ -15,6 +15,10 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+/*Author: Sakitha
+ * Updated:09-11-2023
+ *  Description: This is a Order DTO Class
+ */
 public class OrderDTO {
 	
 	private int orderId;
@@ -32,20 +36,7 @@ public class OrderDTO {
 
     
     
-	@ManyToMany(cascade = CascadeType.ALL)
-	List<Product>product;
 	
-
-	public List<Product> getProduct() {
-		return product;
-	}
-
-
-
-	public void setProduct(List<Product> product) {
-		this.product = product;
-	}
-
 
 
 	public OrderDTO() {

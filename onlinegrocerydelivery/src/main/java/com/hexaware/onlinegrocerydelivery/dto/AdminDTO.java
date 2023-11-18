@@ -4,20 +4,22 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+
+/*Author:Himakar
+ * Updated:09-11-2023
+ *  Description: This is a Admin DTO Class
+ */
+
+
 public class AdminDTO {
 	@NotNull(message="Id should not be null")
 	private int adminId;
 	@NotBlank(message="Username should not be blank")
-	@Size(min=8,max=20,message="Username should be between 8-20 characters")
+	@Size(min=2,max=255,message="Username should be between 2-255 characters")
 	private String userName;
 	@NotBlank(message = "Password should not be blank")
-    @Size(min=6,message="Password must be at least 8 characters long")
-   /* @Pattern.List({
-        @Pattern(regexp = "(?=.*[0-9]).+", message = "Password must contain at least one digit"),
-        @Pattern(regexp = "(?=.*[a-z]).+", message = "Password must contain at least one lowercase letter"),
-        @Pattern(regexp = "(?=.*[A-Z]).+", message = "Password must contain at least one uppercase letter"),
-        @Pattern(regexp = "(?=.*[!@#$%^&*()\\-_=+{};:',.<>?/]).+", message = "Password must contain at least one special character")
-    })*/
+    @Size(min=4,message="Password must be at least 4 characters long")
+  
 	private String password;
 	private String role;
 
@@ -30,9 +32,9 @@ public class AdminDTO {
 	
 
 
-	public AdminDTO(@NotNull(message = "Id should not be null") int adminId,
-			@NotBlank(message = "Username should not be blank") @Size(min = 8, max = 20, message = "Username should be between 8-20 characters") String userName,
-			@NotBlank(message = "Password should not be blank") @Size(min = 6, message = "Password must be at least 8 characters long") String password,
+	public AdminDTO(int adminId,
+			String userName,
+			String password,
 			String role) {
 		super();
 		this.adminId = adminId;

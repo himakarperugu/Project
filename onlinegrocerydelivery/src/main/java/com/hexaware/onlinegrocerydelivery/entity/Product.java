@@ -17,6 +17,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 
 /*Author:Himakar
  * Updated:09-11-2023
+ *  Description: This is a Product Entity Class
  */
 
 @Entity
@@ -33,20 +34,7 @@ public class Product {
 	
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	List<Orders>orders;
 	
-
-	
-
-	
-	public List<Orders> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Orders> orders) {
-		this.orders = orders;
-	}
 
 	public Product() {
 		super();

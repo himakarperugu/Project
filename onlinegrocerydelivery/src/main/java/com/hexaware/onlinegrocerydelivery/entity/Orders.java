@@ -16,6 +16,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 /*Author:Sakitha
  * updated:12/11/2023
+ *  Description: This is a Orders Entity Class
  * 
  */
 @Entity
@@ -33,21 +34,7 @@ public class Orders {
 	
 	private double totalAmount;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	List<Product>product;
 	
-	
-	
-
-	public List<Product> getProduct() {
-		return product;
-	}
-
-
-	public void setProduct(List<Product> product) {
-		this.product = product;
-	}
-
 
 	public Orders() {
 		super();

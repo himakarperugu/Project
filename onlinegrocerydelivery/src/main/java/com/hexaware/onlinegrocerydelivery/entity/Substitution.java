@@ -4,6 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Positive;
 
+
+/*Author:Sakitha
+ * Updated:09-11-2023
+ *  Description: This is a Substitution Entity Class
+ */
+
 @Entity
 public class Substitution {
 	
