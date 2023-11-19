@@ -12,10 +12,6 @@ import jakarta.validation.constraints.Size;
  * Description: This is a Admin Entity Class
  */
 
-
-
-
-
 @Entity
 public class Admin {
 	

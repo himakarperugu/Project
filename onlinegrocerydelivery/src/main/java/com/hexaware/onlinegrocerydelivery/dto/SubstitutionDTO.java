@@ -17,6 +17,8 @@ public class SubstitutionDTO {
     @Positive(message = "Substitute Product ID should be a positive number")
 	private int substituteProductId;
 	
+
+    
 	public SubstitutionDTO() {
 		super();
 	}

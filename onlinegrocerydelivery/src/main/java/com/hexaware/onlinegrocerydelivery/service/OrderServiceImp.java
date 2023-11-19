@@ -9,30 +9,46 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.OrderDTO;
+import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.OrderNotFoundException;
+import com.hexaware.onlinegrocerydelivery.repository.CustomerRepository;
 import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 
 @Service
 public class OrderServiceImp implements IOrderService {
 	
 	Logger logger = LoggerFactory.getLogger(OrderServiceImp.class);
-
-	private OrderRepository orderrepository;
 	
 	
 	@Autowired
-	public OrderServiceImp(OrderRepository orderrepository) {
-		super();
+	private OrderRepository orderrepository;
+	@Autowired
+	private CustomerRepository customerrepository1;
+	
+	public OrderRepository getOrderrepository() {
+		return orderrepository;
+	}
+
+	public void setOrderrepository(OrderRepository orderrepository) {
 		this.orderrepository = orderrepository;
 	}
+	public CustomerRepository getCustomerrepository() {
+		return customerrepository1;
+	}
+
+	public void setCustomerrepository(CustomerRepository customerrepository1) {
+		this.customerrepository1 = customerrepository1;
+	}
+	
 
 	@Override
 	public Orders addOrder(OrderDTO orderDTO) {
 			
 			Orders orders =new Orders();
-			
+			Customer customer=customerrepository1.findById(orderDTO.getCustomerId()).orElse(null);
+					
 			
 			orders.setOrderId(orderDTO.getOrderId());
 			orders.setCustomerId(orderDTO.getCustomerId());
@@ -40,6 +56,7 @@ public class OrderServiceImp implements IOrderService {
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			orders.setTotalAmount(orderDTO.getTotalAmount());
+			orders.setCustomer(customer);
 			
 		
 			

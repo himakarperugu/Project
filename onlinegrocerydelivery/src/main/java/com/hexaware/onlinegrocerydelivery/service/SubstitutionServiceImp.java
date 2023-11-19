@@ -9,9 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.SubstitutionDTO;
+import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.SubstitutionNotFoundException;
+import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
 import com.hexaware.onlinegrocerydelivery.repository.SubstitutionRepository;
 @Service
 public class SubstitutionServiceImp implements ISubstitutionService {
@@ -19,28 +21,50 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	
 	Logger logger = LoggerFactory.getLogger(SubstitutionServiceImp.class);
 
-	
+	@Autowired
 	private SubstitutionRepository substitutionrepository;
 	
 	
 	@Autowired
+	private OrderRepository orderrepository1;
+	
+	
+	
+	
 	public SubstitutionServiceImp(SubstitutionRepository substitutionrepository) {
 		super();
 		this.substitutionrepository = substitutionrepository;
 	}
+	
+	
+
+	public OrderRepository getOrderrepository1() {
+		return orderrepository1;
+	}
+
+
+
+	public void setOrderrepository1(OrderRepository orderrepository1) {
+		this.orderrepository1 = orderrepository1;
+	}
+
+
 
 	@Override
 	public Substitution addSubstitution(SubstitutionDTO substitutionDTO) {
 		
 		Substitution substitution =new Substitution();
 		
+		Orders orders=orderrepository1.findById(substitutionDTO.getOrderId()).orElse(null);
+		
 		
 		substitution.setSubstitutionId(substitutionDTO.getSubstitutionId());
 		substitution.setOrderId(substitutionDTO.getOrderId());
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
-		
+		substitution.setOrders(orders);
 		logger.info("Inserted Substitution Data Into Table " +substitutionDTO);
+		
 		
 		return substitutionrepository.save(substitution);
 	}

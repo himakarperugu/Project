@@ -25,16 +25,28 @@ public class Orders {
 	@Id
 	private int orderId;
 	private int customerId;
-	
 	private LocalDate orderDate;
-
 	private String deliveryAddress;
-
 	private String paymentMethod;
-	
 	private double totalAmount;
 	
 	
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Customer customer;
+	
+	
+	
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 
 	public Orders() {
 		super();

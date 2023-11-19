@@ -33,6 +33,8 @@ public class OrderDTO {
     @Min(value = 1, message = "Total amount must be a positive number")
 	private double totalAmount;
   
+    
+ 
 
     
     

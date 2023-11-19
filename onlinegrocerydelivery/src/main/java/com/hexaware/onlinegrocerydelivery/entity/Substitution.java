@@ -1,7 +1,9 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Positive;
 
 
@@ -21,6 +23,23 @@ public class Substitution {
 	private int substituteProductId;
 	
 	
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Orders orders;
+	
+	
+	
+	
+	public Orders getOrders() {
+		return orders;
+	}
+
+
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
+
+
 	public Substitution() {
 		super();
 	}
