@@ -3,6 +3,7 @@ package com.hexaware.onlinegrocerydelivery.service;
 import java.util.List;
 
 import com.hexaware.onlinegrocerydelivery.dto.AdminDTO;
+import com.hexaware.onlinegrocerydelivery.dto.CustomerDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 
 public interface IAdminService {
@@ -16,6 +17,8 @@ public interface IAdminService {
 	Admin updateAdmin(AdminDTO adminDTO);
 	
 	void deleteById(int adminId);
+	
+	public List<AdminDTO> getByUserName(String userName);
 	
 	
 	

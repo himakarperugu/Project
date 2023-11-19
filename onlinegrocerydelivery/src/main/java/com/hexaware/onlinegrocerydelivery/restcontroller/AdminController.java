@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.hexaware.onlinegrocerydelivery.dto.AdminDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.service.IAdminService;
@@ -56,6 +55,11 @@ public class AdminController {
 	public void deleteById(@PathVariable int adminId) {
 		adminservice.deleteById(adminId);
 
+	}
+	@GetMapping("/getByUserName/{userName}")
+	public List<AdminDTO> getByUserName(@PathVariable String userName) {
+	
+		return adminservice.getByUserName(userName);
 	}
 
 }

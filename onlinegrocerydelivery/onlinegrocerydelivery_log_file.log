@@ -178,3 +178,87 @@ java.lang.NullPointerException: Cannot invoke "com.hexaware.onlinegrocerydeliver
 2023-11-19T10:27:35.355+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-19T10:27:35.432+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-11-19T10:27:35.540+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-19T10:52:11.956+05:30  INFO 1416 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 1416 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-11-19T10:52:11.963+05:30  INFO 1416 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-19T10:52:14.420+05:30  INFO 1416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-19T10:52:14.713+05:30  INFO 1416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 247 ms. Found 5 JPA repository interfaces.
+2023-11-19T10:52:16.488+05:30  INFO 1416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-19T10:52:16.577+05:30  INFO 1416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-19T10:52:16.582+05:30  INFO 1416 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-19T10:52:17.018+05:30  INFO 1416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-19T10:52:17.022+05:30  INFO 1416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4648 ms
+2023-11-19T10:52:17.476+05:30  INFO 1416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-19T10:52:17.607+05:30  INFO 1416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-19T10:52:17.610+05:30  INFO 1416 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-19T10:52:18.054+05:30  INFO 1416 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-19T10:52:18.103+05:30  INFO 1416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-19T10:52:18.676+05:30  INFO 1416 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dbf2da
+2023-11-19T10:52:18.681+05:30  INFO 1416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-19T10:52:20.541+05:30  INFO 1416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-19T10:52:20.755+05:30  INFO 1416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T10:52:21.627+05:30  WARN 1416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-19T10:52:22.296+05:30  INFO 1416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-19T10:52:22.314+05:30  INFO 1416 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 11.208 seconds (process running for 13.134)
+2023-11-19T10:52:39.615+05:30  INFO 1416 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-19T10:52:39.616+05:30  INFO 1416 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-19T10:52:39.618+05:30  INFO 1416 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-19T10:52:41.368+05:30  INFO 1416 --- [http-nio-9090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1051 ms
+2023-11-19T10:53:05.270+05:30  WARN 1416 --- [http-nio-9090-exec-7] c.h.o.service.OrderServiceImp            : Orders with Order ID 6004 not found. No Deletion Operation is performed.
+2023-11-19T11:22:53.164+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-19T11:22:53.806+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-19T11:22:53.923+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-19T11:22:55.543+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T11:22:55.706+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-19T11:22:55.783+05:30  INFO 1416 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-19T11:23:06.860+05:30  INFO 15340 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 15340 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-11-19T11:23:06.875+05:30  INFO 15340 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-19T11:23:08.872+05:30  INFO 15340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-19T11:23:09.028+05:30  INFO 15340 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 5 JPA repository interfaces.
+2023-11-19T11:23:09.984+05:30  INFO 15340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-19T11:23:10.003+05:30  INFO 15340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-19T11:23:10.003+05:30  INFO 15340 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-19T11:23:10.332+05:30  INFO 15340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-19T11:23:10.333+05:30  INFO 15340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3285 ms
+2023-11-19T11:23:10.592+05:30  INFO 15340 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-19T11:23:10.755+05:30  INFO 15340 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-19T11:23:10.760+05:30  INFO 15340 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-19T11:23:11.355+05:30  INFO 15340 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-19T11:23:11.411+05:30  INFO 15340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-19T11:23:12.057+05:30  INFO 15340 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ca2cd5e
+2023-11-19T11:23:12.061+05:30  INFO 15340 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-19T11:23:14.611+05:30  INFO 15340 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-19T11:23:14.791+05:30  INFO 15340 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T11:23:15.836+05:30  WARN 15340 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-19T11:23:16.535+05:30  INFO 15340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-19T11:23:16.554+05:30  INFO 15340 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 10.762 seconds (process running for 12.794)
+2023-11-19T11:23:48.340+05:30  INFO 15340 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-19T11:23:48.341+05:30  INFO 15340 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-19T11:23:48.346+05:30  INFO 15340 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-11-19T11:23:50.050+05:30  INFO 15340 --- [http-nio-9090-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1033 ms
+2023-11-19T11:24:06.513+05:30  INFO 15340 --- [http-nio-9090-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T11:24:13.902+05:30  INFO 15340 --- [http-nio-9090-exec-9] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T11:24:51.742+05:30  INFO 15340 --- [http-nio-9090-exec-1] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 0
+2023-11-19T11:24:59.445+05:30  INFO 15340 --- [http-nio-9090-exec-2] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 78
+2023-11-19T11:25:06.409+05:30  INFO 15340 --- [http-nio-9090-exec-5] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 97
+2023-11-19T11:25:11.828+05:30  INFO 15340 --- [http-nio-9090-exec-7] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 102
+2023-11-19T11:25:16.777+05:30  INFO 15340 --- [http-nio-9090-exec-9] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 103
+2023-11-19T11:25:21.284+05:30  INFO 15340 --- [http-nio-9090-exec-1] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 104
+2023-11-19T11:25:28.042+05:30  INFO 15340 --- [http-nio-9090-exec-2] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 1004
+2023-11-19T11:25:31.555+05:30  INFO 15340 --- [http-nio-9090-exec-5] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 101
+2023-11-19T11:25:35.187+05:30  INFO 15340 --- [http-nio-9090-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T11:25:44.701+05:30  INFO 15340 --- [http-nio-9090-exec-9] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 0
+2023-11-19T11:25:48.751+05:30  INFO 15340 --- [http-nio-9090-exec-1] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T11:28:11.516+05:30  INFO 15340 --- [http-nio-9090-exec-9] c.h.o.service.AdminServiceImp            :  Inserted Admin Data Into Table AdminDTO [adminId=1001, userName=Himakar, password=Himakar@123, role=Admin]
+2023-11-19T11:28:43.592+05:30  INFO 15340 --- [http-nio-9090-exec-1] c.h.o.service.AdminServiceImp            :  Inserted Admin Data Into Table AdminDTO [adminId=1002, userName=Prasad, password=Prasad@123, role=Customer]
+2023-11-19T11:28:51.401+05:30  INFO 15340 --- [http-nio-9090-exec-2] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T11:29:18.570+05:30  INFO 15340 --- [http-nio-9090-exec-5] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 1001
+2023-11-19T11:29:24.970+05:30  INFO 15340 --- [http-nio-9090-exec-7] c.h.o.service.AdminServiceImp            : Deleting the Admin Record Using Admin ID 1002
+2023-11-19T11:30:35.640+05:30  INFO 15340 --- [http-nio-9090-exec-9] c.h.o.service.AdminServiceImp            :  Inserted Admin Data Into Table AdminDTO [adminId=3001, userName=Himakar_1, password=Himakar@123, role=Developer]
+2023-11-19T11:31:07.663+05:30  INFO 15340 --- [http-nio-9090-exec-1] c.h.o.service.AdminServiceImp            :  Inserted Admin Data Into Table AdminDTO [adminId=3002, userName=Prasad_2, password=Prasad@123, role=Customer]
+2023-11-19T11:31:17.364+05:30  INFO 15340 --- [http-nio-9090-exec-2] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-11-19T12:46:41.369+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-19T12:46:41.787+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-19T12:46:41.871+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-19T12:46:42.372+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T12:46:42.544+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-19T12:46:42.629+05:30  INFO 15340 --- [RMI TCP Connection(87)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

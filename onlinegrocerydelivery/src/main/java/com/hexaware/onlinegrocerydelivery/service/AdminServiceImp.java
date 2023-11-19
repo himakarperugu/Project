@@ -1,6 +1,7 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,6 +95,34 @@ public class AdminServiceImp implements IAdminService {
 	        logger.warn("Admin with Admin ID " + adminId + " not found. No Deletion Operation is performed.");
 	    }
 	}
+	@Override
+	public List<AdminDTO> getByUserName(String userName) {
+	    List<Admin> admins = adminrepository.getByUserName(userName);
+
+	    if (admins.isEmpty()) {
+	        throw new AdminNotFoundException(HttpStatus.NOT_FOUND, "Admin with username: " + userName + " Not Found");
+	    }
+
+	    List<AdminDTO> adminDTOs = admins.stream()
+	            .map(admin -> {
+	                AdminDTO adminDTO = new AdminDTO();
+	                adminDTO.setAdminId(admin.getAdminId());
+	                adminDTO.setUserName(admin.getUserName());
+	                adminDTO.setPassword(admin.getPassword());
+	                adminDTO.setRole(admin.getRole());
+	                return adminDTO;
+	            })
+	            .collect(Collectors.toList());
+
+	    logger.info("Fetched Admin Data Using Username: " + userName);
+
+	    return adminDTOs;
+	}
 
 
-}
+	
+	
+	}
+
+
+
