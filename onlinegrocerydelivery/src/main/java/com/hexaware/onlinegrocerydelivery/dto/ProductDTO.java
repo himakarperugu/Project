@@ -1,11 +1,5 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
-import java.util.List;
-
-import com.hexaware.onlinegrocerydelivery.entity.Orders;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -14,6 +8,7 @@ import jakarta.validation.constraints.Positive;
  * Updated:09-11-2023
  *  Description: This is a  Product DTO Class
  */
+
 public class ProductDTO {
 	
 	@Positive(message = "Product ID should be a positive number")

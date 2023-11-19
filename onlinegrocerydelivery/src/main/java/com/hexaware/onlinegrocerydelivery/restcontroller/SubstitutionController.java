@@ -2,7 +2,7 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +22,7 @@ public class SubstitutionController {
 	
 	private ISubstitutionService substitutionservice;
 	
-	@Autowired
+	
 	public SubstitutionController(ISubstitutionService substitutionservice) {
 		super();
 		this.substitutionservice = substitutionservice;
@@ -37,9 +37,9 @@ public class SubstitutionController {
 	
 
 	@GetMapping("/getById/{substitutionId}")
-	public SubstitutionDTO getById(int substituteProductId) {
+	public SubstitutionDTO getById(int substitutionId) {
 	
-		return substitutionservice.getById(substituteProductId);
+		return substitutionservice.getById(substitutionId);
 	}
 
 	@GetMapping("/getAllSubstitution")
@@ -56,9 +56,9 @@ public class SubstitutionController {
 
 
 	@DeleteMapping("/deleteById/{substituteProductId}")
-	public void deleteById(int substituteProductId) {
+	public void deleteById(int substitutionId) {
 		
-		substitutionservice.deleteById(substituteProductId);
+		substitutionservice.deleteById(substitutionId);
 
 	}
 

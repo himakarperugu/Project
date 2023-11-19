@@ -31,3 +31,150 @@
 2023-11-19T00:01:22.474+05:30  INFO 13008 --- [http-nio-9090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1173 ms
 2023-11-19T00:01:55.320+05:30  INFO 13008 --- [http-nio-9090-exec-7] c.h.o.service.SubstitutionServiceImp     : Inserted Substitution Data Into Table SubstitutionDTO [substitutionId=106, orderId=6001, productId=650, substituteProductId=894]
 2023-11-19T03:03:10.431+05:30  WARN 13008 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h28s986ms856µs100ns).
+2023-11-19T09:31:04.170+05:30  WARN 13008 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h27m55s626ms643µs700ns).
+2023-11-19T09:41:08.839+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-19T09:41:09.026+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-19T09:41:09.043+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-19T09:41:09.152+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T09:41:09.202+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-19T09:41:09.277+05:30  INFO 13008 --- [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-19T09:41:12.771+05:30  INFO 3940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 3940 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-11-19T09:41:12.777+05:30  INFO 3940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-19T09:41:13.828+05:30  INFO 3940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-19T09:41:13.921+05:30  INFO 3940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+2023-11-19T09:41:14.595+05:30  INFO 3940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-19T09:41:14.611+05:30  INFO 3940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-19T09:41:14.612+05:30  INFO 3940 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-19T09:41:14.796+05:30  INFO 3940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-19T09:41:14.797+05:30  INFO 3940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1936 ms
+2023-11-19T09:41:15.018+05:30  INFO 3940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-19T09:41:15.105+05:30  INFO 3940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-19T09:41:15.110+05:30  INFO 3940 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-19T09:41:15.475+05:30  INFO 3940 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-19T09:41:15.514+05:30  INFO 3940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-19T09:41:15.993+05:30  INFO 3940 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28bd5015
+2023-11-19T09:41:15.996+05:30  INFO 3940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-19T09:41:20.479+05:30  INFO 3940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-19T09:41:20.862+05:30  INFO 3940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T09:41:21.881+05:30  WARN 3940 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-19T09:41:22.573+05:30  INFO 3940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-19T09:41:22.591+05:30  INFO 3940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 10.396 seconds (process running for 11.556)
+2023-11-19T09:41:41.491+05:30  INFO 3940 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-19T09:41:41.491+05:30  INFO 3940 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-19T09:41:41.491+05:30  INFO 3940 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-11-19T09:41:41.656+05:30  INFO 3940 --- [http-nio-9090-exec-1] c.h.o.service.SubstitutionServiceImp     :  Deleting the Substitution Record Using Substitution ID 125
+2023-11-19T09:44:00.227+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-19T09:44:00.368+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-19T09:44:00.380+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-19T09:44:00.449+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T09:44:00.487+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-19T09:44:00.545+05:30  INFO 3940 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-19T09:51:28.390+05:30  INFO 12860 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 12860 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-11-19T09:51:28.399+05:30  INFO 12860 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-19T09:51:29.622+05:30  INFO 12860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-19T09:51:29.728+05:30  INFO 12860 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2023-11-19T09:51:30.402+05:30  INFO 12860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-19T09:51:30.422+05:30  INFO 12860 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-19T09:51:30.423+05:30  INFO 12860 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-19T09:51:30.667+05:30  INFO 12860 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-19T09:51:30.669+05:30  INFO 12860 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2096 ms
+2023-11-19T09:51:30.890+05:30  INFO 12860 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-19T09:51:31.009+05:30  INFO 12860 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-19T09:51:31.014+05:30  INFO 12860 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-19T09:51:31.503+05:30  INFO 12860 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-19T09:51:31.576+05:30  INFO 12860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-19T09:51:32.356+05:30  INFO 12860 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b7b0b57
+2023-11-19T09:51:32.360+05:30  INFO 12860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-19T09:51:34.497+05:30  INFO 12860 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-19T09:51:34.633+05:30  INFO 12860 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T09:51:35.696+05:30  WARN 12860 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-19T09:51:36.708+05:30  INFO 12860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-19T09:51:36.736+05:30  INFO 12860 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 9.35 seconds (process running for 10.477)
+2023-11-19T09:51:47.432+05:30  INFO 12860 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-19T09:51:47.432+05:30  INFO 12860 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-19T09:51:47.434+05:30  INFO 12860 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-11-19T09:51:48.744+05:30  INFO 12860 --- [http-nio-9090-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 730 ms
+2023-11-19T09:51:56.854+05:30  INFO 12860 --- [http-nio-9090-exec-7] c.h.o.service.SubstitutionServiceImp     :  Fetched All The Substitution Data 
+2023-11-19T09:52:22.271+05:30  INFO 12860 --- [http-nio-9090-exec-10] c.h.o.service.SubstitutionServiceImp     :  Deleting the Substitution Record Using Substitution ID 106
+2023-11-19T09:52:35.103+05:30  INFO 12860 --- [http-nio-9090-exec-2] c.h.o.service.SubstitutionServiceImp     :  Deleting the Substitution Record Using Substitution ID 791
+2023-11-19T09:52:39.901+05:30  INFO 12860 --- [http-nio-9090-exec-3] c.h.o.service.SubstitutionServiceImp     :  Deleting the Substitution Record Using Substitution ID 792
+2023-11-19T09:54:45.493+05:30  INFO 12860 --- [http-nio-9090-exec-5] c.h.o.service.OrderServiceImp            :  Deleting the Orders Record Using Orders ID 259
+2023-11-19T09:54:47.019+05:30 ERROR 12860 --- [http-nio-9090-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.hexaware.onlinegrocerydelivery.entity.Orders.getOrderId()" because "orders" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.hexaware.onlinegrocerydelivery.entity.Orders.getOrderId()" because "orders" is null
+	at com.hexaware.onlinegrocerydelivery.service.OrderServiceImp.deleteById(OrderServiceImp.java:122) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.restcontroller.OrderController.deleteById(OrderController.java:65) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.15.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.15.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-19T09:54:52.665+05:30  INFO 12860 --- [http-nio-9090-exec-9] c.h.o.service.OrderServiceImp            :  Deleting the Orders Record Using Orders ID 564
+2023-11-19T09:54:57.566+05:30  INFO 12860 --- [http-nio-9090-exec-1] c.h.o.service.OrderServiceImp            :  Deleting the Orders Record Using Orders ID 5060
+2023-11-19T09:55:02.337+05:30  INFO 12860 --- [http-nio-9090-exec-4] c.h.o.service.OrderServiceImp            :  Deleting the Orders Record Using Orders ID 8001
+2023-11-19T09:56:02.654+05:30  INFO 12860 --- [http-nio-9090-exec-6] c.h.o.service.ProductServiceImp          :  Deleting the Product Record Using Product ID 654
+2023-11-19T09:56:06.782+05:30  INFO 12860 --- [http-nio-9090-exec-8] c.h.o.service.ProductServiceImp          :  Deleting the Product Record Using Product ID 657
+2023-11-19T09:56:10.223+05:30  INFO 12860 --- [http-nio-9090-exec-7] c.h.o.service.ProductServiceImp          :  Deleting the Product Record Using Product ID 658
+2023-11-19T09:56:14.741+05:30  INFO 12860 --- [http-nio-9090-exec-9] c.h.o.service.ProductServiceImp          :  Deleting the Product Record Using Product ID 4008
+2023-11-19T09:58:35.036+05:30  INFO 12860 --- [http-nio-9090-exec-1] c.h.o.service.OrderServiceImp            : Inserted Orders Data Into Table OrderDTO [orderId=6001, customerId=2001, orderDate=2023-11-06, deliveryAddress=Ongole, paymentMethod=string, totalAmount=10.0]
+2023-11-19T09:59:29.675+05:30  INFO 12860 --- [http-nio-9090-exec-4] c.h.o.service.OrderServiceImp            : Inserted Orders Data Into Table OrderDTO [orderId=6002, customerId=2001, orderDate=2023-11-07, deliveryAddress=Ongole, paymentMethod=COD, totalAmount=100.0]
+2023-11-19T10:00:26.998+05:30  INFO 12860 --- [http-nio-9090-exec-6] c.h.o.service.OrderServiceImp            : Inserted Orders Data Into Table OrderDTO [orderId=6002, customerId=2002, orderDate=2023-11-07, deliveryAddress=Koppolu, paymentMethod=COD, totalAmount=100.0]
+2023-11-19T10:01:44.777+05:30  INFO 12860 --- [http-nio-9090-exec-8] c.h.o.service.CustomerServiceImp         : Inserted Customer Data Into Table CustomerDTO [customerId=2001, customerName=Himakar, email=himakar@gmail.com, phoneNumber=6386189488, deliveryAddress=Ongole]
+2023-11-19T10:02:23.987+05:30  INFO 12860 --- [http-nio-9090-exec-9] c.h.o.service.OrderServiceImp            :  Deleting the Orders Record Using Orders ID 6001
+2023-11-19T10:02:38.716+05:30  INFO 12860 --- [http-nio-9090-exec-1] c.h.o.service.OrderServiceImp            : Inserted Orders Data Into Table OrderDTO [orderId=6001, customerId=2001, orderDate=2023-11-05, deliveryAddress=Ongole, paymentMethod=COD, totalAmount=100.0]
+2023-11-19T10:02:56.655+05:30  INFO 12860 --- [http-nio-9090-exec-4] c.h.o.service.OrderServiceImp            : Inserted Orders Data Into Table OrderDTO [orderId=6003, customerId=2001, orderDate=2023-11-05, deliveryAddress=Ongole, paymentMethod=gpay, totalAmount=160.0]
+2023-11-19T10:04:02.009+05:30  INFO 12860 --- [http-nio-9090-exec-1] c.h.o.service.SubstitutionServiceImp     :  Fetched All The Substitution Data 
+2023-11-19T10:04:37.917+05:30  INFO 12860 --- [http-nio-9090-exec-4] c.h.o.service.SubstitutionServiceImp     : Inserted Substitution Data Into Table SubstitutionDTO [substitutionId=4001, orderId=6001, productId=1001, substituteProductId=401]
+2023-11-19T10:05:37.214+05:30  INFO 12860 --- [http-nio-9090-exec-6] c.h.o.service.SubstitutionServiceImp     : Inserted Substitution Data Into Table SubstitutionDTO [substitutionId=4002, orderId=6002, productId=1002, substituteProductId=402]
+2023-11-19T10:27:34.906+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-11-19T10:27:35.175+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-19T10:27:35.198+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-19T10:27:35.355+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-19T10:27:35.432+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-19T10:27:35.540+05:30  INFO 12860 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

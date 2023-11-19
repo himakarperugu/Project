@@ -2,10 +2,7 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+
 
 /* Author:Himakar
  * @UpdatedOn:09-11-2023
@@ -26,10 +23,6 @@ public class Admin {
 		super();
 	}
 
-
-	
-
-
 	public Admin(int adminId, String userName, String password, String role) {
 		super();
 		this.adminId = adminId;
@@ -37,8 +30,6 @@ public class Admin {
 		this.password = password;
 		this.role = role;
 	}
-
-
 
 
 
@@ -80,10 +71,6 @@ public class Admin {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-
-
-
 
 	@Override
 	public String toString() {

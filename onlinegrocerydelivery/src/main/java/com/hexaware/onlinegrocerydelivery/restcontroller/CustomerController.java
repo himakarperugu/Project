@@ -2,7 +2,6 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +26,7 @@ public class CustomerController {
 	private ICustomerService customerservice;
 	
 	
-	@Autowired
+
 	public CustomerController(ICustomerService customerservice) {
 		super();
 		this.customerservice = customerservice;

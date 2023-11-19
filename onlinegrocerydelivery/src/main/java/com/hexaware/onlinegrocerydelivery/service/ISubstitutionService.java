@@ -9,13 +9,13 @@ public interface ISubstitutionService {
 	
 	public Substitution addSubstitution(SubstitutionDTO substitutionDTO);
 	
-	public SubstitutionDTO getById(int substituteProductId);
+	public SubstitutionDTO getById(int substitutionId);
 	
 	public List<Substitution> getAllSubstitution();
 	
 	Substitution updateSubstitution(SubstitutionDTO substitutionDTO);
 	
-	void deleteById(int substituteProductId);
+	void deleteById(int substitutionId);
 
 	
 

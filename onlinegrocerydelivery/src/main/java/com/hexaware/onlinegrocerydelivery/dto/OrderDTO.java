@@ -1,16 +1,6 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
 import java.time.LocalDate;
-import java.util.List;
-
-import com.hexaware.onlinegrocerydelivery.entity.Customer;
-import com.hexaware.onlinegrocerydelivery.entity.Product;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
  * Updated:09-11-2023
  *  Description: This is a Order DTO Class
  */
+
 public class OrderDTO {
 	
 	private int orderId;
@@ -32,14 +23,6 @@ public class OrderDTO {
 	private String paymentMethod;
     @Min(value = 1, message = "Total amount must be a positive number")
 	private double totalAmount;
-  
-    
- 
-
-    
-    
-	
-
 
 	public OrderDTO() {
 		super();

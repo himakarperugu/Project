@@ -70,15 +70,15 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	}
 
 	@Override
-	public SubstitutionDTO getById(int substituteProductId) {
+	public SubstitutionDTO getById(int substitutionId) {
 		
 		
 		
 		
-		Substitution substitution = substitutionrepository.findById(substituteProductId).orElse( new Substitution());
+		Substitution substitution = substitutionrepository.findById(substitutionId).orElse( new Substitution());
 		
-		if (substitution.getSubstituteProductId()==0) {
-			throw new SubstitutionNotFoundException(HttpStatus.NOT_FOUND,"Substitution with substituteProduct Id : " +substituteProductId+ " Not Found");
+		if (substitution.getSubstitutionId()==0) {
+			throw new SubstitutionNotFoundException(HttpStatus.NOT_FOUND,"Substitution with substituteProduct Id : " +substitutionId+ " Not Found");
 
 		}
 		SubstitutionDTO substitutionDTO = new SubstitutionDTO();
@@ -87,7 +87,7 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
 		
-		logger.info("Fetched Substitution Data Using Substitution ID " + substituteProductId);
+		logger.info("Fetched Substitution Data Using Substitution ID " + substitutionId);
 		
 		return substitutionDTO;
 	}
@@ -115,12 +115,16 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	}
 
 	@Override
-	public void deleteById(int substituteProductId) {
-		Substitution substitution=substitutionrepository.findById(substituteProductId).orElse(null);
-		substitutionrepository.deleteById(substitution.getSubstituteProductId());
-		logger.info(" Deleting the Substitution Record Using Substitution ID "+substituteProductId);
-		
+	public void deleteById(int substitutionId) {
+	    Substitution substitution = substitutionrepository.findById(substitutionId).orElse(null);
 
+	    if (substitution != null) {
+	        substitutionrepository.deleteById(substitution.getSubstitutionId());
+	        logger.info("Deleting the Substitution Record Using Substitution ID " + substitutionId);
+	    } else {
+	        logger.warn("Substitution with Substituition ID " + substitutionId + " not found. No Deletion Operation is performed.");
+	    }
 	}
+
 
 }

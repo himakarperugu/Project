@@ -11,19 +11,16 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
-import com.hexaware.onlinegrocerydelivery.exception.CustomerNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
 @Service
 public class ProductServiceImp implements IProductService {
 	
 	Logger logger = LoggerFactory.getLogger(ProductServiceImp.class);
-
-	private ProductRepository productrepository;
-	
-	
 	
 	@Autowired
+	private ProductRepository productrepository;
+	
 	public ProductServiceImp(ProductRepository productrepository) {
 		super();
 		this.productrepository = productrepository;
@@ -94,13 +91,17 @@ public class ProductServiceImp implements IProductService {
 
 	@Override
 	public void deleteById(int productId) {
-		
-	logger.info(" Deleting the Product Record Using Product ID "+productId);
-		
-	Product product=productrepository.findById(productId).orElse(null);
-	productrepository.deleteById(product.getProductId());
+	    logger.info("Deleting the Product Record Using Product ID " + productId);
 
+	    Product product = productrepository.findById(productId).orElse(null);
+
+	    if (product != null) {
+	        productrepository.deleteById(product.getProductId());
+	    } else {
+	        logger.warn("Product with Product ID " + productId + " not found. No Deletion Operation is performed.");
+	    }
 	}
+
 
 	@Override
 	public List<ProductDTO> getByCategory(String category) {

@@ -5,10 +5,6 @@ import java.util.List;
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
 
-
-
-
-
 public interface IProductService {
 
 	

@@ -4,7 +4,6 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Positive;
 
 
 /*Author:Sakitha
@@ -17,7 +16,6 @@ public class Substitution {
 	
 	@Id
 	private int substitutionId;
-	
 	private int orderId;
 	private int productId;
 	private int substituteProductId;

@@ -118,11 +118,15 @@ public class OrderServiceImp implements IOrderService {
 
 	@Override
 	public void deleteById(int orderId) {
-		Orders orders=orderrepository.findById(orderId).orElse(null);
-		orderrepository.deleteById(orders.getOrderId());
-		logger.info(" Deleting the Orders Record Using Orders ID "+orderId);
-		
+	    Orders orders = orderrepository.findById(orderId).orElse(null);
 
+	    if (orders != null) {
+	        orderrepository.deleteById(orders.getOrderId());
+	        logger.info("Deleting the Orders Record Using Orders ID " + orderId);
+	    } else {
+	        logger.warn("Orders with Order ID " + orderId + " not found. No Deletion Operation is performed.");
+	    }
 	}
+
 
 }

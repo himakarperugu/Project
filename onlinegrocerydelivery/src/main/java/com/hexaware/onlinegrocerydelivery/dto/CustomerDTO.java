@@ -1,11 +1,5 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
-import java.util.List;
-
-import com.hexaware.onlinegrocerydelivery.entity.Orders;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

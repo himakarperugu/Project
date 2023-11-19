@@ -18,8 +18,9 @@ public class AdminServiceImp implements IAdminService {
 	
 	
 	Logger logger = LoggerFactory.getLogger(AdminServiceImp.class);
-	private AdminRepository adminrepository;
 	@Autowired
+	private AdminRepository adminrepository;
+
 	public AdminServiceImp(AdminRepository adminrepository) {
 		super();
 		this.adminrepository = adminrepository;
@@ -84,9 +85,15 @@ public class AdminServiceImp implements IAdminService {
 
 	@Override
 	public void deleteById(int adminId) {
-		Admin admin=adminrepository.findById(adminId).orElse(null);
-		adminrepository.deleteById(admin.getAdminId());
-		logger.info("Deleting the Admin Record Using Admin ID " + adminId);
+	    Admin admin = adminrepository.findById(adminId).orElse(null);
+
+	    if (admin != null) {
+	        adminrepository.deleteById(admin.getAdminId());
+	        logger.info("Deleting the Admin Record Using Admin ID " + adminId);
+	    } else {
+	        logger.warn("Admin with Admin ID " + adminId + " not found. No Deletion Operation is performed.");
+	    }
 	}
+
 
 }

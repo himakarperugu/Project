@@ -1,6 +1,5 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.CustomerDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
-import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.CustomerNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.CustomerRepository;
 @Service
@@ -20,8 +18,9 @@ public class CustomerServiceImp implements ICustomerService {
 
 	Logger logger = LoggerFactory.getLogger(CustomerServiceImp.class);
 	
-	private CustomerRepository customerrepository;
 	@Autowired
+	private CustomerRepository customerrepository;
+	
 	public CustomerServiceImp(CustomerRepository customerrepository) {
 		super();
 		this.customerrepository = customerrepository;
@@ -90,11 +89,16 @@ public class CustomerServiceImp implements ICustomerService {
 
 	@Override
 	public void deleteById(int customerId) {
-		Customer customer=customerrepository.findById(customerId).orElse(null);
-		customerrepository.deleteById(customer.getCustomerId());
-		logger.info("Deleting the Customer Record Using Customer ID " + customerId);
+	    Customer customer = customerrepository.findById(customerId).orElse(null);
 
+	    if (customer != null) {
+	        customerrepository.deleteById(customer.getCustomerId());
+	        logger.info("Deleting the Customer Record Using Customer ID " + customerId);
+	    } else {
+	        logger.warn("Customer with Customer ID " + customerId + " not found. No Deletion Operation is performed.");
+	    }
 	}
+
 
 	@Override
 	public List<CustomerDTO> getByCustomerName(String customerName) {
