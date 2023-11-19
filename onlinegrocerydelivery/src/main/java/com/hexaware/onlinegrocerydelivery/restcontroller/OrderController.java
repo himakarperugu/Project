@@ -2,6 +2,7 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,7 @@ public class OrderController {
 
 
 	@PostMapping("/addOrder")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER')")
 	public Orders addOrder(@Valid @RequestBody OrderDTO orderDTO) {
 		
 		return orderservice.addOrder(orderDTO);
@@ -39,6 +41,7 @@ public class OrderController {
 
 	
 	@GetMapping("/getById/{orderId}")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public OrderDTO getById(@PathVariable int orderId) {
 		
 		return orderservice.getById(orderId);
@@ -47,18 +50,22 @@ public class OrderController {
 	
 
 	@GetMapping("/getAllOrder")
+	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
+
 	public List<Orders> getAllOrder() {
 		
 		return orderservice.getAllOrder();
 	}
 	
 	@PutMapping("/updateOrder")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER')")
 	public Orders updateOrder(@RequestBody OrderDTO OrderDTO) {
 		
 		return orderservice.updateOrder(OrderDTO);
 	}
 	
 	@DeleteMapping("/deleteById/{orderId}")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(int orderId) {
 		
 		orderservice.deleteById(orderId);

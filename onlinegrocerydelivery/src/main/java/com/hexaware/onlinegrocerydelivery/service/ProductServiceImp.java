@@ -12,16 +12,16 @@ import org.springframework.stereotype.Service;
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
-import com.hexaware.onlinegrocerydelivery.repository.ProductRepository;
+import com.hexaware.onlinegrocerydelivery.repository.IProductRepository;
 @Service
 public class ProductServiceImp implements IProductService {
 	
 	Logger logger = LoggerFactory.getLogger(ProductServiceImp.class);
 	
 	@Autowired
-	private ProductRepository productrepository;
+	private IProductRepository productrepository;
 	
-	public ProductServiceImp(ProductRepository productrepository) {
+	public ProductServiceImp(IProductRepository productrepository) {
 		super();
 		this.productrepository = productrepository;
 	}

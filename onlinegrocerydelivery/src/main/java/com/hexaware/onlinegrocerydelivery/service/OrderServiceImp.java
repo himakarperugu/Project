@@ -13,8 +13,8 @@ import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.OrderNotFoundException;
-import com.hexaware.onlinegrocerydelivery.repository.CustomerRepository;
-import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
+import com.hexaware.onlinegrocerydelivery.repository.ICustomerRepository;
+import com.hexaware.onlinegrocerydelivery.repository.IOrderRepository;
 
 @Service
 public class OrderServiceImp implements IOrderService {
@@ -23,22 +23,22 @@ public class OrderServiceImp implements IOrderService {
 	
 	
 	@Autowired
-	private OrderRepository orderrepository;
+	private IOrderRepository orderrepository;
 	@Autowired
-	private CustomerRepository customerrepository1;
+	private ICustomerRepository customerrepository1;
 	
-	public OrderRepository getOrderrepository() {
+	public IOrderRepository getOrderrepository() {
 		return orderrepository;
 	}
 
-	public void setOrderrepository(OrderRepository orderrepository) {
+	public void setOrderrepository(IOrderRepository orderrepository) {
 		this.orderrepository = orderrepository;
 	}
-	public CustomerRepository getCustomerrepository() {
+	public ICustomerRepository getCustomerrepository() {
 		return customerrepository1;
 	}
 
-	public void setCustomerrepository(CustomerRepository customerrepository1) {
+	public void setCustomerrepository(ICustomerRepository customerrepository1) {
 		this.customerrepository1 = customerrepository1;
 	}
 	

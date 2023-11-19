@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 
 
@@ -25,6 +26,9 @@ public class CustomerDTO {
 	private String phoneNumber;
 	@NotBlank(message="Delivery address is required")
 	private String deliveryAddress;
+	@NotBlank(message = "Password should not be blank")
+    @Size(min=4,message="Password must be at least 4 characters long")
+	private String password;
 	
 	
 
@@ -33,14 +37,22 @@ public class CustomerDTO {
 	}
 
 
-	public CustomerDTO(int customerId, String customerName, String email, String phoneNumber, String deliveryAddress) {
+
+	public CustomerDTO(@Positive(message = "CustomerID should be a positive number") int customerId,
+			@NotBlank(message = "Customer name is required") String customerName,
+			@Email(message = "Invalid email format") String email,
+			@Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits") String phoneNumber,
+			@NotBlank(message = "Delivery address is required") String deliveryAddress,
+			@NotBlank(message = "Password should not be blank") @Size(min = 4, message = "Password must be at least 4 characters long") String password) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.deliveryAddress = deliveryAddress;
+		this.password = password;
 	}
+
 
 
 	public int getCustomerId() {
@@ -48,9 +60,11 @@ public class CustomerDTO {
 	}
 
 
+
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
+
 
 
 	public String getCustomerName() {
@@ -58,9 +72,11 @@ public class CustomerDTO {
 	}
 
 
+
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
 
 
 	public String getEmail() {
@@ -68,9 +84,11 @@ public class CustomerDTO {
 	}
 
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 
 	public String getPhoneNumber() {
@@ -78,9 +96,11 @@ public class CustomerDTO {
 	}
 
 
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 
 
 	public String getDeliveryAddress() {
@@ -88,15 +108,21 @@ public class CustomerDTO {
 	}
 
 
+
 	public void setDeliveryAddress(String deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
 	}
 
 
-	@Override
-	public String toString() {
-		return "CustomerDTO [customerId=" + customerId + ", customerName=" + customerName + ", email=" + email
-				+ ", phoneNumber=" + phoneNumber + ", deliveryAddress=" + deliveryAddress + "]";
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 

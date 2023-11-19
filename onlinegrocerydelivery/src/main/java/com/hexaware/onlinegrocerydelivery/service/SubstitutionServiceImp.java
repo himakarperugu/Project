@@ -13,8 +13,8 @@ import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.SubstitutionNotFoundException;
-import com.hexaware.onlinegrocerydelivery.repository.OrderRepository;
-import com.hexaware.onlinegrocerydelivery.repository.SubstitutionRepository;
+import com.hexaware.onlinegrocerydelivery.repository.IOrderRepository;
+import com.hexaware.onlinegrocerydelivery.repository.ISubstitutionRepository;
 @Service
 public class SubstitutionServiceImp implements ISubstitutionService {
 	
@@ -22,29 +22,29 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	Logger logger = LoggerFactory.getLogger(SubstitutionServiceImp.class);
 
 	@Autowired
-	private SubstitutionRepository substitutionrepository;
+	private ISubstitutionRepository substitutionrepository;
 	
 	
 	@Autowired
-	private OrderRepository orderrepository1;
+	private IOrderRepository orderrepository1;
 	
 	
 	
 	
-	public SubstitutionServiceImp(SubstitutionRepository substitutionrepository) {
+	public SubstitutionServiceImp(ISubstitutionRepository substitutionrepository) {
 		super();
 		this.substitutionrepository = substitutionrepository;
 	}
 	
 	
 
-	public OrderRepository getOrderrepository1() {
+	public IOrderRepository getOrderrepository1() {
 		return orderrepository1;
 	}
 
 
 
-	public void setOrderrepository1(OrderRepository orderrepository1) {
+	public void setOrderrepository1(IOrderRepository orderrepository1) {
 		this.orderrepository1 = orderrepository1;
 	}
 

@@ -23,6 +23,8 @@ public class Customer {
 	private String email;
 	private String phoneNumber;
 	private String deliveryAddress;
+	private String password;
+	private final String role="CUSTOMER";
 	
 
 
@@ -31,14 +33,18 @@ public class Customer {
 	}
 
 
-	public Customer(int customerId, String customerName, String email, String phoneNumber, String deliveryAddress) {
+
+	public Customer(int customerId, String customerName, String email, String phoneNumber, String deliveryAddress,
+			String password) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.deliveryAddress = deliveryAddress;
+		this.password = password;
 	}
+
 
 
 	public int getCustomerId() {
@@ -46,9 +52,11 @@ public class Customer {
 	}
 
 
+
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
+
 
 
 	public String getCustomerName() {
@@ -56,9 +64,11 @@ public class Customer {
 	}
 
 
+
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
 
 
 	public String getEmail() {
@@ -66,9 +76,11 @@ public class Customer {
 	}
 
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 
 	public String getPhoneNumber() {
@@ -76,9 +88,11 @@ public class Customer {
 	}
 
 
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 
 
 	public String getDeliveryAddress() {
@@ -86,16 +100,29 @@ public class Customer {
 	}
 
 
+
 	public void setDeliveryAddress(String deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
 	}
 
 
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", email=" + email
-				+ ", phoneNumber=" + phoneNumber + ", deliveryAddress=" + deliveryAddress + "]";
+
+	public String getPassword() {
+		return password;
 	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
+	public String getRole() {
+		return role;
+	}
+
 
 
 	

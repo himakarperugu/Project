@@ -2,7 +2,7 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 
 import java.util.List;
 
-
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +36,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/getById/{adminId}")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public AdminDTO getById(@PathVariable int adminId) {
 		
 		return adminservice.getById(adminId);
@@ -47,11 +48,13 @@ public class AdminController {
 	}
 
 	@PutMapping("/updateAdmin")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public Admin updateAdmin(@RequestBody AdminDTO adminDTO) {
 		return adminservice.updateAdmin(adminDTO);
 	}
 
 	@DeleteMapping("/deleteById/{adminId}")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(@PathVariable int adminId) {
 		adminservice.deleteById(adminId);
 

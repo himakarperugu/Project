@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hexaware.onlinegrocerydelivery.entity.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+public interface IProductRepository extends JpaRepository<Product, Integer> {
 	List<Product> getByCategory(String category);
 	
 	List<Product> getByBrand(String brand);

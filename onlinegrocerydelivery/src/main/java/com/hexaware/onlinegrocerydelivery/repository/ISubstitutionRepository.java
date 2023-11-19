@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 
-public interface SubstitutionRepository extends JpaRepository<Substitution, Integer> {
+public interface ISubstitutionRepository extends JpaRepository<Substitution, Integer> {
 
 }

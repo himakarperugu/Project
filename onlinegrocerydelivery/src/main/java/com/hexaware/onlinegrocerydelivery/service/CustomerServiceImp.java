@@ -7,23 +7,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.CustomerDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.exception.CustomerNotFoundException;
-import com.hexaware.onlinegrocerydelivery.repository.CustomerRepository;
+import com.hexaware.onlinegrocerydelivery.repository.ICustomerRepository;
 @Service
 public class CustomerServiceImp implements ICustomerService {
 
 	Logger logger = LoggerFactory.getLogger(CustomerServiceImp.class);
 	
 	@Autowired
-	private CustomerRepository customerrepository;
+	private ICustomerRepository customerRepository;
+	private  PasswordEncoder passwordEncoder;	
 	
-	public CustomerServiceImp(CustomerRepository customerrepository) {
+	
+
+	public CustomerServiceImp(ICustomerRepository customerRepository, PasswordEncoder passwordEncoder) {
 		super();
-		this.customerrepository = customerrepository;
+		this.customerRepository = customerRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
@@ -37,15 +42,16 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setEmail(customerDTO.getEmail());
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
+		customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
 	
 
 		logger.info("Inserted Customer Data Into Table "+ customerDTO);
-		return customerrepository.save(customer);
+		return customerRepository.save(customer);
 	}
 
 	@Override
 	public CustomerDTO getById(int customerId) {
-		Customer customer = customerrepository.findById(customerId).orElse(new Customer());
+		Customer customer = customerRepository.findById(customerId).orElse(new Customer());
 		
 		
 		if (customer.getCustomerId()==0) {
@@ -60,6 +66,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customerDTO.setEmail(customer.getEmail());
 		customerDTO.setPhoneNumber(customer.getPhoneNumber());
 		customerDTO.setDeliveryAddress(customer.getDeliveryAddress());
+		customerDTO.setPassword(passwordEncoder.encode(customer.getPassword()));
 		logger.info("Fetched Customer Data Using Customer ID " + customerId);
 		
 		
@@ -69,7 +76,7 @@ public class CustomerServiceImp implements ICustomerService {
 	@Override
 	public List<Customer> getAllCustomer() {
 		logger.info(" Fetched All The Customer Data ");
-		return customerrepository.findAll();
+		return customerRepository.findAll();
 	}
 
 	@Override
@@ -82,17 +89,18 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setEmail(customerDTO.getEmail());
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
+		customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
 		logger.info(" Updated Customer Data Into Table " + customerDTO);
 		
-		return customerrepository.save(customer);	
+		return customerRepository.save(customer);	
 	}
 
 	@Override
 	public void deleteById(int customerId) {
-	    Customer customer = customerrepository.findById(customerId).orElse(null);
+	    Customer customer = customerRepository.findById(customerId).orElse(null);
 
 	    if (customer != null) {
-	        customerrepository.deleteById(customer.getCustomerId());
+	    	customerRepository.deleteById(customer.getCustomerId());
 	        logger.info("Deleting the Customer Record Using Customer ID " + customerId);
 	    } else {
 	        logger.warn("Customer with Customer ID " + customerId + " not found. No Deletion Operation is performed.");
@@ -102,7 +110,7 @@ public class CustomerServiceImp implements ICustomerService {
 
 	@Override
 	public List<CustomerDTO> getByCustomerName(String customerName) {
-		 List<Customer> customers = customerrepository.getByCustomerName(customerName);
+		 List<Customer> customers = customerRepository.getByCustomerName(customerName);
 		 
 		 if (customers.isEmpty()) {
 		        throw new CustomerNotFoundException(HttpStatus.NOT_FOUND, "Customer with Customer Name: " + customerName + " Not Found");
@@ -116,7 +124,8 @@ public class CustomerServiceImp implements ICustomerService {
 		            		customer.getCustomerName(),
 		            		customer.getEmail(),
 		            		customer.getPhoneNumber(),
-		            		customer.getDeliveryAddress()
+		            		customer.getDeliveryAddress(),
+		            		customer.getPassword()
 		                   
 		            ))
 		            .collect(Collectors.toList());
