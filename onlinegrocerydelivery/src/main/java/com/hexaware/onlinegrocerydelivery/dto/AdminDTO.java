@@ -1,7 +1,10 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 
@@ -13,13 +16,14 @@ import jakarta.validation.constraints.Size;
 
 public class AdminDTO {
 	@NotNull(message="Id should not be null")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int adminId;
 	@NotBlank(message="Username should not be blank")
 	@Size(min=2,max=255,message="Username should be between 2-255 characters")
 	private String userName;
 	@NotBlank(message = "Password should not be blank")
-    @Size(min=4,message="Password must be at least 4 characters long")
-  
+	@Pattern(regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")
+    @Size(min=8,message="Password must be at least 4 characters long")
 	private String password;
 	private String role;
 

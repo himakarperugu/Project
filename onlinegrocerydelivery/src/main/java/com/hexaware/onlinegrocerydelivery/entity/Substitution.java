@@ -23,7 +23,7 @@ public class Substitution {
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Orders orders;
+	private Orders orders;								//substitution to order
 	
 	
 	

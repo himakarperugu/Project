@@ -1,6 +1,9 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
 import java.time.LocalDate;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,6 +17,7 @@ public class OrderDTO {
 	
 	private int orderId;
 	@NotNull(message = "Customer ID cannot be null")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	@NotNull(message = "Order date cannot be null")
 	private LocalDate orderDate;

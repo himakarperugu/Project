@@ -1,5 +1,7 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -17,6 +19,7 @@ import jakarta.validation.constraints.Size;
 public class CustomerDTO {
 
 	@Positive(message ="CustomerID should be a positive number")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	@NotBlank(message ="Customer name is required")
 	private String customerName;
@@ -28,6 +31,7 @@ public class CustomerDTO {
 	private String deliveryAddress;
 	@NotBlank(message = "Password should not be blank")
     @Size(min=4,message="Password must be at least 4 characters long")
+	@Pattern(regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")
 	private String password;
 	
 	

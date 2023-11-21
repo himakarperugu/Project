@@ -1,5 +1,7 @@
 package com.hexaware.onlinegrocerydelivery.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -12,6 +14,7 @@ import jakarta.validation.constraints.Positive;
 public class ProductDTO {
 	
 	@Positive(message = "Product ID should be a positive number")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
 	@NotBlank(message = "Product name is required")
 	private String productName;

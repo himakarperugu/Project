@@ -1,7 +1,10 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 
 
@@ -26,7 +29,8 @@ public class Customer {
 	private String password;
 	private final String role="CUSTOMER";
 	
-
+	@OneToMany(cascade = CascadeType.ALL)
+	private Orders order;
 
 	public Customer() {
 		super();

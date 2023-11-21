@@ -32,7 +32,7 @@ public class CustomerInfoUserDetailsService implements UserDetailsService {
 
        
         Customer customer = customerRepository.findByCustomerName(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+                .orElseThrow(() -> new UsernameNotFoundException("Customer not found: " + username));
 
         return new CustomerInfoUserDetails(customer);
     }

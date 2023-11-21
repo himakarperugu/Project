@@ -24,7 +24,7 @@ public class JwtService {
 	 public static final String SECRET = "ZGVlcGJ1cnN0d2lyZXF1ZXN0aW9ubmF0dXJhbGV4YW1wbGVzaW5ndGlueWZhcm1lcmY=";
 	
 		public String generateToken(String username) {
-	        logger.info("Generating token for username: {}", username);
+	        logger.info("Generating token for customername: {}", username);
 
 			Map<String,Object>  claims = new HashMap<>();
 			

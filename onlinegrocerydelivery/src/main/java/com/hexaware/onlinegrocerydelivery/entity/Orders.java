@@ -28,7 +28,7 @@ public class Orders {
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Customer customer;
+	private Customer customer;									//orders to customer
 	
 	
 	
