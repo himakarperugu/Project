@@ -20,9 +20,10 @@ import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.service.IProductService;
 
 import jakarta.validation.Valid;
+//Author:Himakar
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/v1/product")
 public class ProductController {
 	
 	
@@ -36,7 +37,7 @@ public class ProductController {
 	}
 
 	@PostMapping("/addProduct")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+
 	public ResponseEntity<Product> addProduct(@Valid @RequestBody  ProductDTO productDTO) {
 		
 		return new ResponseEntity<>(productservice.addProduct(productDTO), HttpStatus.CREATED);

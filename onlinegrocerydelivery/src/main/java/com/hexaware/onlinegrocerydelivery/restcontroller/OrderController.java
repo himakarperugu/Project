@@ -17,9 +17,10 @@ import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.service.IOrderService;
 
 import jakarta.validation.Valid;
+//Author:sakitha
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/v1/order")
 public class OrderController {
 	
 	
@@ -33,7 +34,6 @@ public class OrderController {
 
 
 	@PostMapping("/addOrder")
-	@PreAuthorize("hasAnyAuthority('CUSTOMER')")
 	public Orders addOrder(@Valid @RequestBody OrderDTO orderDTO) {
 		
 		return orderservice.addOrder(orderDTO);
@@ -58,7 +58,7 @@ public class OrderController {
 	}
 	
 	@PutMapping("/updateOrder")
-	@PreAuthorize("hasAnyAuthority('CUSTOMER')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public Orders updateOrder(@RequestBody OrderDTO OrderDTO) {
 		
 		return orderservice.updateOrder(OrderDTO);

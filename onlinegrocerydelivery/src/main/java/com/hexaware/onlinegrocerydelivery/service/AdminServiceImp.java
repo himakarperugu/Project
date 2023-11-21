@@ -14,6 +14,7 @@ import com.hexaware.onlinegrocerydelivery.dto.AdminDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.IAdminRepository;
+//Author:Himakar
 
 @Service
 public class AdminServiceImp implements IAdminService {
@@ -40,7 +41,6 @@ public class AdminServiceImp implements IAdminService {
 		admin.setAdminId(adminDTO.getAdminId());
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(passwordEncoder.encode(adminDTO.getPassword()));
-		//admin.setRole(adminDTO.getRole());
 		logger.info(" Inserted Admin Data Into Table " + adminDTO);
 		
 		return adminrepository.save(admin);
@@ -59,7 +59,6 @@ public class AdminServiceImp implements IAdminService {
 		adminDTO.setAdminId(admin.getAdminId());
 		adminDTO.setUserName(admin.getUserName());
 		adminDTO.setPassword(passwordEncoder.encode(admin.getPassword()));
-		//admin.setRole(adminDTO.getRole());
 		logger.info(" Fetched Admin Data Using Admin ID ");
 		
 
@@ -82,7 +81,6 @@ public class AdminServiceImp implements IAdminService {
 		admin.setAdminId(adminDTO.getAdminId());
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(passwordEncoder.encode(adminDTO.getPassword()));
-		//admin.setRole(adminDTO.getRole());
 		logger.info(" Updated Admin Data Into Table " + adminDTO );
 		
 		return adminrepository.save(admin);
@@ -113,7 +111,6 @@ public class AdminServiceImp implements IAdminService {
 	                adminDTO.setAdminId(admin.getAdminId());
 	                adminDTO.setUserName(admin.getUserName());
 	                adminDTO.setPassword(passwordEncoder.encode(admin.getPassword()));
-	                adminDTO.setRole(admin.getRole());
 	                return adminDTO;
 	            })
 	            .collect(Collectors.toList());

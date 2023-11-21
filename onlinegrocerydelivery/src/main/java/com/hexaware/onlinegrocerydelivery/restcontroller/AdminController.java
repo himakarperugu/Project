@@ -16,8 +16,10 @@ import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.service.IAdminService;
 
 import jakarta.validation.Valid;
+//Author:Himakar
+
 @RestController
-@RequestMapping("/api/Admin")
+@RequestMapping("/api/v1/Admin")
 public class AdminController {
 	
 	

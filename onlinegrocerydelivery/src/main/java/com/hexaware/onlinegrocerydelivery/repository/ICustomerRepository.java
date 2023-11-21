@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
+//Author:Himakar
 
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 	

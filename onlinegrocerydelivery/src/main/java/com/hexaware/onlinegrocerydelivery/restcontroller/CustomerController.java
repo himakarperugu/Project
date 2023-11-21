@@ -18,8 +18,9 @@ import com.hexaware.onlinegrocerydelivery.service.ICustomerService;
 
 import jakarta.validation.Valid;
 
+//Author:Himakar
 @RestController
-@RequestMapping("/api/customer")
+@RequestMapping("/api/v1/customer")
 public class CustomerController {
 
 	

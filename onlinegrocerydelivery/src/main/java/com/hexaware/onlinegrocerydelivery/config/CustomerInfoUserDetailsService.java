@@ -10,6 +10,7 @@ import com.hexaware.onlinegrocerydelivery.entity.Admin;
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.repository.IAdminRepository;
 import com.hexaware.onlinegrocerydelivery.repository.ICustomerRepository;
+//Author:Himakar
 
 @Service  
 public class CustomerInfoUserDetailsService implements UserDetailsService {

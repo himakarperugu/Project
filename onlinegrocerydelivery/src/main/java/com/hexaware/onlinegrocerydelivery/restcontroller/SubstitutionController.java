@@ -14,9 +14,10 @@ import com.hexaware.onlinegrocerydelivery.dto.SubstitutionDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.service.ISubstitutionService;
 
+//Author:sakitha
 
 @RestController
-@RequestMapping("/api/substitution")
+@RequestMapping("/api/v1/substitution")
 public class SubstitutionController {
 	
 	

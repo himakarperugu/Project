@@ -19,6 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter;
+//Author:Himakar
 
 @Configuration
 @EnableWebSecurity
@@ -40,22 +41,19 @@ public class SecurityConfig {
         http.csrf().disable()
             .authorizeRequests()
                 .requestMatchers(
-                		"/api/admin/authenticate",
-                		"/api/admin/addAdmin",
-                    "/api/customer/addCustomer",
-                    "/api/order/addOrder",
-                    "/api/product/addProduct",
-                    "/api/substitution/addSubstitution",
+                		"/api/v1/admin/authenticate",
+                		"/api/v1/admin/addAdmin",
+                    "/api/v1/customer/addCustomer",
                     "/v3/api-docs/**",
                     "/swagger-ui/**",
                     "/swagger-resources/**"
                 ).permitAll()
                 .requestMatchers(
-                    "/api/customer/**",
-                    "/api/admin/**",
-                    "/api/order/**",
-                    "/api/product/**",
-                    "/api/substitution/**"
+                    "/api/v1/customer/**",
+                    "/api/v1/admin/**",
+                    "/api/v1/order/**",
+                    "/api/v1/product/**",
+                    "/api/v1/substitution/**"
                 ).authenticated()
             .and()
             .sessionManagement()

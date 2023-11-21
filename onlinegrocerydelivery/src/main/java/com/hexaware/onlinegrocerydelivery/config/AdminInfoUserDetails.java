@@ -11,11 +11,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.hexaware.onlinegrocerydelivery.entity.Admin;
-
+//Author:sakitha
 public class AdminInfoUserDetails implements UserDetails {
 
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String name;
     private String password;
     private List<GrantedAuthority> authorities;
 

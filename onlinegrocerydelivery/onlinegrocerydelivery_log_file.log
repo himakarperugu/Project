@@ -14,3 +14,31 @@
 2023-11-21T00:38:39.719+05:30  INFO 14808 --- [RMI TCP Connection(498)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-21T00:38:39.740+05:30  INFO 14808 --- [RMI TCP Connection(498)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-11-21T00:38:39.749+05:30  INFO 14808 --- [RMI TCP Connection(498)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-21T07:38:39.325+05:30  INFO 4708 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 4708 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-11-21T07:38:39.334+05:30  INFO 4708 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-21T07:38:41.615+05:30  INFO 4708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-21T07:38:41.942+05:30  INFO 4708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 280 ms. Found 5 JPA repository interfaces.
+2023-11-21T07:38:43.741+05:30  INFO 4708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-21T07:38:43.788+05:30  INFO 4708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-21T07:38:43.790+05:30  INFO 4708 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-11-21T07:38:44.423+05:30  INFO 4708 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-21T07:38:44.426+05:30  INFO 4708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4939 ms
+2023-11-21T07:38:44.832+05:30  INFO 4708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-21T07:38:45.058+05:30  INFO 4708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-11-21T07:38:45.486+05:30  WARN 4708 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-11-21T07:38:45.759+05:30  INFO 4708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-21T07:38:46.586+05:30  INFO 4708 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29c25bbc
+2023-11-21T07:38:46.592+05:30  INFO 4708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-21T07:38:46.816+05:30  INFO 4708 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-21T07:38:49.230+05:30  INFO 4708 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-21T07:38:49.258+05:30  INFO 4708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-21T07:38:51.285+05:30  WARN 4708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-21T07:38:52.086+05:30  INFO 4708 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57def953, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bf4a79b, org.springframework.security.web.context.SecurityContextHolderFilter@4468ced2, org.springframework.security.web.header.HeaderWriterFilter@6c9e7af2, org.springframework.security.web.authentication.logout.LogoutFilter@19f9404d, com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter@38d895e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e3bc13b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c989d82, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a1be5cb, org.springframework.security.web.session.SessionManagementFilter@334ac669, org.springframework.security.web.access.ExceptionTranslationFilter@40304938, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65c66fc4]
+2023-11-21T07:38:52.961+05:30  INFO 4708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-21T07:38:52.985+05:30  INFO 4708 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 14.969 seconds (process running for 17.706)
+2023-11-21T07:39:06.210+05:30  INFO 4708 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-21T07:39:06.211+05:30  INFO 4708 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-21T07:39:06.219+05:30  INFO 4708 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-11-21T07:39:09.694+05:30  INFO 4708 --- [http-nio-9090-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1928 ms
+2023-11-21T07:39:51.924+05:30  INFO 4708 --- [http-nio-9090-exec-3] c.h.o.service.JwtService                 : Generating token for username: Himakar
+2023-11-21T07:39:51.930+05:30  INFO 4708 --- [http-nio-9090-exec-3] c.h.o.service.JwtService                 : Creating token for username: Himakar
