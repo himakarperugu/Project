@@ -54,6 +54,7 @@ public class SecurityConfig {
                                 "/api/v1/admin/**",
                                 "/api/v1/order/**",
                                 "/api/v1/product/**",
+                                "/api/v1/cart",
                                 "/api/v1/substitution/**"
                         ).authenticated())
                 .sessionManagement(management -> management

@@ -13,7 +13,8 @@ public class GlobalExceptionHandler {
 	CustomerNotFoundException.class,
 	OrderNotFoundException.class,
 	ProductNotFoundException.class,
-	SubstitutionNotFoundException.class
+	SubstitutionNotFoundException.class,
+	CartNotFoundException.class
 	
 	})
 public ResponseEntity<String> handleAnyExpection(Exception e) {
