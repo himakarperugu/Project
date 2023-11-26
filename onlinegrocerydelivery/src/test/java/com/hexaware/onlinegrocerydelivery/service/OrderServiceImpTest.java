@@ -17,7 +17,7 @@ class OrderServiceImpTest {
 		orders.setCustomerId(2001);
 		orders.setDeliveryAddress("Ongole");
 		orders.setPaymentMethod("COD");
-		orders.setTotalAmount(2000);
+
 		assertEquals(4001, orders.getOrderId());
 	}
 
@@ -28,7 +28,6 @@ class OrderServiceImpTest {
 		orderDTO.setCustomerId(2001);
 		orderDTO.setDeliveryAddress("Ongole");
 		orderDTO.setPaymentMethod("COD");
-		orderDTO.setTotalAmount(2000);
 		assertEquals(4001, orderDTO.getOrderId());}
 
 	@Test
@@ -38,7 +37,6 @@ class OrderServiceImpTest {
 		orderDTO.setCustomerId(2001);
 		orderDTO.setDeliveryAddress("Ongole");
 		orderDTO.setPaymentMethod("COD");
-		orderDTO.setTotalAmount(2000);
 	}
 
 	@Test
@@ -48,7 +46,6 @@ class OrderServiceImpTest {
 		orders.setCustomerId(2001);
 		orders.setDeliveryAddress("Ongole");
 		orders.setPaymentMethod("COD");
-		orders.setTotalAmount(2000);
 	}
 
 	@Test

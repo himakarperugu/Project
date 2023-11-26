@@ -50,12 +50,12 @@ public class SecurityConfig {
                                 "/swagger-resources/**"
                         ).permitAll()
                         .requestMatchers(
-                                "/api/v1/customer/**",
-                                "/api/v1/admin/**",
-                                "/api/v1/order/**",
-                                "/api/v1/product/**",
-                                "/api/v1/cart",
-                                "/api/v1/substitution/**"
+                               // "/api/v1/customer/**",
+                                "/api/v1/admin/**"
+                                //"/api/v1/order/**",
+                               // "/api/v1/product/**",
+                                //"/api/v1/cart",
+                                //"/api/v1/substitution/**"
                         ).authenticated())
                 .sessionManagement(management -> management
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

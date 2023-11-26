@@ -6,8 +6,11 @@ import java.time.LocalDate;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 
 /*Author:Sakitha
  * updated:12/11/2023
@@ -16,14 +19,16 @@ import jakarta.persistence.ManyToOne;
  */
 @Entity
 public class Orders {
+
+	@SequenceGenerator(name="order_seq",initialValue=200,allocationSize=1)
 	
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="order_seq")
 	@Id
 	private int orderId;
 	private int customerId;
 	private LocalDate orderDate;
 	private String deliveryAddress;
 	private String paymentMethod;
-	private double totalAmount;
 	
 	
 	
@@ -48,15 +53,14 @@ public class Orders {
 	}
 
 
-	public Orders(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod,
-			double totalAmount) {
+	public Orders(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod) {
 		super();
 		this.orderId = orderId;
 		this.customerId = customerId;
 		this.orderDate = orderDate;
 		this.deliveryAddress = deliveryAddress;
 		this.paymentMethod = paymentMethod;
-		this.totalAmount = totalAmount;
+
 	}
 
 
@@ -110,23 +114,6 @@ public class Orders {
 	}
 
 
-	public double getTotalAmount() {
-		return totalAmount;
-	}
-
-
-	public void setTotalAmount(double totalAmount) {
-		this.totalAmount = totalAmount;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Order [orderId=" + orderId + ", customerId=" + customerId + ", orderDate=" + orderDate
-				+ ", deliveryAddress=" + deliveryAddress + ", paymentMethod=" + paymentMethod + ", totalAmount="
-				+ totalAmount + "]";
-	}
-	
 	
 	
 	

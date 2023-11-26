@@ -19,7 +19,6 @@ class ProductServiceImpTest {
 		product.setCategory("Oil");
 		product.setBrand("Freedom");
 		product.setPrice(2000);
-		product.setQuantity(3);
 		assertEquals(3001,product.getProductId());
 	}
 
@@ -32,7 +31,7 @@ class ProductServiceImpTest {
 		productDTO.setCategory("Oil");
 		productDTO.setBrand("Freedom");
 		productDTO.setPrice(2000);
-		productDTO.setQuantity(3);
+	
 		assertEquals(3001,productDTO.getProductId());
 	}
 	@Test
@@ -43,7 +42,7 @@ class ProductServiceImpTest {
 		productDTO.setCategory("Oil");
 		productDTO.setBrand("Freedom");
 		productDTO.setPrice(2000);
-		productDTO.setQuantity(3);
+	
 		}
 
 	@Test
@@ -54,7 +53,7 @@ class ProductServiceImpTest {
 		product.setCategory("Oil");
 		product.setBrand("Freedom");
 		product.setPrice(2000);
-		product.setQuantity(3);
+
 		assertEquals(3001,product.getProductId());	
 		}
 	
@@ -71,7 +70,7 @@ class ProductServiceImpTest {
 		productDTO.setCategory("Oil");
 		productDTO.setBrand("Freedom");
 		productDTO.setPrice(2000);
-		productDTO.setQuantity(3);
+
 		assertEquals("Oil",productDTO.getCategory());
 	}
 
@@ -83,7 +82,7 @@ class ProductServiceImpTest {
 		productDTO.setCategory("Oil");
 		productDTO.setBrand("Freedom");
 		productDTO.setPrice(2000);
-		productDTO.setQuantity(3);
+
 		assertEquals("Freedom",productDTO.getBrand());	}
 
 	/*@Test

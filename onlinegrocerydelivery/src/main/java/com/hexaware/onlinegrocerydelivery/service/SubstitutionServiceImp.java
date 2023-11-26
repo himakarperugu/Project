@@ -10,10 +10,12 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.SubstitutionDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
+import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.SubstitutionNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.IOrderRepository;
+import com.hexaware.onlinegrocerydelivery.repository.IProductRepository;
 import com.hexaware.onlinegrocerydelivery.repository.ISubstitutionRepository;
 //Author:sakitha
 
@@ -28,7 +30,7 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	
 	
 	@Autowired
-	private IOrderRepository orderrepository1;
+	private IProductRepository productRepository;
 	
 	
 	
@@ -40,14 +42,14 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	
 	
 
-	public IOrderRepository getOrderrepository1() {
-		return orderrepository1;
+	public IProductRepository getProductRepository() {
+		return productRepository;
 	}
 
 
 
-	public void setOrderrepository1(IOrderRepository orderrepository1) {
-		this.orderrepository1 = orderrepository1;
+	public void setProductRepository(IProductRepository productRepository) {
+		this.productRepository = productRepository;
 	}
 
 
@@ -57,14 +59,14 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 		
 		Substitution substitution =new Substitution();
 		
-		Orders orders=orderrepository1.findById(substitutionDTO.getOrderId()).orElse(null);
+		Product product=productRepository.findById(substitutionDTO.getProductId()).orElse(null);
 		
 		
 		substitution.setSubstitutionId(substitutionDTO.getSubstitutionId());
 		substitution.setOrderId(substitutionDTO.getOrderId());
 		substitution.setProductId(substitutionDTO.getProductId());
 		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
-		substitution.setOrders(orders);
+		substitution.setProduct(product);
 		logger.info("Inserted Substitution Data Into Table " +substitutionDTO);
 		
 		
@@ -103,18 +105,19 @@ public class SubstitutionServiceImp implements ISubstitutionService {
 	}
 
 	@Override
-	public Substitution updateSubstitution(SubstitutionDTO substitutionDTO) {
-		
-		Substitution substitution =new Substitution();
-		substitution.setSubstitutionId(substitutionDTO.getSubstitutionId());
-		substitution.setOrderId(substitutionDTO.getOrderId());
-		substitution.setProductId(substitutionDTO.getProductId());
-		substitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
-		
-		logger.info("  Updated Substitution Data Into Table " + substitutionDTO);
-		
-		return substitutionrepository.save(substitution);
-	}
+	 public Substitution updateSubstitution(SubstitutionDTO substitutionDTO) {
+        Substitution existingSubstitution = substitutionrepository.findById(substitutionDTO.getSubstitutionId())
+                .orElseThrow(() -> new SubstitutionNotFoundException(HttpStatus.NOT_FOUND,
+                        "Substitution with id: " + substitutionDTO.getSubstitutionId() + " not found"));
+
+        existingSubstitution.setOrderId(substitutionDTO.getOrderId());
+        existingSubstitution.setProductId(substitutionDTO.getProductId());
+        existingSubstitution.setSubstituteProductId(substitutionDTO.getSubstituteProductId());
+
+        logger.info("Updated Substitution Data Into Table: " + existingSubstitution);
+
+        return substitutionrepository.save(existingSubstitution);
+    }
 
 	@Override
 	public void deleteById(int substitutionId) {

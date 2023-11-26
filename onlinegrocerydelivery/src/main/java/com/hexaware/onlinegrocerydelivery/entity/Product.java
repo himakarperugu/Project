@@ -1,7 +1,12 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 
 
 
@@ -12,17 +17,29 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Product {
-	
+
+	@SequenceGenerator(name="product_seq",initialValue=300,allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="product_seq")
 	@Id
-	
 	private int productId;
 	private String productName;
 	private String category;
 	private String brand;
 	private int price;
-	private int quantity;
 	
-	
+	@ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 	
 	
 
@@ -30,14 +47,14 @@ public class Product {
 		super();
 	}
 
-	public Product(int productId, String productName, String category, String brand, int price, int quantity) {
+	public Product(int productId, String productName, String category, String brand, int price) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.category = category;
 		this.brand = brand;
 		this.price = price;
-		this.quantity = quantity;
+	
 	}
 
 	public int getProductId() {
@@ -80,19 +97,7 @@ public class Product {
 		this.price = price;
 	}
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category
-				+ ", brand=" + brand + ", price=" + price + ", quantity=" + quantity + "]";
-	}
+	
 
 	
 	

@@ -18,8 +18,7 @@ import jakarta.validation.constraints.Size;
 
 public class CustomerDTO {
 
-	@Positive(message ="CustomerID should be a positive number")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int customerId;
 	@NotBlank(message ="Customer name is required")
 	private String customerName;
@@ -33,6 +32,8 @@ public class CustomerDTO {
     @Size(min=4,message="Password must be at least 4 characters long")
 	@Pattern(regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$")
 	private String password;
+	private final static String role="CUSTOMER";
+
 	
 	
 

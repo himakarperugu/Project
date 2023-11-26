@@ -38,21 +38,21 @@ public class SubstitutionController {
 	
 
 	@GetMapping("/getById/{substitutionId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public SubstitutionDTO getById(int substitutionId) {
 	
 		return substitutionservice.getById(substitutionId);
 	}
 
 	@GetMapping("/getAllSubstitution")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public List<Substitution> getAllSubstitution() {
 	
 		return substitutionservice.getAllSubstitution();
 	}
 
-	@PutMapping("/updateSubstitution")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PutMapping("/updateSubstitution/substitutionId")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public Substitution updateSubstitution(SubstitutionDTO substitutionDTO) {
 		
 		return substitutionservice.updateSubstitution(substitutionDTO);
@@ -60,7 +60,7 @@ public class SubstitutionController {
 
 
 	@DeleteMapping("/deleteById/{substituteProductId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(int substitutionId) {
 		
 		substitutionservice.deleteById(substitutionId);

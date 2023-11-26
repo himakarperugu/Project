@@ -16,8 +16,6 @@ import jakarta.validation.constraints.NotNull;
 public class OrderDTO {
 	
 	private int orderId;
-	@NotNull(message = "Customer ID cannot be null")
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	@NotNull(message = "Order date cannot be null")
 	private LocalDate orderDate;
@@ -25,8 +23,7 @@ public class OrderDTO {
 	private String deliveryAddress;
     @NotBlank(message = "Payment method should not be blank")
 	private String paymentMethod;
-    @Min(value = 1, message = "Total amount must be a positive number")
-	private double totalAmount;
+   
 
 	public OrderDTO() {
 		super();
@@ -34,15 +31,14 @@ public class OrderDTO {
 
 
 
-	public OrderDTO(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod,
-			double totalAmount) {
+	public OrderDTO(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod) {
 		super();
 		this.orderId = orderId;
 		this.customerId = customerId;
 		this.orderDate = orderDate;
 		this.deliveryAddress = deliveryAddress;
 		this.paymentMethod = paymentMethod;
-		this.totalAmount = totalAmount;
+		
 	}
 
 
@@ -107,23 +103,13 @@ public class OrderDTO {
 
 
 
-	public double getTotalAmount() {
-		return totalAmount;
-	}
-
-
-
-	public void setTotalAmount(double totalAmount) {
-		this.totalAmount = totalAmount;
-	}
-
+	
 
 
 	@Override
 	public String toString() {
 		return "OrderDTO [orderId=" + orderId + ", customerId=" + customerId + ", orderDate=" + orderDate
-				+ ", deliveryAddress=" + deliveryAddress + ", paymentMethod=" + paymentMethod + ", totalAmount="
-				+ totalAmount + "]";
+				+ ", deliveryAddress=" + deliveryAddress + ", paymentMethod=" + paymentMethod +"]";
 	}
 	
 	

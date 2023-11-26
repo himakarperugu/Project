@@ -41,7 +41,7 @@ public class OrderController {
 
 	
 	@GetMapping("/getById/{orderId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public OrderDTO getById(@PathVariable int orderId) {
 		
 		return orderservice.getById(orderId);
@@ -50,22 +50,22 @@ public class OrderController {
 	
 
 	@GetMapping("/getAllOrder")
-	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
 
 	public List<Orders> getAllOrder() {
 		
 		return orderservice.getAllOrder();
 	}
 	
-	@PutMapping("/updateOrder")
-	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PutMapping("/updateOrder/{orderId}")
+	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public Orders updateOrder(@RequestBody OrderDTO OrderDTO) {
 		
 		return orderservice.updateOrder(OrderDTO);
 	}
 	
 	@DeleteMapping("/deleteById/{orderId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(int orderId) {
 		
 		orderservice.deleteById(orderId);

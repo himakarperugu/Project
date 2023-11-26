@@ -38,7 +38,7 @@ public class AdminServiceImp implements IAdminService {
 		
 		
 		
-		admin.setAdminId(adminDTO.getAdminId());
+		
 		admin.setUserName(adminDTO.getUserName());
 		admin.setPassword(passwordEncoder.encode(adminDTO.getPassword()));
 		logger.info(" Inserted Admin Data Into Table " + adminDTO);
@@ -56,7 +56,6 @@ public class AdminServiceImp implements IAdminService {
 		}
 		
 		AdminDTO adminDTO = new AdminDTO();
-		adminDTO.setAdminId(admin.getAdminId());
 		adminDTO.setUserName(admin.getUserName());
 		adminDTO.setPassword(passwordEncoder.encode(admin.getPassword()));
 		logger.info(" Fetched Admin Data Using Admin ID ");
@@ -76,15 +75,24 @@ public class AdminServiceImp implements IAdminService {
 	}
 
 	@Override
-	public Admin updateAdmin(AdminDTO adminDTO) {
-		Admin admin=new Admin();
-		admin.setAdminId(adminDTO.getAdminId());
-		admin.setUserName(adminDTO.getUserName());
-		admin.setPassword(passwordEncoder.encode(adminDTO.getPassword()));
-		logger.info(" Updated Admin Data Into Table " + adminDTO );
-		
-		return adminrepository.save(admin);
+	public Admin updateAdmin(AdminDTO adminDTO, int adminId) {
+	    // Retrieve the existing Admin entity
+	    Admin existingAdmin = adminrepository.findById(adminId)
+	            .orElseThrow(() -> new AdminNotFoundException(HttpStatus.NOT_FOUND,
+	                    "Admin with id: " + adminId + " not found"));
+
+	    // Update the Admin entity with values from AdminDTO
+	    existingAdmin.setUserName(adminDTO.getUserName());
+	    existingAdmin.setPassword(passwordEncoder.encode(adminDTO.getPassword()));
+	    // You can update other fields as well if needed
+
+	    logger.info("Updated Admin Data Into Table: " + existingAdmin);
+
+	    // Save the updated Admin entity back to the database
+	    return adminrepository.save(existingAdmin);
 	}
+
+
 
 	@Override
 	public void deleteById(int adminId) {
@@ -108,7 +116,6 @@ public class AdminServiceImp implements IAdminService {
 	    List<AdminDTO> adminDTOs = admins.stream()
 	            .map(admin -> {
 	                AdminDTO adminDTO = new AdminDTO();
-	                adminDTO.setAdminId(admin.getAdminId());
 	                adminDTO.setUserName(admin.getUserName());
 	                adminDTO.setPassword(passwordEncoder.encode(admin.getPassword()));
 	                return adminDTO;

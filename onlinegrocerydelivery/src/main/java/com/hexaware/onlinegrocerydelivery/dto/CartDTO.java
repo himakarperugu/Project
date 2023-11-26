@@ -11,15 +11,12 @@ public class CartDTO {
 	
 	
 	
-	@NotNull(message="Id should not be null")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int cartId;
 	@NotNull(message="Id should not be null")
 	private int customerId;
 	@NotNull(message="Id should not be null")
 	private int productId;
-	@Positive(message = "Price should be a positive number")
-	private long price;
 	@Positive(message = "Quantity should be a positive number")
 	private int quantity;
     @Min(value = 1, message = "Total amount must be a positive number")
@@ -37,7 +34,6 @@ public class CartDTO {
 		this.cartId = cartId;
 		this.customerId = customerId;
 		this.productId = productId;
-		this.price = price;
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
 	}
@@ -59,12 +55,7 @@ public class CartDTO {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public long getPrice() {
-		return price;
-	}
-	public void setPrice(long price) {
-		this.price = price;
-	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -77,12 +68,7 @@ public class CartDTO {
 	public void setTotalAmount(long totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	@Override
-	public String toString() {
-		return "CartDTO [cartId=" + cartId + ", customerId=" + customerId + ", productId=" + productId + ", price="
-				+ price + ", quantity=" + quantity + ", totalAmount=" + totalAmount + "]";
-	}
-    
+	
     
     
     

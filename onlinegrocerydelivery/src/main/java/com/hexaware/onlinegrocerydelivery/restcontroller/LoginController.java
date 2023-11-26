@@ -47,7 +47,7 @@ public class LoginController {
         authenticate(authRequest.getUsername(), authRequest.getPassword(), userDetailsService);
 
         String token = jwtService.generateToken(authRequest.getUsername());
-        return "User login successful. Token: " + token;
+        return "Customer login successful. Token: " + token;
     }
 
     private void authenticate(String username, String password, UserDetailsService userDetailsService) {

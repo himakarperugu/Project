@@ -1,10 +1,15 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 
 
 
@@ -19,7 +24,10 @@ import jakarta.persistence.OneToMany;
 
 public class Customer {
 	
+
+	@SequenceGenerator(name="customer_seq",initialValue=1000,allocationSize=1)
 	
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="customer_seq")
 	@Id
 	private int customerId;
 	private String customerName;
@@ -27,10 +35,25 @@ public class Customer {
 	private String phoneNumber;
 	private String deliveryAddress;
 	private String password;
-	private final String role="CUSTOMER";
+	private final static String role="CUSTOMER";
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Orders order;
+	
+	
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Product> products;
+
+  
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+	
+
 
 	public Customer() {
 		super();

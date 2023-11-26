@@ -10,8 +10,7 @@ import jakarta.validation.constraints.Positive;
  */
 public class SubstitutionDTO {
 	
-	@Positive(message = "Substitution ID should be a positive number")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int substitutionId;
     @Positive(message = "Order ID should be a positive number")
 	private int orderId;

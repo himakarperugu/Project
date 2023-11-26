@@ -1,7 +1,10 @@
 package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 
 /* Author:Himakar
@@ -13,11 +16,16 @@ import jakarta.persistence.Id;
 public class Admin {
 	
 	
+	
+	
+	
+	@SequenceGenerator(name="admin_seq",initialValue=1,allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="admin_seq")
 	@Id
 	private int adminId;
     private String userName;
     private String password;
-    private final String role="ADMIN";
+    private final static String role="ADMIN";
 	public Admin() {
 		super();
 	}

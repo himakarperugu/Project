@@ -2,8 +2,11 @@ package com.hexaware.onlinegrocerydelivery.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 
 
 /*Author:Sakitha
@@ -13,7 +16,9 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Substitution {
-	
+
+	@SequenceGenerator(name="substitution_seq",initialValue=400,allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="substitution_seq")
 	@Id
 	private int substitutionId;
 	private int orderId;
@@ -23,18 +28,17 @@ public class Substitution {
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Orders orders;								//substitution to order
+	private Product product;								//substitution to product
 	
-	
-	
-	
-	public Orders getOrders() {
-		return orders;
+
+
+	public Product getProduct() {
+		return product;
 	}
 
 
-	public void setOrders(Orders orders) {
-		this.orders = orders;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 

@@ -13,8 +13,7 @@ import jakarta.validation.constraints.Positive;
 
 public class ProductDTO {
 	
-	@Positive(message = "Product ID should be a positive number")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int productId;
 	@NotBlank(message = "Product name is required")
 	private String productName;
@@ -24,8 +23,7 @@ public class ProductDTO {
 	private String brand;
 	@Positive(message = "Price should be a positive number")
 	private int price;
-	@Positive(message = "Quantity should be a positive number")
-	private int quantity;
+	
 	
 	
 	
@@ -36,14 +34,13 @@ public class ProductDTO {
 	}
 
 
-	public ProductDTO(int productId, String productName, String category, String brand, int price, int quantity) {
+	public ProductDTO(int productId, String productName, String category, String brand, int price) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.category = category;
 		this.brand = brand;
 		this.price = price;
-		this.quantity = quantity;
 	}
 
 
@@ -97,21 +94,7 @@ public class ProductDTO {
 	}
 
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-
-	@Override
-	public String toString() {
-		return "ProductDTO [productId=" + productId + ", productName=" + productName + ", category=" + category
-				+ ", brand=" + brand + ", price=" + price + ", quantity=" + quantity + "]";
-	}
+	
 
 
 	

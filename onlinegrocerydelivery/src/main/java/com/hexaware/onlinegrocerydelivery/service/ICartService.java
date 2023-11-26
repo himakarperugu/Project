@@ -7,7 +7,7 @@ import com.hexaware.onlinegrocerydelivery.entity.Cart;
 
 public interface ICartService {
 	
-	Cart  addCart(CartDTO cartDTO);
+	Cart  addCart(CartDTO cartDTO, int productId);
 	CartDTO getById(int cartId);
 	List<Cart> getAllCart();
 	Cart  updateCart(CartDTO cartDTO);

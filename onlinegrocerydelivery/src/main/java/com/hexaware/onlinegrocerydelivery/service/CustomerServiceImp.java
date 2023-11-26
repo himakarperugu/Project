@@ -45,7 +45,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 		customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
-	
+		customer.setProducts(List.of());
 
 		logger.info("Inserted Customer Data Into Table "+ customerDTO);
 		return customerRepository.save(customer);
@@ -81,21 +81,33 @@ public class CustomerServiceImp implements ICustomerService {
 		return customerRepository.findAll();
 	}
 
-	@Override
-	public Customer updateCustomer(CustomerDTO customerDTO) {
-		Customer customer = new Customer();
-		
-		
-		customer.setCustomerId(customerDTO.getCustomerId());
-		customer.setCustomerName(customerDTO.getCustomerName());
-		customer.setEmail(customerDTO.getEmail());
-		customer.setPhoneNumber(customerDTO.getPhoneNumber());
-		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
-		customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
-		logger.info(" Updated Customer Data Into Table " + customerDTO);
-		
-		return customerRepository.save(customer);	
-	}
+	public Customer updateCustomerByCustomerId(CustomerDTO customerDTO) {
+        Customer customer = new Customer();
+
+        // Retrieve existing customer from the repository by customer ID
+        Customer existingCustomer = customerRepository.findById(customerDTO.getCustomerId()).orElse(null);
+
+        // Update customer information if the existing customer is found
+        if (existingCustomer != null) {
+            existingCustomer.setCustomerName(customerDTO.getCustomerName());
+            existingCustomer.setEmail(customerDTO.getEmail());
+            existingCustomer.setPhoneNumber(customerDTO.getPhoneNumber());
+            existingCustomer.setDeliveryAddress(customerDTO.getDeliveryAddress());
+            existingCustomer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
+
+            // Save the updated customer back to the repository
+            customer = customerRepository.save(existingCustomer);
+        } else {
+            // Log a warning if the customer with the given ID is not found
+            logger.warn("Customer with Customer ID " + customerDTO.getCustomerId() + " not found.");
+        }
+
+        // Log an informational message about the update
+        logger.info("Updated Customer Data Into Table " + customerDTO);
+
+        // Return the updated customer
+        return customer;
+    }
 
 	@Override
 	public void deleteById(int customerId) {

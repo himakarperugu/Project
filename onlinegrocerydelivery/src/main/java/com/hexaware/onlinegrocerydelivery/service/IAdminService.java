@@ -14,7 +14,7 @@ public interface IAdminService {
 	
 	public List<Admin> getAllAdmin();
 	
-	Admin updateAdmin(AdminDTO adminDTO);
+	public Admin updateAdmin(AdminDTO adminDTO, int adminId);
 	
 	void deleteById(int adminId);
 	

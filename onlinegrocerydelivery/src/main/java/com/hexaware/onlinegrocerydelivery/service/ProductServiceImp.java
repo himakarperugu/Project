@@ -21,11 +21,11 @@ public class ProductServiceImp implements IProductService {
 	Logger logger = LoggerFactory.getLogger(ProductServiceImp.class);
 	
 	@Autowired
-	private IProductRepository productrepository;
+	private IProductRepository productRepository;
 	
 	public ProductServiceImp(IProductRepository productrepository) {
 		super();
-		this.productrepository = productrepository;
+		this.productRepository = productrepository;
 	}
 
 	@Override
@@ -34,22 +34,21 @@ public class ProductServiceImp implements IProductService {
 		Product product =new Product();
 		
 		
-		product.setProductId(productDTO.getProductId());
+		
 		product.setProductName(productDTO.getProductName());
 		product.setCategory(productDTO.getCategory());
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
-		product.setQuantity(productDTO.getQuantity());
 		
 		logger.info("Inserted Product Data Into Table " +productDTO);
 
-		return productrepository.save(product);
+		return productRepository.save(product);
 	}
 
 	@Override
 	public ProductDTO getById(int productId) {
 		
-		Product product = productrepository.findById(productId).orElse(new Product());
+		Product product = productRepository.findById(productId).orElse(new Product());
 		
 		if (product.getProductId()==0) {
 			throw new ProductNotFoundException(HttpStatus.NOT_FOUND,"Product with Product Id : " +productId+ " Not Found");
@@ -62,7 +61,6 @@ public class ProductServiceImp implements IProductService {
 		productDTO.setCategory(product.getCategory());
 		productDTO.setBrand(product.getBrand());
 		productDTO.setPrice(product.getPrice());
-		productDTO.setQuantity(product.getQuantity());
 		logger.info("Fetched Product Data Using Product ID " + productId);
 		return productDTO;
 	}
@@ -73,7 +71,7 @@ public class ProductServiceImp implements IProductService {
 		
 		logger.info(" Fetched All The Product Data ");
 		
-		return productrepository.findAll();
+		return productRepository.findAll();
 	}
 
 	@Override
@@ -81,24 +79,34 @@ public class ProductServiceImp implements IProductService {
 		
 		Product product = new Product();
 		
-		product.setProductId(product.getProductId());
-		product.setProductName(productDTO.getProductName());
-		product.setCategory(productDTO.getCategory());
-		product.setBrand(productDTO.getBrand());
-		product.setPrice(productDTO.getPrice());
-		product.setQuantity(productDTO.getQuantity());
-		logger.info("  Updated Product Data Into Table " + productDTO);
-		return productrepository.save(product);	
-		}
+		 Product existingProduct = productRepository.findById(productDTO.getProductId()).orElse(null);
+
+	        if (existingProduct != null) {
+	       
+	            existingProduct.setProductName(productDTO.getProductName());
+	            existingProduct.setCategory(productDTO.getCategory());
+	            existingProduct.setBrand(productDTO.getBrand());
+	            existingProduct.setPrice(productDTO.getPrice());
+
+	            product = productRepository.save(existingProduct);
+	        } else {
+	          
+	            logger.warn("Product with Product ID " + productDTO.getProductId() + " not found.");
+	        }
+
+	        logger.info("Updated Product Data Into Table " + productDTO);
+	        return product;
+	    }
+
 
 	@Override
 	public void deleteById(int productId) {
 	    logger.info("Deleting the Product Record Using Product ID " + productId);
 
-	    Product product = productrepository.findById(productId).orElse(null);
+	    Product product = productRepository.findById(productId).orElse(null);
 
 	    if (product != null) {
-	        productrepository.deleteById(product.getProductId());
+	    	productRepository.deleteById(product.getProductId());
 	    } else {
 	        logger.warn("Product with Product ID " + productId + " not found. No Deletion Operation is performed.");
 	    }
@@ -107,7 +115,7 @@ public class ProductServiceImp implements IProductService {
 
 	@Override
 	public List<ProductDTO> getByCategory(String category) {
-		 List<Product> products = productrepository.getByCategory(category);
+		 List<Product> products = productRepository.getByCategory(category);
 		 
 		 if (products.isEmpty()) {
 		        throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product with  Product Category  Name: " + category + " Not Found");
@@ -121,7 +129,6 @@ public class ProductServiceImp implements IProductService {
 		                productDTO.setCategory(product.getCategory());
 		                productDTO.setBrand(product.getBrand());
 		                productDTO.setPrice(product.getPrice());
-		                productDTO.setQuantity(product.getQuantity());
 		                return productDTO;
 		            })
 		            .collect(Collectors.toList());
@@ -132,7 +139,7 @@ public class ProductServiceImp implements IProductService {
 
 	@Override
 	public List<ProductDTO> getByBrand(String brand) {
-		 List<Product> products = productrepository.getByBrand(brand);
+		 List<Product> products = productRepository.getByBrand(brand);
 		 
 		 
 		 if (products.isEmpty()) {
@@ -149,7 +156,6 @@ public class ProductServiceImp implements IProductService {
 	                    productDTO.setCategory(product.getCategory());
 	                    productDTO.setBrand(product.getBrand());
 	                    productDTO.setPrice(product.getPrice());
-	                    productDTO.setQuantity(product.getQuantity());
 	                    return productDTO;
 	                })
 	                .collect(Collectors.toList());
@@ -157,7 +163,7 @@ public class ProductServiceImp implements IProductService {
 	        return productDTOs;
 	}
 	public List<ProductDTO> getByProductName(String productName) {
-	    List<Product> products = productrepository.getByProductName(productName);
+	    List<Product> products = productRepository.getByProductName(productName);
 	    
 	    
 		 if (products.isEmpty()) {
@@ -174,8 +180,8 @@ public class ProductServiceImp implements IProductService {
 	                    product.getProductName(),
 	                    product.getCategory(),
 	                    product.getBrand(),
-	                    product.getPrice(),
-	                    product.getQuantity()
+	                    product.getPrice()
+	                    
 	            ))
 	            .collect(Collectors.toList());
 	}

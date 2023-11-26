@@ -56,7 +56,7 @@ public class OrderServiceImp implements IOrderService {
 			orders.setOrderDate(orderDTO.getOrderDate());
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
-			orders.setTotalAmount(orderDTO.getTotalAmount());
+			
 			orders.setCustomer(customer);
 			
 		
@@ -82,7 +82,7 @@ public class OrderServiceImp implements IOrderService {
 		orders.setOrderDate(orderDTO.getOrderDate());
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
-		orders.setTotalAmount(orderDTO.getTotalAmount());
+		
 		logger.info("Fetched Orders Data Using Orders ID " + orderId);
 
 		
@@ -99,23 +99,20 @@ public class OrderServiceImp implements IOrderService {
 	}
 
 	@Override
-	public Orders updateOrder(OrderDTO orderDTO) {
-	
-		Orders orders = new Orders();
-		orders.setOrderId(orderDTO.getOrderId());
-		orders.setCustomerId(orderDTO.getCustomerId());
-		orders.setOrderDate(orderDTO.getOrderDate());
-		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
-		orders.setPaymentMethod(orderDTO.getPaymentMethod());
-		orders.setTotalAmount(orderDTO.getTotalAmount());
-		logger.info("  Updated Orders Data Into Table " + orderDTO);
+	 public Orders updateOrder(OrderDTO orderDTO) {
+        Orders existingOrder = orderrepository.findById(orderDTO.getOrderId())
+                .orElseThrow(() -> new OrderNotFoundException(HttpStatus.NOT_FOUND,
+                        "Order with id: " + orderDTO.getOrderId() + " not found"));
 
-		
-		
-		
-		return orderrepository.save(orders);
-		
-	}
+        existingOrder.setCustomerId(orderDTO.getCustomerId());
+        existingOrder.setOrderDate(orderDTO.getOrderDate());
+        existingOrder.setDeliveryAddress(orderDTO.getDeliveryAddress());
+        existingOrder.setPaymentMethod(orderDTO.getPaymentMethod());
+
+        logger.info("Updated Orders Data Into Table: " + existingOrder);
+
+        return orderrepository.save(existingOrder);
+    }
 
 	@Override
 	public void deleteById(int orderId) {

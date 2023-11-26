@@ -38,7 +38,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/getById/{adminId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public AdminDTO getById(@PathVariable int adminId) {
 		
 		return adminservice.getById(adminId);
@@ -49,19 +49,21 @@ public class AdminController {
 		return adminservice.getAllAdmin();
 	}
 
-	@PutMapping("/updateAdmin")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
-	public Admin updateAdmin(@RequestBody AdminDTO adminDTO) {
-		return adminservice.updateAdmin(adminDTO);
+	@PutMapping("/updateAdmin/{adminId}")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	public Admin updateAdmin(@RequestBody AdminDTO adminDTO, @PathVariable int adminId) {
+	    return adminservice.updateAdmin(adminDTO, adminId);
 	}
 
+
 	@DeleteMapping("/deleteById/{adminId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(@PathVariable int adminId) {
 		adminservice.deleteById(adminId);
 
 	}
 	@GetMapping("/getByUserName/{userName}")
+	//@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public List<AdminDTO> getByUserName(@PathVariable String userName) {
 	
 		return adminservice.getByUserName(userName);
