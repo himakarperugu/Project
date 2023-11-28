@@ -41,7 +41,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getById/{customerId}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public CustomerDTO getById(@PathVariable int customerId) {
 		
 		return customerservice.getById(customerId);
@@ -49,28 +49,28 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getAllCustomer")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public List<Customer> getAllCustomer() {
 		
 		return customerservice.getAllCustomer();
 	}
 
 	@PutMapping("/updateCustomer/{customerId}")
-    // Add any necessary security annotations if needed
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
     public Customer updateCustomerByCustomerId(@RequestBody CustomerDTO customerDTO) {
         return customerservice.updateCustomerByCustomerId(customerDTO);
     }
 
 
 	@DeleteMapping("/deleteById/{customerId}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public void deleteById(int customerId) {
 		
 		customerservice.deleteById(customerId);
 
 	}
 	@GetMapping("/getByCustomerName/{customerName}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public List<CustomerDTO> getByCustomerName(@PathVariable String customerName) {
 	
 		return customerservice.getByCustomerName(customerName);

@@ -40,7 +40,7 @@ public class CartServiceImp implements ICartService {
     }
 
     @Override
-    public Cart addCart(CartDTO cartDTO, int productId) {
+    public Cart addCart(CartDTO cartDTO) {
         Customer customer = customerRepository.findById(cartDTO.getCustomerId()).orElse(null);
 
         if (customer == null) {
@@ -48,26 +48,27 @@ public class CartServiceImp implements ICartService {
                     " Customer with CustomerId : " + cartDTO.getCustomerId() + " Not Found ");
         }
 
-        Product product = productRepository.findById(productId).orElse(null);
+        // Check if a Cart already exists for this Customer
+        List<Cart> existingCarts = cartRepository.findByCustomerId(cartDTO.getCustomerId());
 
-        if (product == null) {
-            throw new ProductNotFoundException(HttpStatus.NOT_FOUND,
-                    " Product with ProductId : " + productId + " Not Found ");
+        if (!existingCarts.isEmpty()) {
+            // If a Cart already exists, update the first one
+            Cart existingCart = existingCarts.get(0);
+            existingCart.setQuantity(cartDTO.getQuantity());
+            existingCart.setTotalAmount(cartDTO.getTotalAmount());
+            return cartRepository.save(existingCart);
+        } else {
+            // If no Cart exists, create a new one
+            Cart cart = new Cart();
+            cart.setCustomer(customer);
+            cart.setCartId(cartDTO.getCartId());
+            cart.setCustomerId(cartDTO.getCustomerId());
+            cart.setQuantity(cartDTO.getQuantity());
+            cart.setTotalAmount(cartDTO.getTotalAmount());
+            return cartRepository.save(cart);
         }
-
-        Cart cart = new Cart();
-        cart.setCustomer(customer);
-        cart.setProduct(product);
-        cart.setCartId(cartDTO.getCartId());
-        cart.setCustomerId(cartDTO.getCustomerId());
-       // cart.setProductId(product.getProductId()); 
-        cart.setQuantity(cartDTO.getQuantity());
-
-        long totalAmount = product.getPrice() * cartDTO.getQuantity();
-        cart.setTotalAmount(totalAmount);
-
-        return cartRepository.save(cart);
     }
+
 
     @Override
     public CartDTO getById(int cartId) {
@@ -80,7 +81,6 @@ public class CartServiceImp implements ICartService {
         CartDTO cartDTO = new CartDTO();
         cartDTO.setCartId(cart.getCartId());
         cartDTO.setCustomerId(cart.getCustomerId());
-       // cartDTO.setProductId(cart.getProductId());
         cartDTO.setQuantity(cart.getQuantity());
         cartDTO.setTotalAmount(cart.getTotalAmount());
 
@@ -99,7 +99,6 @@ public class CartServiceImp implements ICartService {
                         "Cart with id: " + cartDTO.getCartId() + " not found"));
 
         existingCart.setCustomerId(cartDTO.getCustomerId());
-        // existingCart.setProductId(cartDTO.getProductId());
         existingCart.setQuantity(cartDTO.getQuantity());
         existingCart.setTotalAmount(cartDTO.getTotalAmount());
 

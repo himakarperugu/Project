@@ -45,7 +45,7 @@ public class CustomerServiceImp implements ICustomerService {
 		customer.setPhoneNumber(customerDTO.getPhoneNumber());
 		customer.setDeliveryAddress(customerDTO.getDeliveryAddress());
 		customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
-		customer.setProducts(List.of());
+		
 
 		logger.info("Inserted Customer Data Into Table "+ customerDTO);
 		return customerRepository.save(customer);

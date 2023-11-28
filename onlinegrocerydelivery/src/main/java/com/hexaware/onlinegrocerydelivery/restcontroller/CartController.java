@@ -26,37 +26,33 @@ public class CartController {
 	
 	
 	@PostMapping("/addCart")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
-
-	public Cart addCart(@Valid @RequestBody  CartDTO cartDTO, @PathVariable int productId) {
-		return service.addCart(cartDTO, productId);
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	public Cart addCart(@Valid @RequestBody  CartDTO cartDTO) {
+		return service.addCart(cartDTO);
 	}
 
 	@GetMapping("/getById/{cartId}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
-
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public CartDTO getById(@PathVariable int cartId) {
 		return service.getById(cartId);
 	}
 
 	@GetMapping("/getAllCart")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
-
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public List<Cart> getAllCart() {
 		return service.getAllCart();
 	}
 	
 	@PutMapping("/updateCart/{cartId}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public Cart updateCart(@PathVariable int cartId, @RequestBody CartDTO cartDTO) {
-	    cartDTO.setCartId(cartId); // Set the cartId from the path variable into the CartDTO
+	    cartDTO.setCartId(cartId); 
 	    return service.updateCart(cartDTO);
 	}
 
 
 	@DeleteMapping("/deleteById/{cartId}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
-
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public void deleteById(@PathVariable int cartId) {
 		service.deleteById(cartId);
 	}

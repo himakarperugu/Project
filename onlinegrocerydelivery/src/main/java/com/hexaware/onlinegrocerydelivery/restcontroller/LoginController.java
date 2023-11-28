@@ -1,5 +1,6 @@
 package com.hexaware.onlinegrocerydelivery.restcontroller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,7 +16,7 @@ import com.hexaware.onlinegrocerydelivery.service.JwtService;
 //Author:Himakar
 
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/api/v1/login")
 public class LoginController {
 
     private final AuthenticationManager authenticationManager;

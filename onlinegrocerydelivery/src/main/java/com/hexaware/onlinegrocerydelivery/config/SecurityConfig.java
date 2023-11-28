@@ -36,35 +36,36 @@ public class SecurityConfig {
         return new CustomerInfoUserDetailsService();
     }
 
-    @SuppressWarnings("deprecation")
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .authorizeRequests(requests -> requests
-                        .requestMatchers(
-                                "/api/v1/admin/authenticate",
-                                "/api/v1/admin/addAdmin",
-                                "/api/v1/customer/addCustomer",
-                                "/v3/api-docs/**",
-                                "/swagger-ui/**",
-                                "/swagger-resources/**"
-                        ).permitAll()
-                        .requestMatchers(
-                               // "/api/v1/customer/**",
-                                "/api/v1/admin/**"
-                                //"/api/v1/order/**",
-                               // "/api/v1/product/**",
-                                //"/api/v1/cart",
-                                //"/api/v1/substitution/**"
-                        ).authenticated())
-                .sessionManagement(management -> management
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+    	return http.csrf().disable()               
+                .authorizeHttpRequests()
+                .requestMatchers(
+                		"/api/v1/Admin/authenticate",
+                        "/api/v1/Admin/addAdmin",
+                        "/api/v1/customer/addCustomer",
+                        "/api/v1/login/adminlogin",
+                        "/api/v1/login/customerlogin",
+                        "/v3/api-docs/**",
+                        "/swagger-ui/**",
+                        "/swagger-resources/**")
+                .permitAll()
+                .and()
+                .authorizeHttpRequests().requestMatchers(
+                		"/api/v1/Admin/**",
+                        "/api/v1/customer/**",
+                        "/api/v1/order/**",
+                        "/api/v1/product/**",
+                        "/api/v1/cart/**",
+                        "/api/v1/substitution/**")
+                .authenticated().and() 
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
+                .addFilterBefore(authFilter,UsernamePasswordAuthenticationFilter.class)
+                .build();
     }
-
 
 
     @Bean

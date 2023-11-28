@@ -43,27 +43,27 @@ public class ProductController {
 	}
 
 	@GetMapping("/getById/{productId}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public ProductDTO getById(@PathVariable int productId) {
 		ProductDTO productDTO=productservice.getById(productId);
 		
 		return productDTO;
 	}
 	@GetMapping("/getAllProduct")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public List<Product> getAllProduct() {
 
 		return productservice.getAllProduct();
 	}
 
 	@PutMapping("/updateProduct/{productId}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
     public Product updateProductByProductId(@RequestBody ProductDTO productDTO) {
         return productservice.updateProduct(productDTO);
     }
 
 	@DeleteMapping("/deleteById/{productId}")
-	//@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public void deleteById(int productId) {
 		
 		productservice.deleteById(productId);
@@ -71,20 +71,20 @@ public class ProductController {
 	}
 
 	@GetMapping("/getByCategory/{category}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public List<ProductDTO> getByCategory(@PathVariable String category) {
 		
 		return productservice.getByCategory(category);
 	}
 
 	@GetMapping("/getByBrand/{brand}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public List<ProductDTO> getByBrand(@PathVariable String brand) {
 		
 		return productservice.getByBrand(brand);
 	}
 	@GetMapping("/getByProductName/{productName}")
-	//@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public List<ProductDTO> getByProductName(@PathVariable String productName) {
 		
 		return productservice.getByProductName(productName);

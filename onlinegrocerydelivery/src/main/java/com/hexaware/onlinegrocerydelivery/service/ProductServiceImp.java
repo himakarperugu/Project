@@ -10,8 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.onlinegrocerydelivery.dto.ProductDTO;
+import com.hexaware.onlinegrocerydelivery.entity.Cart;
+import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.exception.ProductNotFoundException;
+import com.hexaware.onlinegrocerydelivery.repository.ICartRepository;
+import com.hexaware.onlinegrocerydelivery.repository.ICustomerRepository;
 import com.hexaware.onlinegrocerydelivery.repository.IProductRepository;
 //Author:Himakar
 
@@ -23,9 +27,23 @@ public class ProductServiceImp implements IProductService {
 	@Autowired
 	private IProductRepository productRepository;
 	
-	public ProductServiceImp(IProductRepository productrepository) {
+	@Autowired
+	private ICustomerRepository customerRepository;
+	
+	@Autowired
+	private ICartRepository cartRepository;
+	
+	
+
+	
+
+
+	public ProductServiceImp(IProductRepository productRepository, ICustomerRepository customerRepository,
+			ICartRepository cartRepository) {
 		super();
-		this.productRepository = productrepository;
+		this.productRepository = productRepository;
+		this.customerRepository = customerRepository;
+		this.cartRepository = cartRepository;
 	}
 
 	@Override
@@ -33,13 +51,15 @@ public class ProductServiceImp implements IProductService {
 		
 		Product product =new Product();
 		
-		
+		Customer customer=customerRepository.findById(productDTO.getCustomerId()).orElse(null);
+
+
 		
 		product.setProductName(productDTO.getProductName());
 		product.setCategory(productDTO.getCategory());
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
-		
+		product.setCustomer(customer);		
 		logger.info("Inserted Product Data Into Table " +productDTO);
 
 		return productRepository.save(product);

@@ -19,27 +19,13 @@ public class Cart {
 	@Id
 	private int cartId;
 	private int customerId;
-	//private int productId;
 	private int quantity;
 	private long totalAmount;
 	
 	
 	
-	@ManyToOne
-	@JoinColumn(name="productId")
-	private Product product;
 	
-	
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-	
-	
-	
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
 	
@@ -64,11 +50,11 @@ public class Cart {
 	
 	
 	
-	public Cart(int cartId, int customerId, int productId, int quantity, long totalAmount) {
+	public Cart(int cartId, int customerId,  int quantity, long totalAmount) {
 		super();
 		this.cartId = cartId;
 		this.customerId = customerId;
-		//this.productId = productId;
+		
 
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
@@ -93,12 +79,7 @@ public class Cart {
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-//	public int getProductId() {
-//		return productId;
-//	}
-//	public void setProductId(int productId) {
-//		this.productId = productId;
-//	}
+	
 	
 	public int getQuantity() {
 		return quantity;
