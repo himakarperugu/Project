@@ -6,6 +6,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.onlinegrocerydelivery.dto.AuthRequest;
 import com.hexaware.onlinegrocerydelivery.service.JwtService;
 //Author:Himakar
-
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/login")
 public class LoginController {
@@ -40,7 +41,7 @@ public class LoginController {
         authenticate(authRequest.getUsername(), authRequest.getPassword(), adminDetailsService);
 
         String token = jwtService.generateToken(authRequest.getUsername());
-        return "Admin login successful. Token: " + token;
+        return  token;
     }
 
     @PostMapping("/customerlogin")
@@ -48,7 +49,7 @@ public class LoginController {
         authenticate(authRequest.getUsername(), authRequest.getPassword(), userDetailsService);
 
         String token = jwtService.generateToken(authRequest.getUsername());
-        return "Customer login successful. Token: " + token;
+        return  token;
     }
 
     private void authenticate(String username, String password, UserDetailsService userDetailsService) {

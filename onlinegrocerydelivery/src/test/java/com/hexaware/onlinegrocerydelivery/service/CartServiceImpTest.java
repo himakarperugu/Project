@@ -14,8 +14,7 @@ class CartServiceImpTest {
 		CartDTO cartDTO =new CartDTO();
 		cartDTO.setCartId(2007);
 		cartDTO.setCustomerId(9);
-		cartDTO.setPrice(8000);
-		cartDTO.setProductId(8);
+		
 		cartDTO.setQuantity(2);
 		cartDTO.setTotalAmount(10000);
 		assertEquals(2007, cartDTO.getCartId());
@@ -26,8 +25,7 @@ class CartServiceImpTest {
 		CartDTO cartDTO =new CartDTO();
 		cartDTO.setCartId(2007);
 		cartDTO.setCustomerId(9);
-		cartDTO.setPrice(8000);
-		cartDTO.setProductId(8);
+		
 		cartDTO.setQuantity(2);
 		cartDTO.setTotalAmount(10000);
 		assertEquals(2007, cartDTO.getCartId());
@@ -38,8 +36,7 @@ class CartServiceImpTest {
 		CartDTO cartDTO =new CartDTO();
 		cartDTO.setCartId(2007);
 		cartDTO.setCustomerId(9);
-		cartDTO.setPrice(8000);
-		cartDTO.setProductId(8);
+		
 		cartDTO.setQuantity(2);
 		cartDTO.setTotalAmount(10000);
 		assertEquals(2007, cartDTO.getCartId());
@@ -51,8 +48,7 @@ class CartServiceImpTest {
 		CartDTO cartDTO =new CartDTO();
 		cartDTO.setCartId(2007);
 		cartDTO.setCustomerId(9);
-		cartDTO.setPrice(8000);
-		cartDTO.setProductId(8);
+		
 		cartDTO.setQuantity(2);
 		cartDTO.setTotalAmount(10000);
 		assertEquals(2007, cartDTO.getCartId());

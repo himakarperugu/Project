@@ -3,6 +3,7 @@ package com.hexaware.onlinegrocerydelivery.restcontroller;
 import java.util.List;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,7 @@ import com.hexaware.onlinegrocerydelivery.entity.Substitution;
 import com.hexaware.onlinegrocerydelivery.service.ISubstitutionService;
 
 //Author:sakitha
-
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/substitution")
 public class SubstitutionController {

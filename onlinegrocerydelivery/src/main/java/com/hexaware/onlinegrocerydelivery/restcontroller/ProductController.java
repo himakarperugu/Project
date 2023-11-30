@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ import com.hexaware.onlinegrocerydelivery.service.IProductService;
 
 import jakarta.validation.Valid;
 //Author:Himakar
-
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/product")
 public class ProductController {
@@ -57,7 +58,7 @@ public class ProductController {
 	}
 
 	@PutMapping("/updateProduct/{productId}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
     public Product updateProductByProductId(@RequestBody ProductDTO productDTO) {
         return productservice.updateProduct(productDTO);
     }
@@ -90,13 +91,7 @@ public class ProductController {
 		return productservice.getByProductName(productName);
 	}
 	
-//	@ExceptionHandler({ProductNotFoundException.class})
-//	public ResponseEntity<String> ProductException(ProductNotFoundException productexception)
-//	{
-//		return new ResponseEntity<String>(productexception.getMessage(),HttpStatus.BAD_REQUEST);
-//		
-//	}
-//	
+
 	
 	
 }
