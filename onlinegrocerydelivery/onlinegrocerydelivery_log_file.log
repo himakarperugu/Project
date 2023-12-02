@@ -2181,3 +2181,543 @@ io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period
 2023-11-30T18:53:49.076+05:30  INFO 776 --- [RMI TCP Connection(245)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-30T18:53:49.145+05:30  INFO 776 --- [RMI TCP Connection(245)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-11-30T18:53:49.268+05:30  INFO 776 --- [RMI TCP Connection(245)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-02T21:31:51.327+05:30  INFO 2208 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 2208 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-12-02T21:31:51.348+05:30  INFO 2208 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-02T21:31:54.351+05:30  INFO 2208 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-02T21:31:54.595+05:30  INFO 2208 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 214 ms. Found 6 JPA repository interfaces.
+2023-12-02T21:31:56.201+05:30  INFO 2208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2023-12-02T21:31:56.240+05:30  INFO 2208 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-02T21:31:56.241+05:30  INFO 2208 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-12-02T21:31:56.562+05:30  INFO 2208 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-02T21:31:56.566+05:30  INFO 2208 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4993 ms
+2023-12-02T21:31:57.012+05:30  INFO 2208 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-02T21:31:57.183+05:30  INFO 2208 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-12-02T21:31:57.617+05:30  WARN 2208 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-12-02T21:31:57.896+05:30  INFO 2208 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-02T21:31:58.737+05:30  INFO 2208 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16b7e04a
+2023-12-02T21:31:58.744+05:30  INFO 2208 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-02T21:31:58.939+05:30  INFO 2208 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-12-02T21:32:01.211+05:30  INFO 2208 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-02T21:32:01.259+05:30  INFO 2208 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02T21:32:04.096+05:30  WARN 2208 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-02T21:32:04.912+05:30  INFO 2208 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@366c9912, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628b9af5, org.springframework.security.web.context.SecurityContextHolderFilter@2e93f91d, org.springframework.security.web.header.HeaderWriterFilter@69860811, org.springframework.web.filter.CorsFilter@137db13f, org.springframework.security.web.authentication.logout.LogoutFilter@1267adbe, com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter@7da9b32c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14a5d7ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4778c085, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a3c3a04, org.springframework.security.web.session.SessionManagementFilter@3100b5cf, org.springframework.security.web.access.ExceptionTranslationFilter@14b0b7f9, org.springframework.security.web.access.intercept.AuthorizationFilter@4a83d61c]
+2023-12-02T21:32:05.797+05:30  INFO 2208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2023-12-02T21:32:05.834+05:30  INFO 2208 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 15.96 seconds (process running for 18.108)
+2023-12-02T21:51:50.290+05:30  INFO 2208 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-12-02T21:51:51.252+05:30  INFO 2208 --- [RMI TCP Connection(23)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-02T21:51:51.668+05:30  WARN 2208 --- [RMI TCP Connection(23)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)
+2023-12-02T21:51:52.249+05:30  INFO 2208 --- [RMI TCP Connection(23)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02T21:51:52.388+05:30  INFO 2208 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-02T21:51:52.607+05:30  INFO 2208 --- [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-02T21:52:09.241+05:30  INFO 14612 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 14612 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-12-02T21:52:09.250+05:30  INFO 14612 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-02T21:52:15.161+05:30  INFO 14612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-02T21:52:15.523+05:30  INFO 14612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 342 ms. Found 6 JPA repository interfaces.
+2023-12-02T21:52:17.795+05:30  INFO 14612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2023-12-02T21:52:17.881+05:30  INFO 14612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-02T21:52:17.881+05:30  INFO 14612 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-12-02T21:52:18.284+05:30  INFO 14612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-02T21:52:18.284+05:30  INFO 14612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8808 ms
+2023-12-02T21:52:18.828+05:30  INFO 14612 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-02T21:52:19.075+05:30  INFO 14612 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-12-02T21:52:19.755+05:30  WARN 14612 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-12-02T21:52:20.172+05:30  INFO 14612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-02T21:52:21.471+05:30  INFO 14612 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b332b23
+2023-12-02T21:52:21.479+05:30  INFO 14612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-02T21:52:21.814+05:30  INFO 14612 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-12-02T21:52:25.775+05:30  INFO 14612 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-02T21:52:25.812+05:30  INFO 14612 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02T21:52:31.254+05:30  WARN 14612 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-02T21:52:32.480+05:30  INFO 14612 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7154a248, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@435a4d2d, org.springframework.security.web.context.SecurityContextHolderFilter@77afdbc5, org.springframework.security.web.header.HeaderWriterFilter@798d8247, org.springframework.web.filter.CorsFilter@253379ec, org.springframework.security.web.authentication.logout.LogoutFilter@5ff12345, com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter@20608ef4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b718c45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25639668, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73c6ebec, org.springframework.security.web.session.SessionManagementFilter@d91e8c7, org.springframework.security.web.access.ExceptionTranslationFilter@1a13b5c1, org.springframework.security.web.access.intercept.AuthorizationFilter@10545d02]
+2023-12-02T21:52:34.429+05:30  INFO 14612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2023-12-02T21:52:34.482+05:30  INFO 14612 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 27.641 seconds (process running for 31.136)
+2023-12-02T21:53:22.228+05:30  INFO 14612 --- [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-02T21:53:22.292+05:30  INFO 14612 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-02T21:53:22.492+05:30  INFO 14612 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 192 ms
+2023-12-02T21:53:54.191+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:53:54.193+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:53:54.370+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:53:54.370+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:54.497+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:53:54.498+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:54.501+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:53:54.502+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:53:54.502+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:53:54.503+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:54.538+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:53:59.236+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:53:59.237+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:53:59.260+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:53:59.261+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:59.271+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:53:59.271+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:59.277+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:53:59.277+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:53:59.277+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:53:59.277+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:53:59.295+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:19.251+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:19.251+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:19.262+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:19.262+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:19.273+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:19.273+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:19.276+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:19.276+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:19.276+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:19.276+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:19.287+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:24.233+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:24.233+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:24.244+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:24.244+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:24.249+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:24.249+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:24.256+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:24.256+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:24.256+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:24.256+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:24.265+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:25.181+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:25.182+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:25.193+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.193+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.212+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.214+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.225+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:25.225+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:25.225+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:25.225+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.251+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:25.443+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:25.449+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:25.454+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.454+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.465+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.465+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.470+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:25.470+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:25.470+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:25.470+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.475+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:25.529+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:25.529+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:25.534+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.534+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.545+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:25.545+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.549+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:25.549+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:25.549+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:25.549+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:25.556+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:54:57.825+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:54:57.833+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:54:57.881+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:57.886+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:57.902+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:54:57.902+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:57.907+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:54:57.907+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:54:57.907+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:54:57.907+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:54:57.953+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:55:00.542+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Generating token for customername: Sakitha
+2023-12-02T21:55:00.542+05:30  INFO 14612 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Creating token for username: Sakitha
+2023-12-02T21:55:00.559+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:00.559+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:00.575+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:00.579+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:00.585+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Sakitha
+2023-12-02T21:55:00.585+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:55:00.585+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:55:00.585+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:00.596+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:55:53.165+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Generating token for customername: Vikas
+2023-12-02T21:55:53.182+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Creating token for username: Vikas
+2023-12-02T21:55:53.304+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:53.304+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:53.336+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:53.336+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:53.342+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Vikas
+2023-12-02T21:55:53.342+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:55:53.342+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:55:53.342+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:53.358+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:55:58.411+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Generating token for customername: Vikas
+2023-12-02T21:55:58.411+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Creating token for username: Vikas
+2023-12-02T21:55:58.430+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:58.430+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Validating token for username: Vikas
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:55:58.443+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:55:58.451+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:56:03.259+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Vikas
+2023-12-02T21:56:03.262+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Vikas
+2023-12-02T21:56:03.275+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:56:03.275+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:03.288+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:56:03.288+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:03.294+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Vikas
+2023-12-02T21:56:03.294+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:56:03.294+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:56:03.294+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:03.299+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T21:56:19.539+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Generating token for customername: Vikas
+2023-12-02T21:56:19.540+05:30  INFO 14612 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Creating token for username: Vikas
+2023-12-02T21:56:19.556+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:56:19.558+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:19.582+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T21:56:19.582+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:19.587+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Vikas
+2023-12-02T21:56:19.588+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T21:56:19.588+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T21:56:19.588+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T21:56:19.597+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:04:10.211+05:30  INFO 14612 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:04:10.236+05:30  INFO 14612 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:04:10.380+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:04:10.380+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:10.412+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:04:10.412+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:10.416+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:04:10.416+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:04:10.416+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:04:10.419+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:10.448+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:04:18.819+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:04:18.819+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:04:18.835+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:04:18.835+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:18.838+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:04:18.838+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:18.849+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:04:18.849+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:04:18.849+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:04:18.849+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:04:18.851+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:05:31.116+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:05:31.116+05:30  INFO 14612 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:05:31.174+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:05:31.174+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:05:31.233+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:05:31.233+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:05:31.249+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:05:31.249+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:05:31.249+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:05:31.249+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:05:31.276+05:30  INFO 14612 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:09:16.145+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:09:16.166+05:30  INFO 14612 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:09:16.379+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:09:16.385+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:09:16.425+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:16.454+05:30  INFO 14612 --- [http-nio-8181-exec-10] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:09:36.859+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:09:36.864+05:30  INFO 14612 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:09:36.906+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:09:36.915+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:36.924+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:09:36.924+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:36.927+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:09:36.927+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:09:36.927+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:09:36.927+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:09:36.939+05:30  INFO 14612 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:10:55.864+05:30  INFO 14612 --- [http-nio-8181-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 5655 ms
+2023-12-02T22:11:23.382+05:30  INFO 14612 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:11:23.382+05:30  INFO 14612 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:11:47.056+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:11:47.056+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:11:47.089+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:11:47.089+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:11:47.097+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:11:47.097+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:11:47.097+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:11:47.097+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:11:47.512+05:30  INFO 14612 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:22:54.512+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-12-02T22:23:00.230+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-02T22:23:00.645+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-02T22:23:01.985+05:30  WARN 14612 --- [RMI TCP Connection(35)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)
+2023-12-02T22:23:04.572+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02T22:23:04.972+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-02T22:23:05.110+05:30  INFO 14612 --- [RMI TCP Connection(35)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-02T22:23:18.091+05:30  INFO 1940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Starting OnlinegrocerydeliveryApplication using Java 17.0.8.1 with PID 1940 (C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery\target\classes started by himak in C:\Users\himak\OneDrive\Desktop\Hexaware\case study\Project\onlinegrocerydelivery)
+2023-12-02T22:23:18.104+05:30  INFO 1940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-02T22:23:21.093+05:30  INFO 1940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-02T22:23:21.336+05:30  INFO 1940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 206 ms. Found 6 JPA repository interfaces.
+2023-12-02T22:23:23.195+05:30  INFO 1940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2023-12-02T22:23:23.237+05:30  INFO 1940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-02T22:23:23.238+05:30  INFO 1940 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-12-02T22:23:23.619+05:30  INFO 1940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-02T22:23:23.620+05:30  INFO 1940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5315 ms
+2023-12-02T22:23:24.081+05:30  INFO 1940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-02T22:23:24.237+05:30  INFO 1940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-12-02T22:23:25.028+05:30  WARN 1940 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-12-02T22:23:25.411+05:30  INFO 1940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-02T22:23:26.424+05:30  INFO 1940 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a3c99f1
+2023-12-02T22:23:26.430+05:30  INFO 1940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-02T22:23:26.789+05:30  INFO 1940 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-12-02T22:23:30.492+05:30  INFO 1940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-02T22:23:30.526+05:30  INFO 1940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02T22:23:36.045+05:30  WARN 1940 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-02T22:23:36.974+05:30  INFO 1940 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@49314684, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d5d945d, org.springframework.security.web.context.SecurityContextHolderFilter@586af46, org.springframework.security.web.header.HeaderWriterFilter@2a23c061, org.springframework.web.filter.CorsFilter@60c33609, org.springframework.security.web.authentication.logout.LogoutFilter@20e25bf7, com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter@1ec09a68, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6700374f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63024843, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6137dc84, org.springframework.security.web.session.SessionManagementFilter@f5314bc, org.springframework.security.web.access.ExceptionTranslationFilter@6e6ec71f, org.springframework.security.web.access.intercept.AuthorizationFilter@367653cc]
+2023-12-02T22:23:37.891+05:30  INFO 1940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2023-12-02T22:23:37.995+05:30  INFO 1940 --- [main] c.h.o.OnlinegrocerydeliveryApplication   : Started OnlinegrocerydeliveryApplication in 21.341 seconds (process running for 25.453)
+2023-12-02T22:23:46.350+05:30  INFO 1940 --- [http-nio-8181-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-02T22:23:46.351+05:30  INFO 1940 --- [http-nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-02T22:23:46.383+05:30  INFO 1940 --- [http-nio-8181-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
+2023-12-02T22:23:51.106+05:30  INFO 1940 --- [http-nio-8181-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2999 ms
+2023-12-02T22:24:30.000+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:24:30.002+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:24:56.379+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:24:56.381+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:24:56.520+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:24:56.520+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:24:56.561+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:24:56.571+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:24:56.571+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:24:56.572+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:24:56.858+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:25:38.396+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:25:38.417+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:25:38.624+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:25:38.631+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:38.710+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:25:38.711+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:38.730+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:25:38.731+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:25:38.732+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:25:38.732+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:38.870+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:25:44.362+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:25:44.364+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:25:44.389+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:25:44.391+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:44.445+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:25:44.445+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:44.556+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:25:44.556+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:25:44.556+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:25:44.557+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:25:44.584+05:30  INFO 1940 --- [http-nio-8181-exec-4] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:00.915+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:00.974+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:01.541+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:01.541+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:01.862+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:01.862+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:01.878+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:01.878+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:01.878+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:01.878+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:01.934+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:04.691+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:04.691+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:04.935+05:30  INFO 1940 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:04.935+05:30  INFO 1940 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:05.009+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:05.009+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:05.040+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:05.040+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:05.049+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:05.049+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:05.060+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:05.060+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:05.072+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:05.378+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:05.378+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:05.386+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:05.386+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:05.386+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:05.401+05:30  INFO 1940 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:05.529+05:30  WARN 1940 --- [http-nio-8181-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "undefined"]
+2023-12-02T22:30:09.706+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:09.706+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:09.732+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:09.732+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:09.746+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:09.746+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:09.763+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:09.763+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:10.003+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:10.003+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:10.035+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:30:10.064+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:10.064+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:10.083+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:10.083+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:10.094+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:10.094+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:10.094+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:10.094+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:10.105+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:27.079+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:27.079+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.092+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:27.092+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.100+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:27.100+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:27.100+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:27.100+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.292+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:27.292+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:27.317+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:27.317+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.342+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:27.342+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.349+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:27.349+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:27.349+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:27.349+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:27.353+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:27.385+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:30:30.676+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:30.682+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:30.728+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:30.730+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:30.734+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:30.734+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:30.739+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:30.739+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:31.581+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:31.581+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:31.717+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:30:31.812+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:31.812+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:31.834+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:31.834+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:31.834+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:31.834+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:31.834+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:43.278+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:32.382+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:43.297+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:43.524+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:43.685+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:43.685+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:43.699+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:43.699+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:43.705+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:43.705+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:43.918+05:30  INFO 1940 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:43.918+05:30  INFO 1940 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:44.174+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:44.184+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:44.206+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:44.206+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:44.214+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:44.846+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:44.851+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:44.851+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:44.905+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:30:44.979+05:30  INFO 1940 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:30:44.985+05:30  INFO 1940 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:30:45.230+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:30:45.305+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:45.305+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:45.310+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:45.315+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:45.319+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:45.319+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:45.319+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:45.319+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:46.137+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            :  Fetched Admin Data Using Admin ID 
+2023-12-02T22:30:48.649+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:48.649+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:48.676+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:30:48.676+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:48.681+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:30:48.681+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:30:48.681+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:30:48.681+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:30:48.686+05:30  INFO 1940 --- [http-nio-8181-exec-8] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:31:25.220+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:31:25.247+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:31:25.431+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:25.431+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:25.485+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:25.485+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:25.492+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:31:25.492+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:31:25.492+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:31:25.493+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:25.582+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:31:30.082+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:30.087+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.103+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:30.103+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.110+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:31:30.110+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:31:30.111+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:31:30.111+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.390+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:31:30.390+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:31:30.413+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:30.413+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.430+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:31:30.431+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.437+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:31:30.438+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:31:30.438+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:31:30.438+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:31:30.448+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:31:30.823+05:30  INFO 1940 --- [http-nio-8181-exec-9] c.h.o.service.AdminServiceImp            : Fetched Admin Data Using Username: Prajwal
+2023-12-02T22:32:50.968+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:32:51.033+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:32:51.343+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:32:51.353+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:32:51.481+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:32:51.481+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:32:51.488+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:32:51.489+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:32:51.489+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:32:51.489+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:32:51.518+05:30  INFO 1940 --- [http-nio-8181-exec-5] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 
+2023-12-02T22:33:08.987+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:33:08.987+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:09.002+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:33:09.002+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:09.007+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:33:09.007+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:33:09.007+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:33:09.007+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:09.628+05:30  INFO 1940 --- [http-nio-8181-exec-3] c.h.o.service.AdminServiceImp            : Updated Admin Data Into Table: Admin [adminId=4, userName=Prajwal, password=$2a$10$2Ryt7mn9Kb/.J9ax9ym82egzaC2B9yimQe0pUhmFfhMwF6QEMTtLK, role=ADMIN]
+2023-12-02T22:33:29.129+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Generating token for customername: Prajwal
+2023-12-02T22:33:29.129+05:30  INFO 1940 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Creating token for username: Prajwal
+2023-12-02T22:33:29.162+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:33:29.162+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:29.194+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2023-12-02T22:33:29.194+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:29.199+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prajwal
+2023-12-02T22:33:29.200+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2023-12-02T22:33:29.200+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2023-12-02T22:33:29.201+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2023-12-02T22:33:29.210+05:30  INFO 1940 --- [http-nio-8181-exec-6] c.h.o.service.AdminServiceImp            :  Fetched All The Admin Data 

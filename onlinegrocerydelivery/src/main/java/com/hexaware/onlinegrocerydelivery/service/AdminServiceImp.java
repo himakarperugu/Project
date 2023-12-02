@@ -56,6 +56,7 @@ public class AdminServiceImp implements IAdminService {
 		}
 		
 		AdminDTO adminDTO = new AdminDTO();
+		adminDTO.setAdminId(admin.getAdminId());
 		adminDTO.setUserName(admin.getUserName());
 		adminDTO.setPassword(passwordEncoder.encode(admin.getPassword()));
 		logger.info(" Fetched Admin Data Using Admin ID ");
