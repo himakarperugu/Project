@@ -49,10 +49,10 @@ public class CartController {
 		return service.getAllCart();
 	}
 	
-	@PutMapping("/updateCart/{cartId}")
+	@PutMapping("/updateCart")
 	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
-	public Cart updateCart(@PathVariable int cartId, @RequestBody CartDTO cartDTO) {
-	    cartDTO.setCartId(cartId); 
+	public Cart updateCart(@RequestBody CartDTO cartDTO) {
+	    //cartDTO.setCartId(cartId); 
 	    return service.updateCart(cartDTO);
 	}
 

@@ -24,9 +24,22 @@ public class Cart {
 	
 	
 	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	private Product product;
 	
 
-	@OneToOne(cascade = CascadeType.ALL)
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	
+	
+	
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Customer customer;
 	
 	

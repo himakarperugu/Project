@@ -1,0 +1,156 @@
+<h2><marquee behavior="scroll" direction="">Customer Login Page</marquee>
+</h2>
+
+<div class="user_loginpage">
+  <div id="user_login" class="text-center">
+    <div>
+      <button style="box-shadow: 5px 5px 3px teal;width: 200px;border: none;border-radius: 20px;height: 40px; color: white;background-color:cadetblue; font-size: larger; font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" (click)="showForm()" class="btn btn-success ">Login</button>
+    </div> <br>
+    
+    <div *ngIf="isshowFormVisible" class="container  col-lg-4">
+        <form   #formData=ngForm  (ngSubmit)="readFormData(formData)" >
+            <fieldset>
+              
+              <div id="customerpage" class="form-group">
+                <label for="exampleInputEmail1">UserName</label> <br>
+                <input type="username" class="form-control" name="username"  required  #username="ngModel"  ngModel   placeholder="Enter Valid Name"> <br>
+                <small id="userHelp" class="form-text text-muted" style="color: rgb(29, 33, 117);"></small><br> <br>
+                <span style="color:red"  *ngIf="username.touched && username.invalid" >CustomerName is required</span>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label> <br>
+                <input type="password" class="form-control"  name="password"  required  #pwd="ngModel"   ngModel placeholder="Enter Valid Password">
+                <span style="color:red"   *ngIf="pwd.touched && pwd.invalid" >Password is mandartory</span>
+              </div> <br>
+      
+              <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 200px;height: 50px;font-weight: bold" type="submit" class="btn btn-primary" [disabled]="formData.invalid">Submit</button>
+            </fieldset>
+    
+        </form>
+      </div>
+      </div>
+
+
+  
+    
+    
+    <div id="user_add">
+
+    <div id="user_add" class="text-center">
+    <button style="box-shadow:5px 5px 3px teal;border: none;width: 200px;border-radius: 20px;height: 40px; color: white;background-color: cadetblue; font-size: larger; font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" (click)="toggleForm()" class="btn btn-success">Customer Registration</button> <br> <br>
+    </div>
+    
+    
+    <form *ngIf="isFormVisible" #myform="ngForm"  method="post"  class="container col-md-4" (ngSubmit)="insertEmployee(myform.value)">
+        
+       <fieldset>
+        <div class="form-group">
+          Customer Name: <br><input type="text" class="form-control"  #usernamecontrol="ngModel" name="customerName"  required ngModel placeholder="Enter Valid Name"> 
+          <span  style="color: red;"  *ngIf="usernamecontrol.touched && usernamecontrol.invalid">Customer Name is Mandatory</span>
+          </div> <br>
+      
+          <div class="form-group">
+            Email: <br><input type=email class="form-control"  #emailcontrol="ngModel" name="email"  required ngModel placeholder="Enter Valid Email">
+            <span  style="color: red;"  *ngIf="emailcontrol.touched && emailcontrol.invalid">email is Mandatory</span>
+            </div>
+      <br>
+            <div class="form-group">
+              Phone Number: <br><input type=text class="form-control"  #numbercontrol="ngModel" name="phoneNumber"  required ngModel placeholder="Enter Valid PhoneNumber">
+              <span  style="color: red;"  *ngIf="numbercontrol.touched && numbercontrol.invalid">Phone Number is Mandatory</span>
+              </div> <br>
+              <div class="form-group">
+                Address: <br><input type=text class="form-control"  #locationcontrol="ngModel" name="deliveryAddress"  required ngModel placeholder="Enter Valid DeliveryAddress"> 
+                <span  style="color: red;"  *ngIf="locationcontrol.touched && locationcontrol.invalid">Location is Mandatory</span>
+                </div>
+      <br>
+          <div class="form-group">
+              Password: <br><input type="password" class="form-control"  #pwdcontrol="ngModel" name="password"  required ngModel placeholder="Enter Valid Password">
+              <span  style="color: red;"  *ngIf="pwdcontrol.touched && pwdcontrol.invalid">Password is Mandatory</span>
+          </div>
+          <br>
+      <br>
+          <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 200px;height: 50px;font-weight: bold" type="submit"  class="btn btn-primary" [disabled]="myform.invalid" >Submit</button>
+          
+
+       </fieldset>
+    </form>
+    
+    </div>
+    
+<div  id="user_delete">
+<br>
+  <br>
+  <br>
+  <div class="text-center">
+  <button style="box-shadow: 5px 5px 3px teal;border: none;width: 200px;border-radius: 20px;height: 40px; color: white;background-color:cadetblue; font-size: larger; font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" (click)="deleteForm()" class="btn btn-success">Delete Customer</button>
+  </div><br>
+  
+  <div *ngIf="isdeleteFormVisible">
+  <div  class="form-group">
+    <form action="">
+      <fieldset>
+        <label for="deleteId">Enter ID to Delete:</label> <br>
+    <input type="number" class="form-control" name="deleteId" [(ngModel)]="deleteId" required>
+  
+  <br> <br>
+  <!-- Modify the delete button to call the deleteById method with the entered ID -->
+  <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 200px;height: 50px;font-weight: bold" type="button" class="btn btn-danger" (click)="deleteById()">Delete</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+  
+
+</div>
+    
+    
+    <br> <br> <br> 
+    
+  <div  id="user_update">
+    <div class="text-center">
+      <button style="box-shadow: 5px 5px 3px teal;border: none;width: 200px;border-radius: 20px;height: 40px; color: white;background-color: cadetblue; font-size: larger; font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" (click)="updateForm()" class="btn btn-success ">Update Customer</button> <br> <br>
+    </div>
+    <div *ngIf="isupdateFormVisible" class="container  col-lg-4">
+      <form   #formData=ngForm  (ngSubmit)="update(formData)" >
+<fieldset>
+  <div class="form-group">
+        
+    Customer Id: <br><input type="number" class="form-control" name="customerId"  required  #customerId="ngModel"  ngModel placeholder="Enter Valid Customer ID">
+    <span style="color:red"  *ngIf="customerId.touched && customerId.invalid" >Id is required</span>
+  </div> <br>
+  <div class="form-group">
+    
+    CustomerName: <br><input type="text" class="form-control" name="customerName"  required  #customerName="ngModel"  ngModel placeholder="Enter Valid Name">
+    <span style="color:red"  *ngIf="customerName.touched && customerName.invalid" >Name is required</span>
+  </div> <br>
+  <div class="form-group">
+    
+    Email: <br><input type="text" class="form-control" name="email"  required  #email="ngModel"  ngModel placeholder="Enter Valid Email">
+    <span style="color:red"  *ngIf="email.touched && email.invalid" >Email is required</span>
+  </div> <br>
+  <div class="form-group">
+    
+    PhoneNumber: <br><input type="text" class="form-control" name="phoneNumber"  required  #phoneNumber="ngModel"  ngModel placeholder="Enter Valid Phone Number">
+    <span style="color:red"  *ngIf="phoneNumber.touched && phoneNumber.invalid" >Phonenumber is required</span>
+  </div> <br>
+  <div class="form-group">
+
+    DeliveryAddress: <br><input type="text" class="form-control" name="deliveryAddress"  required  #deliveryAddress="ngModel"  ngModel placeholder="Enter Address">
+    <span style="color:red"  *ngIf="deliveryAddress.touched && deliveryAddress.invalid" >Delivery Address is required</span>
+  </div> <br>
+  <div class="form-group">
+    
+    Password: <br><input type="password" class="form-control"  name="password"  required  #pwd="ngModel"   ngModel placeholder="Enter valid Password">
+    <span style="color:red"   *ngIf="pwd.touched && pwd.invalid" >Password is mandartory</span>
+  </div>
+<br>
+  <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 200px;height: 50px;font-weight: bold" type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
+
+
+</fieldset>  </form>
+    </div>
+  </div>  
+  
+   
+
+</div>

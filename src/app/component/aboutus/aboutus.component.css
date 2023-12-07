@@ -1,0 +1,22 @@
+.about{
+    background-image: url(https://t3.ftcdn.net/jpg/01/15/05/88/360_F_115058873_PlbfM1AlHNW31gBQcKSxZLhGdUst9ErP.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    position: relative;
+    /* background-color: linear-gradient(rgb(0,0,0,0,50),rgb(0,0,0,0,50)); */
+}
+
+p{
+    color: rgb(12, 17, 6);
+    font-size: medium;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    padding: 20px;
+    line-height: 25px;
+
+}

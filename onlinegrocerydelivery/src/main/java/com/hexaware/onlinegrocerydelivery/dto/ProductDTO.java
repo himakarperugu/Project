@@ -23,20 +23,20 @@ public class ProductDTO {
 	private String brand;
 	@Positive(message = "Price should be a positive number")
 	private int price;
-	private int customerId;
+	//private int customerId;
 	
 	
 
 
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+//
+//	public int getCustomerId() {
+//		return customerId;
+//	}
+//
+//
+//	public void setCustomerId(int customerId) {
+//		this.customerId = customerId;
+//	}
 
 
 	public ProductDTO() {
