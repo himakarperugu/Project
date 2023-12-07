@@ -14,12 +14,12 @@ export class ProductComponent implements  OnInit{
   key:any;
   response: any;
   productService:any
-  productKey:any;
+  adminKey:any;
   authRequest: Product = new Product();
   deleteId!: number;
   getName!:String;
   getresponseName:any;
-  productKey$!: Observable<any>;
+  adminKey$!: Observable<any>;
   getCategory!: String;
 
 
@@ -27,8 +27,8 @@ export class ProductComponent implements  OnInit{
     this.productService = jwtService;
     this.key = this.admintoken.Token;
     this.key.subscribe((genToken: any) => {
-      this.productKey = genToken;
-      console.log(this.productKey)
+      this.adminKey = genToken;
+     // console.log(this.adminKey)
     });
   }
   ngOnInit(): void {
@@ -38,14 +38,14 @@ export class ProductComponent implements  OnInit{
 
 
   public getall(){
-    this.accessApi(this.productKey)
-    console.log(this.productKey);
+    this.accessApi(this.adminKey)
+    console.log(this.adminKey);
     
   }
 
-  public accessApi(productKey: any) {
-    console.log('accessApi', productKey);  
-    let response = this.productService.getAll(productKey);
+  public accessApi(adminKey: any) {
+    console.log('accessApi', adminKey);  
+    let response = this.productService.getAll(adminKey);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData);
@@ -80,10 +80,8 @@ export class ProductComponent implements  OnInit{
 
 
   add(formData: any) {
-    const productId: number = formData.form.value.productId;
+    //const productId: number = formData.form.value.productId;
     const productName: string = formData.form.value.productName;
-    
-  
     const brand: string = formData.form.value.brand;
     const category: string = formData.form.value.category;
     const price: number = formData.form.value.price;
@@ -99,7 +97,7 @@ export class ProductComponent implements  OnInit{
       
     };
   
-    this.productService.addAdmin(updatedAdmin, this.productKey)
+    this.productService.add(updatedAdmin, this.adminKey)
       .subscribe(
         (updatedAdmin: Product) => {
           console.log('Updated product is: ', updatedAdmin);
@@ -112,21 +110,29 @@ export class ProductComponent implements  OnInit{
 
   }
 
-  deleteById() {
-    
-    console.log("msg")
-
-    this.jwtService.delete(this.deleteId, this.productKey).subscribe((msg: any) => {
-      console.log("Deleted " + msg);
-    });
-  }
   
+
+  
+
+//   deleteById() {
+// debugger
+//     this.jwtService.delete(this.deleteId, this.adminKey).subscribe((msg:any) => {
+//       console.log( msg);
+//       console.log("hi");
+//     });
+//   }
+  
+
+
+
   getByName(){
-    this.jwtService.getName(this.getName,this.productKey).subscribe((message) => {
+    this.jwtService.getName(this.getName,this.adminKey).subscribe((message) => {
       this.getresponseName=message
       console.log("get Name is success " + message);
     });
   }
+
+
   //  getByCategory(){
   //   this.jwtService.getCategory(this.getCategory,this.productKey).subscribe((message) => {
   //     this.getresponseName=message
@@ -160,7 +166,7 @@ export class ProductComponent implements  OnInit{
         price: price
       };
     
-      this.productService.update(updatedAdmin, this.productKey)
+      this.productService.update(updatedAdmin, this.adminKey)
         .subscribe(
           (updatedAdmin: Product) => {
             console.log('Updated Admin is: ', updatedAdmin);

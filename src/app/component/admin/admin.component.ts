@@ -22,6 +22,13 @@ export class AdminComponent implements OnInit {
 
 
   authRequest: AuthRequest = new AuthRequest();
+  isLoggedIn: boolean = false;
+
+  login(formData: any) {
+    // Implement your login logic here
+    // Set this.isLoggedIn to true upon successful login
+    this.isLoggedIn = true;
+  }
   
 
 constructor(private adminService:AdminService){}
@@ -102,9 +109,8 @@ insertEmployee(data:Admin){
     );
 }
 deleteById() {
+  debugger
 this.getAccessToken(this.authRequest);
-
-
 this.adminService.delete(this.deleteId, this.token).subscribe((message) => {
 console.log("Deleted " + message);
 });

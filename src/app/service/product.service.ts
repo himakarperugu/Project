@@ -17,20 +17,25 @@ const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 return this.http.get(this.baseURL + "product/getAllProduct", { headers, responseType: 'text' as 'json' });
 }
 
-addAdmin(addAdmin: Product, token: string): Observable<Product> {
+add(add: Product, token: string): Observable<Product> {
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  return this.http.post<Product>(`${this.baseURL}product/addProduct`, addAdmin, { headers });
+  return this.http.post<Product>(`${this.baseURL}product/addProduct`, add, { headers });
 }
 
 update(update: Product, token: string): Observable<Product> {
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
   return this.http.put<Product>(`${this.baseURL}product/updateProduct/${update.productId}`,update, { headers });
 }
+// delete(Id: number, token: any): Observable<string> {
+//   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+//   return this.http.delete<string>(`${this.baseURL}product/deleteById/${Id}`, { headers });
+// }
+// delete(Id: number, token: any): Observable<Product> {
+//   const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+//   return this.http.delete<Product>(`${this.baseURL}product/deleteById/${Id}`, { headers });
+// }
 
-delete(productId: number, token: any): Observable<string> {
-  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  return this.http.delete<string>(`${this.baseURL}product/deleteById/${productId}`, { headers });
-}
+
 getName(Name: String, token: any): Observable<Product> {
   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
   return this.http.get<Product>(`${this.baseURL}product/getByProductName/${Name}`, { headers });

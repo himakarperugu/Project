@@ -1,11 +1,11 @@
 .header {
-    background-color: rgb(0, 102, 255);
+    background-color: rgb(191, 212, 244);
     padding: 20px;
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    color: white;
+    color: rgb(58, 56, 56);
     justify-content: space-between;
     border-radius: 10px;
     box-shadow: 0px 3px 4px gray;
@@ -35,7 +35,7 @@ li button{
     padding: 5px;
     background-color: #464545;
     box-shadow: 0px 3px 5px #878484;
-    color: white;
+    color: rgb(244, 234, 234);
     font-size: medium;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;

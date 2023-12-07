@@ -57,7 +57,7 @@ public class OrderController {
 		return orderservice.getAllOrder();
 	}
 	
-	@PutMapping("/updateOrder/{orderId}")
+	@PutMapping("/updateOrder")
 	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
 	public Orders updateOrder(@RequestBody OrderDTO OrderDTO) {
 		
