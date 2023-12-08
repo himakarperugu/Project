@@ -4,6 +4,8 @@ import { ProductService } from 'src/app/service/product.service';
 import { AdminService } from 'src/app/service/admin.service';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CustomerService } from 'src/app/service/customer.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -21,16 +23,34 @@ export class ProductComponent implements  OnInit{
   getresponseName:any;
   adminKey$!: Observable<any>;
   getCategory!: String;
+  admin: boolean=false;
+  customer: boolean=false;
 
 
-  constructor(private jwtService: ProductService, private admintoken: AdminService) {
-    this.productService = jwtService;
-    this.key = this.admintoken.Token;
+
+  constructor(private jwtService:ProductService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
+
+    
+    this.productService=jwtService;
+    if(admintoken.admin==true){
+      this.admin=true;
+      this.customer=false;
+    this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-     // console.log(this.adminKey)
+      
+    });}
+    if(customertoken.customer==true){
+      this.admin=false;
+      this.customer=true;
+      this.key=customertoken.Token;
+    this.key.subscribe((genToken: any) => {
+      this.adminKey = genToken;
+      
     });
-  }
+    }
+    
+   }
   ngOnInit(): void {
     
   }
@@ -179,6 +199,11 @@ export class ProductComponent implements  OnInit{
         );
     }
     
+
+  goBack()
+  {
+    this.router.navigate(['/admindashboard'])
+  }
   
 }
   

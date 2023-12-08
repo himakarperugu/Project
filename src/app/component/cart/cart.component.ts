@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from 'src/app/model/Cart';
 import { AdminService } from 'src/app/service/admin.service';
 import { CartService } from 'src/app/service/cart.service';
+import { CustomerService } from 'src/app/service/customer.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,20 +14,44 @@ export class CartComponent {
 
   key:any;
   response: any;
-  menuService:any
+  cartService:any
   adminKey:any;
   authRequest: Cart = new Cart();
   deleteId!: number;
   getName!:String;
+  customer: boolean=false;
+  admin: boolean=false;
 
-  constructor(private jwtService:CartService,admintoken:AdminService){
-    this.menuService=jwtService;
+  constructor(private jwtService:CartService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
+   
+    this.cartService=jwtService;
+    if(admintoken.admin==true){
+      this.admin=true;
+      this.customer=false;
     this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      // console.log(genToken);
-      // this.accessApi(this.adminKey);
+      
+    });}
+    if(customertoken.customer==true){
+      this.admin=false;
+      this.customer=true;
+      this.key=customertoken.Token;
+    this.key.subscribe((genToken: any) => {
+      this.adminKey = genToken;
+      
     });
+    }
+   
+   
+   
+    // this.menuService=jwtService;
+    // this.key=admintoken.Token;
+    // this.key.subscribe((genToken: any) => {
+    //   this.adminKey = genToken;
+    //   // console.log(genToken);
+    //   // this.accessApi(this.adminKey);
+    // });
     
    }
    public getall(){
@@ -35,7 +61,7 @@ export class CartComponent {
   }
   public accessApi(adminKey: any) {
     console.log('accessApi', adminKey);  
-    let response = this.menuService.getAll(adminKey);
+    let response = this.cartService.getAll(adminKey);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); // Parse string to array
@@ -82,7 +108,7 @@ export class CartComponent {
    
     };
   
-    this.menuService.add(updatedAdmin, this.adminKey)
+    this.cartService.add(updatedAdmin, this.adminKey)
       .subscribe(
         (updatedAdmin: Cart) => {
           console.log('Updated cart is: ', updatedAdmin);
@@ -110,7 +136,7 @@ export class CartComponent {
    totalAmount:totalAmount,
     };
   
-    this.menuService.updateMenu(updatedAdmin, this.adminKey)
+    this.cartService.updateCart(updatedAdmin, this.adminKey)
       .subscribe(
         (updatedAdmin: Cart) => {
           console.log('Updated Admin is: ', updatedAdmin);
@@ -125,5 +151,10 @@ export class CartComponent {
 
 
 }
+goBack()
+  {
+    this.router.navigate(['/admindashboard'])
+  }
+  
 
 }

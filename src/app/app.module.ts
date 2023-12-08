@@ -17,6 +17,8 @@ import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
 import { CustomerComponent } from './component/customer/customer.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { CustomerdashboardComponent } from './component/customerdashboard/customerdashboard.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { CustomerComponent } from './component/customer/customer.component';
     LoginComponent,
     RegistrationComponent,
     AboutusComponent,
-    CustomerComponent
+    CustomerComponent,
+    AdmindashboardComponent,
+    CustomerdashboardComponent
   ],
   imports: [
     BrowserModule,

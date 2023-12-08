@@ -50,7 +50,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getAllCustomer")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
 	public List<Customer> getAllCustomer() {
 		
 		return customerservice.getAllCustomer();

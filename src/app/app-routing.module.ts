@@ -8,17 +8,21 @@ import { LoginComponent } from './component/login/login.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
 import { CustomerComponent } from './component/customer/customer.component';
 import { OrderComponent } from './component/order/order.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { CustomerdashboardComponent } from './component/customerdashboard/customerdashboard.component';
 
 const routes: Routes = [ {path:'', component:HomeComponent},
 
 {path:'aboutus', component:AboutusComponent},
 {path:'adminlogin',component:LoginComponent},
 {path:'customerlogin',component:CustomerComponent},
-// {path:'registration',component:RegistrationComponent},
+{path:'admindashboard',component:AdmindashboardComponent},
+{path:'customerdashboard',component:CustomerdashboardComponent},
 {path:'product',component:ProductComponent},
 {path:'cart',component:CartComponent},
 {path:'order',component:OrderComponent},
 {path:'**',component:NotfoundComponent}];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

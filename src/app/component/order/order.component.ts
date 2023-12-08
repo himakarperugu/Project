@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Orders } from 'src/app/model/Orders';
 import { AdminService } from 'src/app/service/admin.service';
+import { CustomerService } from 'src/app/service/customer.service';
 import { OrdersService } from 'src/app/service/orders.service';
 
 @Component({
@@ -17,16 +19,35 @@ export class OrderComponent {
   deleteId!: number;
   getName!:String;
   getresponseName:any;
-  constructor(private jwtService:OrdersService,admintoken:AdminService){
+  admin: boolean=false;
+  customer: boolean=false;
+  constructor(private jwtService:OrdersService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
 
-    
     this.orderService=jwtService;
+    if(admintoken.admin==true){
+      this.admin=true;
+      this.customer=false;
     this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      // console.log(genToken);
-      // this.accessApi(this.adminKey);
+      
+    });}
+    if(customertoken.customer==true){
+      this.admin=false;
+      this.customer=true;
+      this.key=customertoken.Token;
+    this.key.subscribe((genToken: any) => {
+      this.adminKey = genToken;
+      
     });
+    }
+    // this.orderService=jwtService;
+    // this.key=admintoken.Token;
+    // this.key.subscribe((genToken: any) => {
+    //   this.adminKey = genToken;
+    //   // console.log(genToken);
+    //   // this.accessApi(this.adminKey);
+    // });
     
    }
 
@@ -97,15 +118,15 @@ export class OrderComponent {
       );
   }
 
-  deleteById() {
-    // Remove this line, as it is not needed
-    // this.menuService(this.authRequest);
+  // deleteById() {
+  //   // Remove this line, as it is not needed
+  //   // this.menuService(this.authRequest);
   
-    // Now, make the delete request with the entered ID
-    this.jwtService.delete(this.deleteId, this.adminKey).subscribe((msg: any) => {
-      console.log("Deleted " + msg);
-    });
-  }
+  //   // Now, make the delete request with the entered ID
+  //   this.jwtService.delete(this.deleteId, this.adminKey).subscribe((msg: any) => {
+  //     console.log("Deleted " + msg);
+  //   });
+  // }
 
   update(formData: any) {
     const orderId: number = formData.form.value.orderId;
@@ -139,7 +160,10 @@ export class OrderComponent {
       );
   }
   
-
+  goBack()
+  {
+    this.router.navigate(['/admindashboard'])
+  }
 
 
 

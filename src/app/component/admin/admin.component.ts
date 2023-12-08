@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/admin.service';
 import { AuthRequest } from 'src/app/model/AuthRequest';
 import { Admin } from 'src/app/model/Admin';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -18,6 +19,7 @@ export class AdminComponent implements OnInit {
   token: any;
   admin: Admin | undefined;
   adminId: number | undefined;
+  static token: any;
  
 
 
@@ -31,7 +33,7 @@ export class AdminComponent implements OnInit {
   }
   
 
-constructor(private adminService:AdminService){}
+constructor(private adminService:AdminService,private router:Router){}
 
 ngOnInit(): void {
   
@@ -51,7 +53,8 @@ public getAccessToken(authRequest:any){
     response.subscribe( (genToken:any)=> {  this.token = genToken ;console.log(genToken); 
 
     this.accessApi(this.token) });
-
+      alert("admin login successful");
+      
     
 
 }
@@ -65,6 +68,7 @@ response.subscribe((responseData: any) => {
   if (typeof responseData === 'string') {
     this.response = JSON.parse(responseData); // Parse string to array
     console.log('Response Data:', this.response);
+    this.router.navigate(['admindashboard'])
   } else {
     console.log('Unexpected response type:', responseData);
     // Handle unexpected response if necessary

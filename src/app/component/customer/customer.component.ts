@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthRequest } from 'src/app/model/AuthRequest';
 import { customer } from 'src/app/model/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
+import { CustomerdashboardComponent } from '../customerdashboard/customerdashboard.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class CustomerComponent {
   token: any;
   authRequest: AuthRequest = new AuthRequest();
 
-  constructor(private customerService: CustomerService, private adminService: CustomerService) {}
+  constructor(private customerService: CustomerService, private adminService: CustomerService,private router:Router) {}
 
   readFormData(formData: any) {
     this.authRequest.username = formData.form.value.username;
@@ -24,11 +26,12 @@ export class CustomerComponent {
   }
  
   public accessApi(token: any) {
-    let response = this.customerService.authorizationTest(token);
+    let response = this.customerService.getAll(token);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); // Parse string to array
         console.log('Response Data:', this.response);
+        this.router.navigate(['admindashboard'])
       } else {
         console.log('Unexpected response type:', responseData);
         // Handle unexpected response if necessary
@@ -80,6 +83,7 @@ public getAccessToken(authRequest: any) {
     this.token = genToken;
     console.log(genToken);
      this.accessApi(this.token);
+     alert("Log in successful")
   });
 }
 
