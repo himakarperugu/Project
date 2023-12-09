@@ -36,9 +36,8 @@ public class ProductController {
 		super();
 		this.productservice = productservice;
 	}
-	
+
 	@PostMapping("/addProduct")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public ResponseEntity<Product> addProduct(@Valid @RequestBody  ProductDTO productDTO) {
 		
 		return new ResponseEntity<>(productservice.addProduct(productDTO), HttpStatus.CREATED);

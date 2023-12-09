@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Orders } from 'src/app/model/Orders';
 import { AdminService } from 'src/app/service/admin.service';
-import { CustomerService } from 'src/app/service/customer.service';
 import { OrdersService } from 'src/app/service/orders.service';
 
 @Component({
@@ -19,35 +18,16 @@ export class OrderComponent {
   deleteId!: number;
   getName!:String;
   getresponseName:any;
-  admin: boolean=false;
-  customer: boolean=false;
-  constructor(private jwtService:OrdersService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
+  constructor(private jwtService:OrdersService,admintoken:AdminService,private router:Router){
 
+    
     this.orderService=jwtService;
-    if(admintoken.admin==true){
-      this.admin=true;
-      this.customer=false;
     this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      
-    });}
-    if(customertoken.customer==true){
-      this.admin=false;
-      this.customer=true;
-      this.key=customertoken.Token;
-    this.key.subscribe((genToken: any) => {
-      this.adminKey = genToken;
-      
+      // console.log(genToken);
+      // this.accessApi(this.adminKey);
     });
-    }
-    // this.orderService=jwtService;
-    // this.key=admintoken.Token;
-    // this.key.subscribe((genToken: any) => {
-    //   this.adminKey = genToken;
-    //   // console.log(genToken);
-    //   // this.accessApi(this.adminKey);
-    // });
     
    }
 

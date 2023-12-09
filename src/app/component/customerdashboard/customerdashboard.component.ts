@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customerdashboard',
@@ -8,8 +8,18 @@ import { Router } from '@angular/router';
 })
 export class CustomerdashboardComponent {
   constructor(private router:Router){}
-  goBack()
-      {
-        this.router.navigate(['/customerdashboard'])
-      }
+
+  customerproduct(){
+  this.router.navigate(['/customerproduct'])
+  
+
+ }
+ customercart(){
+  this.router.navigate(['/customercart'])
+
+}
+customerorder(){
+  this.router.navigate(['/customerorder'])
+
+}
 }

@@ -8,7 +8,6 @@ import { Admin } from '../model/Admin';
 })
 export class AdminService {
   Token: any;
-  admin: any;
 
   constructor(private http:HttpClient) { }
 

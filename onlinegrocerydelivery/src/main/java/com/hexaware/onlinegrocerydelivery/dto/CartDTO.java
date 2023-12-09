@@ -20,7 +20,6 @@ public class CartDTO {
 	private int quantity;
     @Min(value = 1, message = "Total amount must be a positive number")
 	private long totalAmount;
-    private int productId;
     
     
 	public CartDTO() {
@@ -30,13 +29,12 @@ public class CartDTO {
 
 	public CartDTO(int cartId, @NotNull(message = "Id should not be null") int customerId,
 			@Positive(message = "Quantity should be a positive number") int quantity,
-			@Min(value = 1, message = "Total amount must be a positive number") long totalAmount, int productId) {
+			@Min(value = 1, message = "Total amount must be a positive number") long totalAmount) {
 		super();
 		this.cartId = cartId;
 		this.customerId = customerId;
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
-		this.productId = productId;
 	}
 
 
@@ -77,16 +75,6 @@ public class CartDTO {
 
 	public void setTotalAmount(long totalAmount) {
 		this.totalAmount = totalAmount;
-	}
-
-
-	public int getProductId() {
-		return productId;
-	}
-
-
-	public void setProductId(int productId) {
-		this.productId = productId;
 	}
 	
     

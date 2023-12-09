@@ -51,7 +51,7 @@ public class ProductServiceImp implements IProductService {
 		
 		Product product =new Product();
 		
-		//Customer customer=customerRepository.findById(productDTO.getCustomerId()).orElse(null);
+		Customer customer=customerRepository.findById(productDTO.getCustomerId()).orElse(null);
 
 
 		
@@ -59,7 +59,7 @@ public class ProductServiceImp implements IProductService {
 		product.setCategory(productDTO.getCategory());
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
-		//product.setCustomer(customer);		
+		product.setCustomer(customer);		
 		logger.info("Inserted Product Data Into Table " +productDTO);
 
 		return productRepository.save(product);

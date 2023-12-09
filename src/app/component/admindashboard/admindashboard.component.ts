@@ -7,10 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./admindashboard.component.css']
 })
 export class AdmindashboardComponent {
+
   constructor(private router:Router){}
   goBack()
       {
-        this.router.navigate(['/admindashboard'])
+        this.router.navigate(['/adminlogin'])
       }
+
 
 }

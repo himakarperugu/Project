@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthRequest } from 'src/app/model/AuthRequest';
 import { customer } from 'src/app/model/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
-import { CustomerdashboardComponent } from '../customerdashboard/customerdashboard.component';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +16,9 @@ export class CustomerComponent {
   token: any;
   authRequest: AuthRequest = new AuthRequest();
 
-  constructor(private customerService: CustomerService, private adminService: CustomerService,private router:Router) {}
+  constructor(private customerService: CustomerService, 
+
+private router:Router) {}
 
   readFormData(formData: any) {
     this.authRequest.username = formData.form.value.username;
@@ -26,15 +27,15 @@ export class CustomerComponent {
   }
  
   public accessApi(token: any) {
-    let response = this.customerService.getAll(token);
+    let response = this.customerService.authorizationTest(token);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
-        this.response = JSON.parse(responseData); // Parse string to array
+        this.response = JSON.parse(responseData); 
         console.log('Response Data:', this.response);
-        this.router.navigate(['admindashboard'])
+        alert("Customer Login Successfull");
+        this.router.navigate(['customerdashboard'])
       } else {
         console.log('Unexpected response type:', responseData);
-        // Handle unexpected response if necessary
       }
     });
   }
@@ -61,7 +62,7 @@ export class CustomerComponent {
   insertEmployee(data:customer){
     console.log(data)
     
-    this.adminService.insert(data)
+    this.customerService.insert(data)
     .subscribe(
       (adm)=>{console.log(adm);}
       );
@@ -79,11 +80,11 @@ deleteById() {
 
 public getAccessToken(authRequest: any) {
   let response = this.customerService.getGeneratedToken(authRequest);
-  response.subscribe((genToken) => {
+  response.subscribe((genToken:any) => {
     this.token = genToken;
     console.log(genToken);
      this.accessApi(this.token);
-     alert("Log in successful")
+    
   });
 }
 
@@ -112,7 +113,7 @@ update(formData: any) {
 
   };
 
-  this.adminService.updateCustomer(updatedAdmin, this.token)
+  this.customerService.updateCustomer(updatedAdmin, this.token)
     .subscribe(
       (updatedCustomer: customer) => {
         console.log('Updated Customer is: ', updatedCustomer);

@@ -28,7 +28,7 @@ export class CartService {
   
     delete(Id: number, token: any): Observable<string> {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      return this.http.delete<string>(`${this.baseURL}cart/deleteById/${Id}`, { headers });
+      return this.http.delete<string>(`${this.baseURL}cart/cart`, { headers });
     }
   
     

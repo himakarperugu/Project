@@ -3,7 +3,7 @@
 <body>
 
 
- <button (click)="getall()">Product Menu</button>
+ <button (click)="getall()">Display Products</button>
  <div *ngIf="response && response.length > 0">
    <table border="1">
    
@@ -15,6 +15,7 @@
          <th>Category</th>
          <th>Brand</th>
          <th>Price</th>
+         <th>actions</th>
        </tr>
      </thead>
      
@@ -25,6 +26,11 @@
          <td>{{ admin.category }}</td>
          <td>{{ admin.brand }}</td>
          <td>{{ admin.price }}</td>
+         <td>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger" style="background-color: red" (click)="delete(admin.productId)">Delete</button>
+          </div>
+        </td>
        </tr>
      </tbody>
    </table>
@@ -116,10 +122,10 @@
   
 
   <button type="button" class="btn btn-danger" (click)="deleteById()">Delete</button>
-  </div> -->
-  <!-- <br> -->
+  </div>
+  <br> -->
 
-  <div class="text-center">
+  <!-- <div class="text-center">
     <button (click)="getFormName()" class="btn btn-success">Get ProductName</button>
     </div>
     <div *ngIf="isgetFormNameVisible">
@@ -155,12 +161,13 @@
           </tbody>
         </table>
       </div> 
+
+
+
       <br>
       <br>
-      <div class="custom-button">
-          <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;"><i class="fa-solid fa-arrow-left"></i>Back</button>
-          </div>
-      <br>
+
+ -->
 
       <!-- <div class="text-center">
         <button (click)="getByCategory()" class="btn btn-success">Get ProductName</button>
@@ -198,5 +205,9 @@
               </tbody>
             </table>
           </div>  -->
-  
+          <br>
+          <div class="custom-button">
+            <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;"><i class="fa-solid fa-arrow-left"></i>Back</button>
+            </div>
+            <br>
      

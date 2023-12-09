@@ -6,40 +6,27 @@ import { customer } from '../model/Customer';
   providedIn: 'root'
 })
 export class CustomerService {
-  Token: any;
-  customer: any;
-
+Token:any
   constructor(private http:HttpClient) { }
 
   baseURL:string = 'http://localhost:8181/api/v1/';
 
   getGeneratedToken(requestBody: any){
 
-        return this.http.post(this.baseURL+"login/customerlogin",requestBody,{responseType: 'text' as 'json'});
-
+       this.Token=  this.http.post(this.baseURL+"login/customerlogin",requestBody,{responseType: 'text' as 'json'});
+    return this.Token
     }
 
-    getAll(token:any){
+    authorizationTest(token:any){
 
-      let tokenString = "Bearer "+token;
+          let tokenString = "Bearer "+token;
 
-     const headers =  new HttpHeaders().set("Authorization",tokenString);
-
-
-    return this.http.get(this.baseURL+"customer/getAllCustomer",{headers,responseType:'text' as 'json'});
-
-}
-
-    // authorizationTest(token:any){
-
-    //       let tokenString = "Bearer "+token;
-
-    //      const headers =  new HttpHeaders().set("Authorization",tokenString);
+         const headers =  new HttpHeaders().set("Authorization",tokenString);
 
 
-    //     return this.http.get(this.baseURL+"customer/getAllCustomer",{headers,responseType:'text' as 'json'});
+        return this.http.get(this.baseURL+"customer/getAllCustomer",{headers,responseType:'text' as 'json'});
 
-    // }
+    }
     insert(body:customer):Observable<customer>{
 
       console.log(body);

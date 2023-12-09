@@ -1,0 +1,31 @@
+
+ <h2 class="text-center">view customers</h2>
+<div>
+<table border="1" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>email</th>
+        <th>phoneNumber</th>
+        <th>deliveryAddress</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let admin of response">
+        <td>{{ admin.customerId }}</td>
+        <td>{{ admin.customerName}}</td>
+        <td>{{ admin.deliveryAddress }}</td>
+        <td>{{ admin.email }}</td>
+        <td>{{admin.phoneNumber}}</td>
+        <td>customer</td>
+ 
+      </tr>
+    </tbody>
+  </table>
+</div> 
+
+
+  

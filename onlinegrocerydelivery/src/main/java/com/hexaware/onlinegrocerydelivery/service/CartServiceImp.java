@@ -42,18 +42,11 @@ public class CartServiceImp implements ICartService {
     @Override
     public Cart addCart(CartDTO cartDTO) {
         Customer customer = customerRepository.findById(cartDTO.getCustomerId()).orElse(null);
-        Product product = productRepository.findById(cartDTO.getProductId()).orElse(null);
 
         if (customer == null) {
             throw new CustomerNotFoundException(HttpStatus.NOT_FOUND,
                     " Customer with CustomerId : " + cartDTO.getCustomerId() + " Not Found ");
         }
-
-        if (product == null) {
-            throw new ProductNotFoundException(HttpStatus.NOT_FOUND,
-                    " Product with ProductId : " + cartDTO.getProductId() + " Not Found ");
-        }
-
 
         // Check if a Cart already exists for this Customer
         List<Cart> existingCarts = cartRepository.findByCustomerId(cartDTO.getCustomerId());
@@ -72,7 +65,6 @@ public class CartServiceImp implements ICartService {
             cart.setCustomerId(cartDTO.getCustomerId());
             cart.setQuantity(cartDTO.getQuantity());
             cart.setTotalAmount(cartDTO.getTotalAmount());
-            cart.setProduct(product);
             return cartRepository.save(cart);
         }
     }
@@ -91,7 +83,6 @@ public class CartServiceImp implements ICartService {
         cartDTO.setCustomerId(cart.getCustomerId());
         cartDTO.setQuantity(cart.getQuantity());
         cartDTO.setTotalAmount(cart.getTotalAmount());
-        cartDTO.setProductId(cart.getProduct().getProductId());
 
         return cartDTO;
     }
@@ -103,8 +94,6 @@ public class CartServiceImp implements ICartService {
 
     @Override
     public Cart updateCart(CartDTO cartDTO) {
-        Product product = productRepository.findById(cartDTO.getProductId()).orElse(null);
-
         Cart existingCart = cartRepository.findById(cartDTO.getCartId())
                 .orElseThrow(() -> new CartNotFoundException(HttpStatus.NOT_FOUND,
                         "Cart with id: " + cartDTO.getCartId() + " not found"));
@@ -112,7 +101,6 @@ public class CartServiceImp implements ICartService {
         existingCart.setCustomerId(cartDTO.getCustomerId());
         existingCart.setQuantity(cartDTO.getQuantity());
         existingCart.setTotalAmount(cartDTO.getTotalAmount());
-        existingCart.setProduct(product);
 
         // Save the updated Cart entity back to the database
         return cartRepository.save(existingCart);

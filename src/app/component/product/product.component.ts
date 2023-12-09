@@ -5,7 +5,6 @@ import { AdminService } from 'src/app/service/admin.service';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomerService } from 'src/app/service/customer.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -18,39 +17,21 @@ export class ProductComponent implements  OnInit{
   productService:any
   adminKey:any;
   authRequest: Product = new Product();
-  deleteId!: number;
+  deleteId!: any;
   getName!:String;
   getresponseName:any;
   adminKey$!: Observable<any>;
   getCategory!: String;
-  admin: boolean=false;
-  customer: boolean=false;
 
 
-
-  constructor(private jwtService:ProductService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
-
-    
-    this.productService=jwtService;
-    if(admintoken.admin==true){
-      this.admin=true;
-      this.customer=false;
-    this.key=admintoken.Token;
+  constructor(private jwtService: ProductService, private admintoken: AdminService,private router:Router) {
+    this.productService = jwtService;
+    this.key = this.admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      
-    });}
-    if(customertoken.customer==true){
-      this.admin=false;
-      this.customer=true;
-      this.key=customertoken.Token;
-    this.key.subscribe((genToken: any) => {
-      this.adminKey = genToken;
-      
+     // console.log(this.adminKey)
     });
-    }
-    
-   }
+  }
   ngOnInit(): void {
     
   }
@@ -130,17 +111,21 @@ export class ProductComponent implements  OnInit{
 
   }
 
-  
+  delete(productId:number){
+    this.productService.delete(productId,this.adminKey).subscribe((msg:any) => {
+     console.log("Product is deleted");
+      
+      alert("Product is deleted");
+    });
 
   
 
-//   deleteById() {
-// debugger
-//     this.jwtService.delete(this.deleteId, this.adminKey).subscribe((msg:any) => {
-//       console.log( msg);
-//       console.log("hi");
-//     });
-//   }
+  // deleteById() {
+  //   this.jwtService.delete(this.deleteId, this.adminKey).subscribe((msg:any) => {
+  //     console.log( msg);
+  //     console.log("hi");
+  //   });
+   }
   
 
 
@@ -198,12 +183,12 @@ export class ProductComponent implements  OnInit{
           }
         );
     }
-    
+    goBack()
+    {
+      this.router.navigate(['/admindashboard'])
+    }
 
-  goBack()
-  {
-    this.router.navigate(['/admindashboard'])
-  }
+    
   
 }
   

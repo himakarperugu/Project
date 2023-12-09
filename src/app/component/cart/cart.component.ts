@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Cart } from 'src/app/model/Cart';
 import { AdminService } from 'src/app/service/admin.service';
 import { CartService } from 'src/app/service/cart.service';
-import { CustomerService } from 'src/app/service/customer.service';
 
 @Component({
   selector: 'app-cart',
@@ -19,39 +18,13 @@ export class CartComponent {
   authRequest: Cart = new Cart();
   deleteId!: number;
   getName!:String;
-  customer: boolean=false;
-  admin: boolean=false;
 
-  constructor(private jwtService:CartService,admintoken:AdminService,customertoken:CustomerService,private router:Router){
-   
+  constructor(private jwtService:CartService,admintoken:AdminService,private router:Router){
     this.cartService=jwtService;
-    if(admintoken.admin==true){
-      this.admin=true;
-      this.customer=false;
     this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      
-    });}
-    if(customertoken.customer==true){
-      this.admin=false;
-      this.customer=true;
-      this.key=customertoken.Token;
-    this.key.subscribe((genToken: any) => {
-      this.adminKey = genToken;
-      
     });
-    }
-   
-   
-   
-    // this.menuService=jwtService;
-    // this.key=admintoken.Token;
-    // this.key.subscribe((genToken: any) => {
-    //   this.adminKey = genToken;
-    //   // console.log(genToken);
-    //   // this.accessApi(this.adminKey);
-    // });
     
    }
    public getall(){
@@ -94,17 +67,14 @@ export class CartComponent {
     const customerId: number = formData.form.value.customerId;
     const quantity: number = formData.form.value.quantity;
     const totalAmount: number = formData.form.value.totalAmount;
-    
-   
+    const productId: number = formData.form.value.productId;
   
     const updatedAdmin: Cart = {
-     
-
-
       cartId:0,
    customerId:customerId,
    quantity: quantity,
-   totalAmount:totalAmount
+   totalAmount:totalAmount,
+   productId:productId
    
     };
   
@@ -126,7 +96,7 @@ export class CartComponent {
     const customerId: number = formData.form.value.customerId;
     const quantity: number = formData.form.value.quantity;
     const totalAmount: number = formData.form.value.totalAmount;
-
+    const productId: number = formData.form.value.productId;
   
     const updatedAdmin: Cart = {
       
@@ -134,9 +104,10 @@ export class CartComponent {
    customerId:customerId,
    quantity: quantity,
    totalAmount:totalAmount,
+   productId:productId
     };
   
-    this.cartService.updateCart(updatedAdmin, this.adminKey)
+    this.cartService.updateMenu(updatedAdmin, this.adminKey)
       .subscribe(
         (updatedAdmin: Cart) => {
           console.log('Updated Admin is: ', updatedAdmin);
@@ -152,9 +123,9 @@ export class CartComponent {
 
 }
 goBack()
-  {
-    this.router.navigate(['/admindashboard'])
-  }
-  
+    {
+      this.router.navigate(['/admindashboard'])
+    }
+
 
 }
