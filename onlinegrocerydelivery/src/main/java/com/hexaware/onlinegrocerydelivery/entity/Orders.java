@@ -25,7 +25,7 @@ public class Orders {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="order_seq")
 	@Id
 	private int orderId;
-	private int customerId;
+//	private int customerId;
 	private LocalDate orderDate;
 	private String deliveryAddress;
 	private String paymentMethod;
@@ -53,10 +53,10 @@ public class Orders {
 	}
 
 
-	public Orders(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod) {
+	public Orders(int orderId,  LocalDate orderDate, String deliveryAddress, String paymentMethod) {
 		super();
 		this.orderId = orderId;
-		this.customerId = customerId;
+//		this.customerId = customerId;
 		this.orderDate = orderDate;
 		this.deliveryAddress = deliveryAddress;
 		this.paymentMethod = paymentMethod;
@@ -73,15 +73,15 @@ public class Orders {
 		this.orderId = orderId;
 	}
 
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+//
+//	public int getCustomerId() {
+//		return customerId;
+//	}
+//
+//
+//	public void setCustomerId(int customerId) {
+//		this.customerId = customerId;
+//	}
 
 
 	public LocalDate getOrderDate() {

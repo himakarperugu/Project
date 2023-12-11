@@ -1,5 +1,6 @@
 <!-- <p>cart works!</p>
 <h2 class="text-center">Cart Page</h2> -->
+<app-navbar></app-navbar>
 <button (click)="getall()">Get Cart</button>
 
 <div *ngIf="response && response.length > 0">
@@ -100,6 +101,43 @@
 </div>
 <br>
 <br>
+
+<div style="display: flex; justify-content: center; align-items: center;" class="text-center">
+  <button (click)="getFormName()" class="btn btn-success">Display Cart</button>
+</div>
+
+<div *ngIf="isgetFormVisible">
+  <div class="form-group">
+    <form style="display: flex; justify-content: center; align-items: center;" action="">
+      <fieldset>
+        <label for="deleteId">Enter ID to Get Details</label> <br> <br>
+        <input type="number" class="form-control" name="deleteId" [(ngModel)]="getById" required>
+        <br> <br>
+        <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="button" class="btn btn-primary btn-sm" (click)="getById()">get</button> <br>
+      </fieldset>
+    </form>
+    <div *ngIf="response">
+      <h2>Cart Details</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>CartId</th>
+            <th>CustomerId</th>
+            <th>Quantity</th>
+            <th>TotalAmount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ response.CartId }}</td>
+            <td>{{ response.CustomerId }}</td>
+            <td>{{ response.Quantity }}</td>
+            <td>{{ response.TotalAmount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
 <div class="custom-button">
     <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;"><i class="fa-solid fa-arrow-left"></i>Back</button>
     </div>

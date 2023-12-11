@@ -31,7 +31,7 @@ public class OrderDTO {
 
 
 
-	public OrderDTO(int orderId, int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod) {
+	public OrderDTO(int orderId,int customerId, LocalDate orderDate, String deliveryAddress, String paymentMethod) {
 		super();
 		this.orderId = orderId;
 		this.customerId = customerId;
@@ -103,17 +103,6 @@ public class OrderDTO {
 
 
 
-	
-
-
-	@Override
-	public String toString() {
-		return "OrderDTO [orderId=" + orderId + ", customerId=" + customerId + ", orderDate=" + orderDate
-				+ ", deliveryAddress=" + deliveryAddress + ", paymentMethod=" + paymentMethod +"]";
-	}
-	
-	
-	
 	
 
 }

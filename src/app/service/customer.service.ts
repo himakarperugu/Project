@@ -7,12 +7,14 @@ import { customer } from '../model/Customer';
 })
 export class CustomerService {
 Token:any
+customerId:any;
   constructor(private http:HttpClient) { }
 
   baseURL:string = 'http://localhost:8181/api/v1/';
 
   getGeneratedToken(requestBody: any){
-
+    // console.log("hi")
+    // console.log(requestBody)
        this.Token=  this.http.post(this.baseURL+"login/customerlogin",requestBody,{responseType: 'text' as 'json'});
     return this.Token
     }
@@ -22,7 +24,7 @@ Token:any
           let tokenString = "Bearer "+token;
 
          const headers =  new HttpHeaders().set("Authorization",tokenString);
-
+      console.log(this.customerId);
 
         return this.http.get(this.baseURL+"customer/getAllCustomer",{headers,responseType:'text' as 'json'});
 
@@ -45,6 +47,13 @@ Token:any
     updateCustomer(updatedCustomer: customer, token: string): Observable<customer> {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
       return this.http.put<customer>(`${this.baseURL}customer/updateCustomer/${updatedCustomer.customerId}`, updatedCustomer, { headers });
+    }
+    getcustomer(name:String,token: string){
+      const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
+
+      return this.http.get(`${this.baseURL}customers/getByCustomerName/${name}`,{headers,responseType:'text' as 'json'});
+
+
     }
   
   }

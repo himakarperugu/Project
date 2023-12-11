@@ -20,9 +20,9 @@ export class CartService {
   
     }
 
-    add(addCart: Cart, token: string): Observable<Cart> {
+    add(productId:number, token: string): Observable<Cart> {
       const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-      return this.http.post<Cart>(`${this.baseURL}cart/addCart`, addCart, { headers });
+      return this.http.post<Cart>(`${this.baseURL}cart/addCart`, productId, { headers });
     }
   
   
@@ -35,6 +35,10 @@ export class CartService {
     updateMenu(updatedcart: Cart, token: string): Observable<Cart> {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
       return this.http.put<Cart>(`${this.baseURL}cart/updateCart`,updatedcart, { headers });
+    }
+    getById(Id: number, token: any){
+      const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
+      return this.http.get(`${this.baseURL}cart/getById/${Id}`,{headers});
     }
 
   

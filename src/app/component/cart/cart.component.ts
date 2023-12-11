@@ -18,6 +18,9 @@ export class CartComponent {
   authRequest: Cart = new Cart();
   deleteId!: number;
   getName!:String;
+  cartId:number=0;
+  Token:any;
+  
 
   constructor(private jwtService:CartService,admintoken:AdminService,private router:Router){
     this.cartService=jwtService;
@@ -54,9 +57,9 @@ export class CartComponent {
   deleteForm() {
     this.isDeleteFormVisible = !this.isDeleteFormVisible;
   }
-  isGetFormNameVisible: boolean = false;
+  isgetFormVisible: boolean = false;
   getFormName() {
-    this.isGetFormNameVisible = !this.isGetFormNameVisible;
+    this.isgetFormVisible = !this.isgetFormVisible;
   }
   isUpdateFormVisible: boolean = false;
   updateForm() {
@@ -77,11 +80,12 @@ export class CartComponent {
    productId:productId
    
     };
-  
+    
     this.cartService.add(updatedAdmin, this.adminKey)
       .subscribe(
         (updatedAdmin: Cart) => {
           console.log('Updated cart is: ', updatedAdmin);
+          alert("Added to cart with cartId"+this.cartId);
           // Handle any further logic or UI updates after a successful update
         },
         (error: any) => {
@@ -121,6 +125,15 @@ export class CartComponent {
 
 
 
+}
+
+
+getById(){
+  this.accessApi(this.authRequest);
+  this.cartService.getId(this.getById,this.Token).subscribe((message:any) => {
+    this.response=message
+    console.log("get id is success " + message);
+  });
 }
 goBack()
     {

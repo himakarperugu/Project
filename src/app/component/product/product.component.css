@@ -1,87 +1,120 @@
-/* General Styles */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    font-size: 14px; /* Adjust as needed */
-}
-
-/* Table Styles */
+/* Apply styles to the table */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-th, td {
+  }
+  
+  th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: 12px; /* Adjust as needed */
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* Form Styles */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px; /* Adjust as needed */
-}
-
-/* Button Styles */
-.btn {
-    background-color: rgb(63, 140, 187);
-    border-radius: 20px;
-    font-size: 14px; /* Adjust as needed */
-    box-shadow: 0px 2px 5px white;
+  }
+  
+  th {
+    background-color: #4CAF50;
     color: white;
-    width: 150px;
-    height: 40px;
-    font-weight: bold;
+  }
+  
+  /* Apply styles to the buttons */
+  .btn {
+    padding: 10px 20px;
+    margin: 5px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Add specific styles for different buttons as needed */
-.btn-success {
-    background-color: rgb(79, 81, 79);
-}
-
-.btn-danger {
+  }
+  
+  .btn-success {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-danger {
     background-color: red;
-}
-
-.btn-primary {
-    background-color: rgb(63, 140, 187);
-}
-
-/* Center Text Styles */
-.text-center {
+    color: white;
+  }
+  
+  /* Apply styles to the forms */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Apply styles to the custom buttons */
+  .custom-button {
+    margin-top: 20px;
+  }
+  
+  .transparent-button {
+    background-color: transparent;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+  }
+  
+  /* Apply styles to the body */
+  body {
+    padding: 20px;
+  }
+  
+  /* Apply styles to the container */
+  .container {
+    margin: 0 auto;
+  }
+  
+  /* Apply styles to the text-center class */
+  .text-center {
     text-align: center;
-}
-
-/* Container Styles */
-.container {
-    margin: auto;
-    width: 50%;
-}
-
-/* Optional: Styles for form error messages */
-span {
-    color: red;
-}
-
-/* Optional: Additional styling for specific elements */
-/* For example, updateForm and deleteForm sections */
-.container.col-lg-4 {
-    width: 40%;
-}
+  }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+        display: block;
+        margin: 0 auto;
+      
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-danger {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background-color: darkred;
+  }
+  

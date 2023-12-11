@@ -23,6 +23,7 @@ import { AdmindashboardComponent } from './component/admindashboard/admindashboa
 import { CustomerorderComponent } from './component/customerorder/customerorder.component';
 import { CustomercartComponent } from './component/customercart/customercart.component';
 import { AdmincustomerdetailsComponent } from './component/admincustomerdetails/admincustomerdetails.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AdmincustomerdetailsComponent } from './component/admincustomerdetails/
     AdmindashboardComponent,
     CustomerorderComponent,
     CustomercartComponent,
-    AdmincustomerdetailsComponent
+    AdmincustomerdetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

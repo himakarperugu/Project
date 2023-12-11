@@ -1,5 +1,4 @@
-
-
+<app-navbar></app-navbar>
 <body>
 
 
@@ -15,7 +14,7 @@
          <th>Category</th>
          <th>Brand</th>
          <th>Price</th>
-         <th>actions</th>
+         <th>Actions</th>
        </tr>
      </thead>
      
@@ -80,30 +79,30 @@
   <form   #formData=ngForm  (ngSubmit)="update(formData)" >
     <div class="form-group">
     
-      productId :<input type="number" class="form-control" name="productId"  required  #productId="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="productId.touched && productId.invalid" >productId is required</span>
+      ProductId :<input type="number" class="form-control" name="productId"  required  #productId="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="productId.touched && productId.invalid" >ProductId is required</span>
     </div>
     <div class="form-group">
     
-      productName :<input type="text" class="form-control" name="productName"  required  #productName="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="productName.touched && productName.invalid" >productName is required</span>
+      ProductName :<input type="text" class="form-control" name="productName"  required  #productName="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="productName.touched && productName.invalid" >ProductName is required</span>
     </div>
     <div class="form-group">
       
-      category:<input type="text" class="form-control" name="category"  required  #category="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="category.touched && category.invalid" >category is required</span>
+      Category:<input type="text" class="form-control" name="category"  required  #category="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="category.touched && category.invalid" >Category is required</span>
     </div>
     
     
     <div class="form-group">
 
-      brand:<input type="text" class="form-control" name="brand"  required  #brand="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="brand.touched && brand.invalid" >brand is required</span>
+      Brand:<input type="text" class="form-control" name="brand"  required  #brand="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="brand.touched && brand.invalid" >Brand is required</span>
     </div>
     <div class="form-group">
       
-        price:<input type="number" class="form-control"  name="price"  required  #price="ngModel"   ngModel>
-      <span style="color:red"   *ngIf="price.touched && price.invalid" >price is mandartory</span>
+        Price:<input type="number" class="form-control"  name="price"  required  #price="ngModel"   ngModel>
+      <span style="color:red"   *ngIf="price.touched && price.invalid" >Price is mandartory</span>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
@@ -207,7 +206,7 @@
           </div>  -->
           <br>
           <div class="custom-button">
-            <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;"><i class="fa-solid fa-arrow-left"></i>Back</button>
+            <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;">Back</button>
             </div>
             <br>
      

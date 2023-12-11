@@ -26,7 +26,8 @@ export class CustomerorderComponent {
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
       // console.log(genToken);
-      // this.accessApi(this.adminKey);
+      //  this.accessApi(this.adminKey);
+      this.getall();
     });
     
    }

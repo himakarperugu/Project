@@ -1,5 +1,6 @@
 <!-- <p>orders works!</p> -->
 <!-- <h2 class="text-center">Order Page</h2> -->
+<app-navbar></app-navbar>
 <button (click)="getall()">View Orders</button>
 
 <div *ngIf="response && response.length > 0">
@@ -125,6 +126,6 @@
 </div>-->
 <br>
 <div class="custom-button">
-  <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;"><i class="fa-solid fa-arrow-left"></i>Back</button>
+  <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;">Back</button>
   </div>
   <br> 

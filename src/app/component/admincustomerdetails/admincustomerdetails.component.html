@@ -1,31 +1,34 @@
-
- <h2 class="text-center">view customers</h2>
-<div>
-<table border="1" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>email</th>
-        <th>phoneNumber</th>
-        <th>deliveryAddress</th>
-        <th>Role</th>
-      </tr>
-    </thead>
-    
-    <tbody>
-      <tr *ngFor="let admin of response">
-        <td>{{ admin.customerId }}</td>
-        <td>{{ admin.customerName}}</td>
-        <td>{{ admin.deliveryAddress }}</td>
-        <td>{{ admin.email }}</td>
-        <td>{{admin.phoneNumber}}</td>
-        <td>customer</td>
- 
-      </tr>
-    </tbody>
-  </table>
-</div> 
-
-
-  
+<app-navbar></app-navbar>
+    <h2 style="text-align: center;">View Customers</h2>
+    <div>
+        <table border="1" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>PhoneNumber</th>
+                    <th>DeliveryAddress</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let admin of response">
+                    <td>{{ admin.customerId }}</td>
+                    <td>{{ admin.customerName}}</td>
+                    <td>{{ admin.deliveryAddress }}</td>
+                    <td>{{ admin.email }}</td>
+                    <td>{{admin.phoneNumber}}</td>
+                    <td>Customer</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    <br>
+    <br>
+          <div class="custom-button">
+            <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="text-align:center 20px;">Back</button>
+            </div>
+            <br>
+     

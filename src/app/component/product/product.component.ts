@@ -22,6 +22,7 @@ export class ProductComponent implements  OnInit{
   getresponseName:any;
   adminKey$!: Observable<any>;
   getCategory!: String;
+  quant!:number;
 
 
   constructor(private jwtService: ProductService, private admintoken: AdminService,private router:Router) {
@@ -102,6 +103,7 @@ export class ProductComponent implements  OnInit{
       .subscribe(
         (updatedAdmin: Product) => {
           console.log('Updated product is: ', updatedAdmin);
+          alert("Product is Added");
         },
         (error: any) => {
           console.error('Error updating Product: ', error);
@@ -175,6 +177,7 @@ export class ProductComponent implements  OnInit{
         .subscribe(
           (updatedAdmin: Product) => {
             console.log('Updated Admin is: ', updatedAdmin);
+            alert("Product is Updated");
             // Handle successful update
           },
           (error: any) => {

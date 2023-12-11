@@ -13,7 +13,6 @@ public class GlobalExceptionHandler {
 	CustomerNotFoundException.class,
 	OrderNotFoundException.class,
 	ProductNotFoundException.class,
-	SubstitutionNotFoundException.class,
 	CartNotFoundException.class
 	
 	})
