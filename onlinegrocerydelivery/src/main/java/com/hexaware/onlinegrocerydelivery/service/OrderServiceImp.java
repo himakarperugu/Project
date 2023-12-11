@@ -52,7 +52,7 @@ public class OrderServiceImp implements IOrderService {
 					
 			
 			orders.setOrderId(orderDTO.getOrderId());
-			orders.setCustomerId(orderDTO.getCustomerId());
+//			orders.setCustomerId(orderDTO.getCustomerId());
 			orders.setOrderDate(orderDTO.getOrderDate());
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
@@ -78,7 +78,7 @@ public class OrderServiceImp implements IOrderService {
 		}
 		
 		orders.setOrderId(orderDTO.getOrderId());
-		orders.setCustomerId(orderDTO.getCustomerId());
+//		orders.setCustomerId(orderDTO.getCustomerId());
 		orders.setOrderDate(orderDTO.getOrderDate());
 		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 		orders.setPaymentMethod(orderDTO.getPaymentMethod());
@@ -104,7 +104,7 @@ public class OrderServiceImp implements IOrderService {
                 .orElseThrow(() -> new OrderNotFoundException(HttpStatus.NOT_FOUND,
                         "Order with id: " + orderDTO.getOrderId() + " not found"));
 
-        existingOrder.setCustomerId(orderDTO.getCustomerId());
+//        existingOrder.setCustomerId(orderDTO.getCustomerId());
         existingOrder.setOrderDate(orderDTO.getOrderDate());
         existingOrder.setDeliveryAddress(orderDTO.getDeliveryAddress());
         existingOrder.setPaymentMethod(orderDTO.getPaymentMethod());

@@ -7,6 +7,9 @@ import { Product } from '../model/Product';
   providedIn: 'root'
 })
 export class ProductService {
+  productId!:number;
+  quant!:any;
+  price!:number;
 
   constructor(private http:HttpClient) { }
   baseURL:string = 'http://localhost:8181/api/v1/';

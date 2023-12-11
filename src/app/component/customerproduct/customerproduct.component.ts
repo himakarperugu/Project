@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/Product';
+import { CartService } from 'src/app/service/cart.service';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -21,9 +23,10 @@ export class CustomerproductComponent implements  OnInit{
   getresponseName:any;
   adminKey$!: Observable<any>;
   getCategory!: String;
+  quant!:number;
 
 
-  constructor(private jwtService: ProductService, private admintoken: CustomerService) {
+  constructor(private jwtService: ProductService, private admintoken: CustomerService,private cartService:CartService,private router:Router) {
     this.productService = jwtService;
     this.key = this.admintoken.Token;
     this.key.subscribe((genToken: any) => {
@@ -87,6 +90,16 @@ export class CustomerproductComponent implements  OnInit{
     });
   }
 
+  add(product:any,price:any){
+    this.jwtService.productId=product;
+    this.jwtService.quant=this.quant;
+    this.jwtService.price=price;
+    console.log(this.jwtService.productId,this.jwtService.quant=this.quant,this.jwtService.price=price);
+    this.gotoCustomercart();
+    };
+    gotoCustomercart(){
+      this.router.navigate(["/customercart"])
+    }
 
   //  getByCategory(){
   //   this.jwtService.getCategory(this.getCategory,this.productKey).subscribe((message) => {
@@ -95,5 +108,5 @@ export class CustomerproductComponent implements  OnInit{
   //   });
   
 }
-  
+
   

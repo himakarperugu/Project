@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthRequest } from 'src/app/model/AuthRequest';
@@ -15,10 +16,13 @@ export class CustomerComponent {
   response: any;
   token: any;
   authRequest: AuthRequest = new AuthRequest();
+  mainCustomerId:any;
+  
 
-  constructor(private customerService: CustomerService, 
 
-private router:Router) {}
+  
+
+  constructor(private customerService: CustomerService, private router:Router) {}
 
   readFormData(formData: any) {
     this.authRequest.username = formData.form.value.username;
@@ -32,6 +36,7 @@ private router:Router) {}
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); 
         console.log('Response Data:', this.response);
+        this.getbyname(token);
         alert("Customer Login Successfull");
         this.router.navigate(['customerdashboard'])
       } else {
@@ -124,6 +129,27 @@ update(formData: any) {
         // Handle error scenarios
       }
     );
+}
+
+getbyname(adminKey: string) { // Accept adminKey as a parameter
+  if (adminKey) {
+    let response = this.customerService.getcustomer(this.authRequest.username, adminKey);
+
+    response.subscribe((responseData: any) => {
+      if (responseData && typeof responseData === 'string') {
+        this.response = JSON.parse(responseData);
+        this.mainCustomerId=this.response.customerId;
+        console.log('Response Data:', this.response);
+       this.customerService.customerId=this.mainCustomerId;
+      console.log("hi");
+
+        // Convert object properties to an array, excluding the 'password' property
+
+      }
+    });
+  } else {
+    console.error('Admin key is null.');
+  }
 }
 
 

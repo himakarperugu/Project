@@ -14,7 +14,7 @@ class OrderServiceImpTest {
 	void testAddOrder() {
 		Orders orders =new Orders();
 		orders.setOrderId(4001);
-		orders.setCustomerId(2001);
+//		orders.setCustomerId(2001);
 		orders.setDeliveryAddress("Ongole");
 		orders.setPaymentMethod("COD");
 
@@ -43,7 +43,7 @@ class OrderServiceImpTest {
 	void testUpdateOrder() {
 		Orders orders =new Orders();
 		orders.setOrderId(4001);
-		orders.setCustomerId(2001);
+//		orders.setCustomerId(2001);
 		orders.setDeliveryAddress("Ongole");
 		orders.setPaymentMethod("COD");
 	}

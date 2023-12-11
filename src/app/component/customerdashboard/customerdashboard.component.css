@@ -1,0 +1,34 @@
+/* Apply styles to the app-navbar */
+app-navbar {
+    /* Add styles for your app-navbar component if needed */
+  }
+  
+  /* Apply styles to the ul element */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  /* Apply styles to the buttons */
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Apply styles to the buttons on hover */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Apply styles to increase the button size when active */
+  button:active {
+    transform: scale(1.1);
+  }
+  

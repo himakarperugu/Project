@@ -50,7 +50,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/getAllCustomer")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
 	public List<Customer> getAllCustomer() {
 		
 		return customerservice.getAllCustomer();
@@ -65,13 +65,13 @@ public class CustomerController {
 
 	@DeleteMapping("/deleteById/{customerId}")
 	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
-	public void deleteById(int customerId) {
+	public void deleteById(@PathVariable int customerId) {
 		
 		customerservice.deleteById(customerId);
 
 	}
 	@GetMapping("/getByCustomerName/{customerName}")
-	@PreAuthorize("hasAnyAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
 	public List<CustomerDTO> getByCustomerName(@PathVariable String customerName) {
 	
 		return customerservice.getByCustomerName(customerName);

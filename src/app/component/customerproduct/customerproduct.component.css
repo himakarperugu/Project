@@ -1,0 +1,58 @@
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Apply styles to the buttons and input */
+  .btn-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="number"] {
+    width: 50px; /* Adjust the width as needed */
+    margin-right: 5px; /* Add spacing between input and button */
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-info {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  /* Optional: Apply styles for text-center class */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Optional: Apply styles for additional spacing */
+  br {
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }  

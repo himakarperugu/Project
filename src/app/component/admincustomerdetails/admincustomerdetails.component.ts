@@ -59,5 +59,10 @@ export class AdmincustomerdetailsComponent {
       } 
     });
   }
+  goBack()
+      {
+        this.route.navigate(['/admindashboard'])
+      }
+
 
 }
