@@ -19,7 +19,7 @@ import com.hexaware.onlinegrocerydelivery.service.ICustomerService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin("http://localhost:54682")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/customer")
 public class CustomerController {
