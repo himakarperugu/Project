@@ -1,0 +1,45 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+/* Header Styles */
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: cadetblue;
+    padding-left: 20px;
+}
+
+/* About Section Styles */
+.about {
+    background-image: url(https://t3.ftcdn.net/jpg/01/15/05/88/360_F_115058873_PlbfM1AlHNW31gBQcKSxZLhGdUst9ErP.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay for better text visibility */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(113, 111, 111, 0.5); /* Adjust the overlay color and opacity */
+}
+
+/* Paragraph Styles */
+p {
+    color: #0d0d0d;
+    font-size: medium;
+    font-weight: 500;
+    text-align: justify;
+    padding: 20px;
+    line-height: 25px;
+    z-index: 1; /* Ensure text appears above the overlay */
+}

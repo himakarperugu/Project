@@ -1,0 +1,45 @@
+h2{
+    background-color: rgb(147, 135, 131);
+    color: rgb(56, 79, 56);
+}
+
+fieldset{
+    background-color:rgb(150, 207, 209);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px gray;
+    padding: 30px 150px;
+}
+legend{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: larger;
+    color: rgb(49, 39, 58)
+}
+
+fieldset input{
+    border-radius: 5px;
+    width: 350px;
+    height: 30px;
+    border: none;
+    
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    font-size: medium;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:rgb(122, 109, 122);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 3px 4px rgb(142, 156, 142);
+    color: rgb(247, 239, 239);
+}
+
+.admin{
+    padding: 20px;
+    background-color:gainsboro;
+    
+    flex-wrap: nowrap;
+}

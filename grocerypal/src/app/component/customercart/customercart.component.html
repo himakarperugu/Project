@@ -1,0 +1,142 @@
+{{response|json}}
+<app-navbar></app-navbar>
+ <button (click)="getall()">Get Cart</button> 
+
+<div *ngIf="response && response.length > 0">
+  <table border="1" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>cartId</th>
+        <th>customerId</th>
+        <th>quantity</th>
+        <th>totalAmount</th>
+        <th>productId</th>
+        <th></th>
+      </tr>
+    </thead>
+   
+    <tbody>
+      <tr *ngFor="let admin of response">
+        <td>{{ admin.cartId }}</td>
+        <td>{{ admin.customerId }}</td>
+        <td>{{ admin.quantity }}</td>
+        <td>{{ admin.totalAmount }}</td>
+        <td>{{ admin.productId }}</td>
+        <!-- <td>{{ "300"}}</td> -->
+        <!-- <td><button click="order()">Place order</button></td> -->
+        <td><a class="header-button" routerLink="/customerorder" routerLinkActive="active">Place Order</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br> 
+
+<br>
+<!-- <div class="text-center">
+  <button (click)="addForm()" class="btn btn-success">Add Cart</button>
+</div>
+<div *ngIf="isAddFormVisible" class="container col-lg-4">
+  <form #formData=ngForm (ngSubmit)="add(formData)">
+
+    <div class="form-group">
+      customerId:
+      <input type="number" class="form-control" name="customerId" required #customerId="ngModel" ngModel>
+      <span style="color:red" *ngIf="customerId.touched && customerId.invalid">customerId is required</span>
+    </div>
+
+    <div class="form-group">
+      quantity:
+      <input type="number" class="form-control" name="quantity" required #quantity="ngModel" ngModel>
+      <span style="color:red" *ngIf="quantity.touched && quantity.invalid">quantity is required</span>
+    </div>
+
+    <div class="form-group">
+      totalAmount:
+      <input type="number" class="form-control" name="totalAmount" required #totalAmount="ngModel" ngModel>
+      <span style="color:red" *ngIf="totalAmount.touched && totalAmount.invalid">totalAmount is required</span>
+    </div>
+    <div class="form-group">
+      productId:
+      <input type="number" class="form-control" name="productId" required #productId="ngModel" ngModel>
+      <span style="color:red" *ngIf="productId.touched && productId.invalid">productId is required</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">Submit</button>
+  </form>
+</div>
+
+<br>
+<div style="display: flex; justify-content: center; align-items: center;" class="text-center">
+  <button (click)="getFormName()" class="btn btn-success">Display Cart</button>
+</div>
+
+<div *ngIf="isGetFormNameVisible">
+  <div class="form-group">
+    <form style="display: flex; justify-content: center; align-items: center;" action="">
+      <fieldset>
+        <label for="deleteId">Enter ID to Get Details</label> <br> <br>
+        <input type="number" class="form-control" name="deleteId" [(ngModel)]="getById" required>
+        <br> <br>
+        <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="button" class="btn btn-primary btn-sm" (click)="getById()">get</button> <br>
+      </fieldset>
+    </form>
+    <div *ngIf="response">
+      <h2>Cart Details</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>CartId</th>
+            <th>CustomerId</th>
+            <th>Quantity</th>
+            <th>TotalAmount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ response.CartId }}</td>
+            <td>{{ response.CustomerId }}</td>
+            <td>{{ response.Quantity }}</td>
+            <td>{{ response.TotalAmount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+<!-- <div class="text-center">
+  <button (click)="updateForm()" class="btn btn-success">Update Cart</button>
+</div>
+<div *ngIf="isUpdateFormVisible" class="container col-lg-4">
+  <form #formData=ngForm (ngSubmit)="update(formData)">
+
+    <div class="form-group">
+      cartId:
+      <input type="number" class="form-control" name="cartId" required #cartId="ngModel" ngModel>
+      <span style="color:red" *ngIf="cartId.touched && cartId.invalid">cartId is required</span>
+    </div>
+
+    <div class="form-group">
+      customerId:
+      <input type="number" class="form-control" name="customerId" required #customerId="ngModel" ngModel>
+      <span style="color:red" *ngIf="customerId.touched && customerId.invalid">customerId is required</span>
+    </div>
+
+    <div class="form-group">
+      quantity:
+      <input type="number" class="form-control" name="quantity" required #quantity="ngModel" ngModel>
+      <span style="color:red" *ngIf="quantity.touched && quantity.invalid">quantity is required</span>
+    </div>
+
+    <div class="form-group">
+      totalAmount:
+      <input type="number" class="form-control" name="totalAmount" required #totalAmount="ngModel" ngModel>
+      <span style="color:red" *ngIf="totalAmount.touched && totalAmount.invalid">totalAmount is required</span>
+    </div>
+    <div class="form-group">
+      productId:
+      <input type="number" class="form-control" name="productId" required #productId="ngModel" ngModel>
+      <span style="color:red" *ngIf="productId.touched && productId.invalid">productId is required</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">Submit</button>
+  </form>
+</div>
+<br> -->

@@ -1,0 +1,131 @@
+<!-- <p>orders works!</p> -->
+<!-- <h2 class="text-center">Order Page</h2> -->
+<app-navbar></app-navbar>
+<button (click)="getall()">View Orders</button>
+
+<div *ngIf="response && response.length > 0">
+    <!-- {{response|json}} -->
+  <table border="1" class="table table-bordered">
+    <!-- Table headers -->
+    
+    <thead>
+      <tr>
+        <th>OrderId</th>
+        <th>CustomerId</th>
+        <th>OrderDate</th>
+        <th>DeliveryAddress</th>
+        <th>PaymentMethod</th>
+      </tr>
+    </thead>
+    
+    <!-- Table body -->
+    <tbody>
+      <tr *ngFor="let admin of response">
+        <td>{{ admin.orderId }}</td>
+        <td>{{ admin.customer.customerId }}</td>
+        <td>{{ admin.orderDate }}</td>
+        <td>{{ admin.deliveryAddress }}</td>
+        <td>{{ admin.paymentMethod }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<!-- <div class="text-center">
+  <button (click)="addForm()" class="btn btn-success ">Add Order</button>
+</div>
+<div *ngIf="isaddFormVisible" class="container  col-lg-4">
+  <form   #formData=ngForm  (ngSubmit)="add(formData)" >
+    <div class="form-group">
+    
+      customerId :<input type="number" class="form-control" name="customerId"  required  #customerId="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="customerId.touched && customerId.invalid" >customerId is required</span>
+    </div>
+
+    <div class="form-group">
+    
+        orderDate :<input type="date" class="form-control" name="orderDate"  required  #orderDate="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="orderDate.touched && orderDate.invalid" >orderDate is required</span>
+    </div>
+
+    <div class="form-group">
+      
+      deliveryAddress:<input type="text" class="form-control" name="deliveryAddress"  required  #deliveryAddress="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="deliveryAddress.touched && deliveryAddress.invalid" >deliveryAddress is required</span>
+    </div>
+    
+    
+    <div class="form-group">
+
+      paymentMethod:<input type="text" class="form-control" name="paymentMethod"  required  #paymentMethod="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="paymentMethod.touched && paymentMethod.invalid" >paymentMethod is required</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
+  </form>
+</div>
+
+<br> -->
+<!-- <div class="text-center">
+<button (click)="deleteForm()" class="btn btn-success">Delete Order</button>
+</div>
+
+<div *ngIf="isdeleteFormVisible">
+<div  class="form-group">
+  <label for="deleteId">Enter ID to Delete:</label>
+  <input type="number" class="form-control" name="deleteId" [(ngModel)]="deleteId" required>
+</div>
+
+<button type="button" class="btn btn-danger" (click)="deleteById()">Delete</button>
+</div> -->
+<!-- <br>
+<div class="text-center">
+  <button (click)="updateForm()" class="btn btn-success ">Update Order</button>
+</div>
+<div *ngIf="isupdateFormVisible" class="container  col-lg-4">
+  <form   #formData=ngForm  (ngSubmit)="update(formData)" >
+    
+    <div class="form-group">
+    
+      OrderId :<input type="number" class="form-control" name="orderId"  required  #orderId="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="orderId.touched && orderId.invalid" >OrderId is required</span>
+    </div>
+   
+    <div class="form-group">
+    
+      customerId :<input type="number" class="form-control" name="customerId"  required  #customerId="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="customerId.touched && customerId.invalid" >customerId is required</span>
+    </div>
+
+    <div class="form-group">
+    
+        orderDate :<input type="date" class="form-control" name="orderDate"  required  #orderDate="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="orderDate.touched && orderDate.invalid" >orderDate is required</span>
+    </div>
+
+    <div class="form-group">
+      
+      deliveryAddress:<input type="text" class="form-control" name="deliveryAddress"  required  #deliveryAddress="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="deliveryAddress.touched && deliveryAddress.invalid" >deliveryAddress is required</span>
+    </div>
+    
+    
+    <div class="form-group">
+
+      paymentMethod:<input type="text" class="form-control" name="paymentMethod"  required  #paymentMethod="ngModel"  ngModel>
+      <span style="color:red"  *ngIf="paymentMethod.touched && paymentMethod.invalid" >paymentMethod is required</span>
+    </div>
+    
+    
+    
+    
+
+    <button type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
+  </form>
+</div>-->
+<br>
+<div class="custom-button">
+  <button type="submit" class="btn btn-primary transparent-button" (click)="goBack()" style="margin-left: 20px;">Back</button>
+  </div>
+  <br> 
