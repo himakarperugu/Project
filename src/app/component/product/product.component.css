@@ -52,6 +52,7 @@ table {
   /* Apply styles to the body */
   body {
     padding: 20px;
+    
   }
   
   /* Apply styles to the container */
@@ -118,3 +119,4 @@ table {
     background-color: darkred;
   }
   
+

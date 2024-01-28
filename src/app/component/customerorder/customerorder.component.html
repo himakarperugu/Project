@@ -30,23 +30,11 @@
 </div>
 
 <br>
-<!-- <div class="text-center">
-  <button (click)="addForm()" class="btn btn-success ">Add Order</button>
-</div>
-<div *ngIf="isaddFormVisible" class="container  col-lg-4">
+
+
+
   <form   #formData=ngForm  (ngSubmit)="add(formData)" >
-    <div class="form-group">
     
-      customerId :<input type="number" class="form-control" name="customerId"  required  #customerId="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="customerId.touched && customerId.invalid" >customerId is required</span>
-    </div>
-
-    <div class="form-group">
-    
-        orderDate :<input type="date" class="form-control" name="orderDate"  required  #orderDate="ngModel"  ngModel>
-      <span style="color:red"  *ngIf="orderDate.touched && orderDate.invalid" >orderDate is required</span>
-    </div>
-
     <div class="form-group">
       
       deliveryAddress:<input type="text" class="form-control" name="deliveryAddress"  required  #deliveryAddress="ngModel"  ngModel>
@@ -62,7 +50,7 @@
 
     <button type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
   </form>
-</div> -->
+
 
 <!-- <br>
 <div class="text-center">

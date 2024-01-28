@@ -1,6 +1,19 @@
 <app-navbar></app-navbar>
-<button (click)="getall()">All Products</button>
- <div *ngIf="response && response.length > 0">
+
+<body>
+  <div class="admin-dashboard">
+  <header class="header">
+<ul class="button-list">
+
+<li class="restaurant-container">
+<button class="header-button large-buttoncustomer"  (click)="getall()">All Products</button>
+
+</li>
+</ul>
+    </header>
+    </div>
+</body>
+<div *ngIf="response && response.length > 0">
    <table border="1">
    
      <thead>
@@ -15,21 +28,28 @@
        </tr>
      </thead>
      
-     <tbody>
-       <tr *ngFor="let customer of response">
-         <td>{{ customer.productId}}</td>
-         <td>{{ customer.productName }}</td>
-         <td>{{ customer.category }}</td>
-         <td>{{ customer.brand }}</td>
-         <td>{{ customer.price }}</td>
-         <td>
-          <div class="btn-group" role="group">
-            <input type="number" [(ngModel)]="customer.quant" min="1">
-            <button type="button" class="btn btn-info" (click)="add(customer.productId,customer.price)">Add to Cart</button>
-          </div>
-        </td>
-       </tr>
-     </tbody>
+
+
+<tbody>
+  <tr *ngFor="let customer of response">
+    <td>{{ customer.productId }}</td>
+    <td>{{ customer.productName }}</td>
+    <td>{{ customer.category }}</td>
+    <td>{{ customer.brand }}</td>
+    <td>{{ customer.price }}</td>
+    <td>
+      <div class="btn-group" role="group">
+   
+        <input type="number" [(ngModel)]="quantities[customer.productId]" min="1">
+        <button type="button" class="btn btn-info" (click)="add(customer, quantities[customer.productId])">Add to Cart</button>
+      </div>
+    </td>
+  </tr>
+</tbody>
+
+
+
+
    </table>
  </div>
  

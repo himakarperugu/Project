@@ -8,13 +8,13 @@ import { customer } from '../model/Customer';
 export class CustomerService {
 Token:any
 customerId:any;
+mainId:any
   constructor(private http:HttpClient) { }
 
   baseURL:string = 'http://localhost:8181/api/v1/';
 
   getGeneratedToken(requestBody: any){
-    // console.log("hi")
-    // console.log(requestBody)
+    
        this.Token=  this.http.post(this.baseURL+"login/customerlogin",requestBody,{responseType: 'text' as 'json'});
     return this.Token
     }
@@ -48,10 +48,14 @@ customerId:any;
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
       return this.http.put<customer>(`${this.baseURL}customer/updateCustomer/${updatedCustomer.customerId}`, updatedCustomer, { headers });
     }
+
+
     getcustomer(name:String,token: string){
       const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
+      console.log('In customer name service')
+      
 
-      return this.http.get(`${this.baseURL}customers/getByCustomerName/${name}`,{headers,responseType:'text' as 'json'});
+      return this.http.get(`${this.baseURL}customer/getByCustomerName/${name}`,{headers,responseType:'text' as 'json'});
 
 
     }

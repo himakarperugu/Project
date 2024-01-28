@@ -18,7 +18,8 @@ export class CustomerComponent {
   authRequest: AuthRequest = new AuthRequest();
   mainCustomerId:any;
   
-
+customerId:any
+customerdetails:any
 
   
 
@@ -36,9 +37,24 @@ export class CustomerComponent {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); 
         console.log('Response Data:', this.response);
-        this.getbyname(token);
+        // this.getbyname(token);
+        
+
+        this.customerId= this.customerService.getcustomer(this.authRequest.username,token)
+        console.log("Customer Id:", this.customerId);
+        this.customerId.subscribe((sakitha:any)=>{
+          if (typeof sakitha === 'string') {
+            this.customerdetails=JSON.parse(sakitha);
+            console.log(this.customerdetails);
+            console.log(this.customerdetails[0].customerId);
+            this.customerService.mainId=this.customerdetails[0].customerId;
+          }
+        }
+        );
+
         alert("Customer Login Successfull");
         this.router.navigate(['customerdashboard'])
+
       } else {
         console.log('Unexpected response type:', responseData);
       }

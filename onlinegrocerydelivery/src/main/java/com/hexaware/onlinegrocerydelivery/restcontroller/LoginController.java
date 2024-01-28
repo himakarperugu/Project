@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.onlinegrocerydelivery.dto.AuthRequest;
 import com.hexaware.onlinegrocerydelivery.service.JwtService;
 //Author:Himakar
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:54682")
 @RestController
 @RequestMapping("/api/v1/login")
 public class LoginController {

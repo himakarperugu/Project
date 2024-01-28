@@ -19,7 +19,7 @@ import com.hexaware.onlinegrocerydelivery.service.IOrderService;
 
 import jakarta.validation.Valid;
 //Author:sakitha
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:54682")
 @RestController
 @RequestMapping("/api/v1/order")
 public class OrderController {
@@ -46,6 +46,14 @@ public class OrderController {
 	public OrderDTO getById(@PathVariable int orderId) {
 		
 		return orderservice.getById(orderId);
+		
+	}
+	
+	@GetMapping("/getByCustomerId/{customerId}")
+	@PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
+	public List<OrderDTO> getByCustomer(@PathVariable int customerId) {
+		
+		return orderservice.getByCustomerId(customerId);
 		
 	}
 	

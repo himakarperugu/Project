@@ -36,11 +36,9 @@
  </div>
  
  
- 
- <br>
  <br>
  <div class="text-center">
-   <button (click)="addForm()" class="btn btn-success ">Add Product</button>
+   <button (click)="addForm()">Add Product</button>
  </div>
  <div *ngIf="isaddFormVisible" class="container  col-lg-4">
    <form   #formData=ngForm  (ngSubmit)="add(formData)" >
@@ -73,7 +71,7 @@
  </div>
  <br>
  <div class="text-center">
-  <button (click)="updateForm()" class="btn btn-success ">Update Product</button>
+  <button (click)="updateForm()">Update Product</button>
 </div>
 <div *ngIf="isupdateFormVisible" class="container  col-lg-4">
   <form   #formData=ngForm  (ngSubmit)="update(formData)" >

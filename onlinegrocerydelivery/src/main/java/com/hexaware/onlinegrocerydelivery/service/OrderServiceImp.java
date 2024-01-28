@@ -1,14 +1,18 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.onlinegrocerydelivery.dto.CartDTO;
 import com.hexaware.onlinegrocerydelivery.dto.OrderDTO;
+import com.hexaware.onlinegrocerydelivery.entity.Cart;
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
 import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
@@ -52,12 +56,12 @@ public class OrderServiceImp implements IOrderService {
 					
 			
 			orders.setOrderId(orderDTO.getOrderId());
-//			orders.setCustomerId(orderDTO.getCustomerId());
+			orders.setCustomer(customer);
 			orders.setOrderDate(orderDTO.getOrderDate());
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
 			
-			orders.setCustomer(customer);
+			
 			
 		
 			
@@ -68,6 +72,30 @@ public class OrderServiceImp implements IOrderService {
 	}
 
 	@Override
+	public List<OrderDTO> getByCustomerId(int customerId) {
+	    List<Orders> orderList = orderrepository.findOrdersByCustomerId(customerId);
+	    List<OrderDTO> orderDTOList = new ArrayList<>();
+
+	    for (Orders orders : orderList) {
+	        OrderDTO orderDTO = new OrderDTO();
+	        
+	        orderDTO.setOrderId(orders.getOrderId());
+	        orderDTO.setCustomerId(orders.getCustomer().getCustomerId());
+	        orderDTO.setDeliveryAddress(orders.getDeliveryAddress());
+	        orderDTO.setOrderDate(orders.getOrderDate());
+	        orderDTO.setPaymentMethod(orders.getPaymentMethod());
+
+	        // Add the created OrderDTO to the list
+	        orderDTOList.add(orderDTO);
+	    }
+
+	    return orderDTOList;
+	}
+
+	
+	
+	
+	@Override
 	public OrderDTO getById(int orderId) {
 		Orders orders = orderrepository.findById(orderId).orElse(new Orders());
 		OrderDTO orderDTO = new OrderDTO();
@@ -76,12 +104,19 @@ public class OrderServiceImp implements IOrderService {
 			throw new OrderNotFoundException(HttpStatus.NOT_FOUND," Orders with Order Id : " + orderId + " Not Found " );
 
 		}
+		orderDTO.setOrderId(orders.getOrderId());
+		orderDTO.setCustomerId(orders.getCustomer().getCustomerId());
+		orderDTO.setDeliveryAddress(orders.getDeliveryAddress());
+		orderDTO.setOrderDate(orders.getOrderDate());
+		orderDTO.setPaymentMethod(orders.getPaymentMethod());
 		
-		orders.setOrderId(orderDTO.getOrderId());
-//		orders.setCustomerId(orderDTO.getCustomerId());
-		orders.setOrderDate(orderDTO.getOrderDate());
-		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
-		orders.setPaymentMethod(orderDTO.getPaymentMethod());
+//		orders.setOrderId(orderDTO.getOrderId());
+//		orders.setCustomer(customer);
+//		orders.setOrderDate(orderDTO.getOrderDate());
+//		orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
+//		orders.setPaymentMethod(orderDTO.getPaymentMethod());
+		
+		
 		
 		logger.info("Fetched Orders Data Using Orders ID " + orderId);
 

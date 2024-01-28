@@ -18,6 +18,8 @@ public interface IOrderService {
 	
 	void deleteById(int orderId);
 
+	public List<OrderDTO> getByCustomerId(int customerId);
+
 	
 
 

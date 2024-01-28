@@ -12,6 +12,7 @@ public interface ICartService {
 	List<Cart> getAllCart();
 	Cart  updateCart(CartDTO cartDTO);
 	String deleteById(int cartId);
+	List<CartDTO> getByCustomerId(int customerId);
 	
 
 }

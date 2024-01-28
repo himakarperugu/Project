@@ -1,7 +1,9 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +70,29 @@ public class CartServiceImp implements ICartService {
             return cartRepository.save(cart);
         }
     }
+    @Override
+    public List<CartDTO> getByCustomerId(int customerId) {
+    	List<Cart> cartList = cartRepository.findCustomerByCustomerId(customerId);
+	    List<CartDTO> cartDTOList = new ArrayList<>();
 
+	    for (Cart cart : cartList) {
+	        CartDTO cartDTO = new CartDTO();
+
+	        cartDTO.setCustomerId(cart.getCustomer().getCustomerId());
+
+	        cartDTO.setCartId(cart.getCartId());
+
+	       
+	        cartDTO.setQuantity(cart.getQuantity());
+
+	        cartDTO.setTotalAmount(cart.getTotalAmount());
+
+	        cartDTOList.add(cartDTO);
+	    }
+
+        return cartDTOList;
+    } 
+    
 
     @Override
     public CartDTO getById(int cartId) {
@@ -113,4 +137,5 @@ public class CartServiceImp implements ICartService {
         cartRepository.deleteById(cart.getCartId());
         return "Deleted";
     }
+     
 }

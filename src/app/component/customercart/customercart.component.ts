@@ -23,12 +23,13 @@ export class CustomercartComponent {
   getId!:number;
   quant!:number;
 
-  constructor(private jwtService:CartService,admintoken:CustomerService,private variable:ProductService,private router:Router){
+  constructor(private jwtService:CartService,private admintoken:CustomerService,private variable:ProductService,private router:Router){
     this.cartService=jwtService;
     this.key=admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      this.getall()
+      this.add()
+
     });
     
    }
@@ -67,19 +68,19 @@ export class CustomercartComponent {
   updateForm() {
     this.isUpdateFormVisible = !this.isUpdateFormVisible;
   }
-  var=this.variable.productId
-  add(formData: any) {
-    const customerId: number =1002;
-    const quantity: number = 1;
-    const totalAmount: number = this.variable.price*1;
-    const productId: number = this.variable.productId;
-    console.log(customerId,quantity,totalAmount,productId);
+
+  add() {
+    const customerId: number =this.admintoken.mainId;
+    const quantity: number = this.variable.quant;
+    const totalAmount: number = this.variable.price*quantity
+    
+    console.log(customerId,quantity,totalAmount);
     const updatedAdmin: Cart = {
       cartId:0,
-   customerId:customerId,
+      customerId:customerId,
    quantity: quantity,
    totalAmount:totalAmount,
-   productId:productId
+   
    
     };
   
@@ -102,15 +103,14 @@ export class CustomercartComponent {
     const customerId: number = formData.form.value.customerId;
     const quantity: number = formData.form.value.quantity;
     const totalAmount: number = formData.form.value.totalAmount;
-    const productId: number = formData.form.value.productId;
+    
   
     const updatedAdmin: Cart = {
       
       cartId:cartId,
-   customerId:customerId,
+      customerId:customerId,
    quantity: quantity,
    totalAmount:totalAmount,
-   productId:productId
     };
   
     this.cartService.updateMenu(updatedAdmin, this.adminKey)
@@ -132,6 +132,12 @@ export class CustomercartComponent {
 getById(){
   this.accessApi(this.authRequest);
   this.cartService.getById(this.getId,this.Token).subscribe((message:any) => {
+    this.response=message
+    console.log("get id is success " + message);
+  });
+}
+getBycustomerId(){
+  this.cartService.getByName(this.admintoken.mainId,this.Token).subscribe((message:any) => {
     this.response=message
     console.log("get id is success " + message);
   });

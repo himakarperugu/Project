@@ -20,10 +20,12 @@ export class CartService {
   
     }
 
-    add(productId:number, token: string): Observable<Cart> {
+    add(id:number, token: string): Observable<Cart> {
       const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-      return this.http.post<Cart>(`${this.baseURL}cart/addCart`, productId, { headers });
+      return this.http.post<Cart>(`${this.baseURL}cart/addCart`,id,  { headers });
     }
+  
+    
   
   
     delete(Id: number, token: any): Observable<string> {
@@ -39,6 +41,11 @@ export class CartService {
     getById(Id: number, token: any){
       const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
       return this.http.get(`${this.baseURL}cart/getById/${Id}`,{headers});
+    }
+
+    getByName(Id: number, token: any){
+      const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
+      return this.http.get(`${this.baseURL}cart/getByCustomerId/${Id}`,{headers});
     }
 
   

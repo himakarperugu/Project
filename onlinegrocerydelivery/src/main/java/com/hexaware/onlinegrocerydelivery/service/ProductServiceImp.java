@@ -27,8 +27,7 @@ public class ProductServiceImp implements IProductService {
 	@Autowired
 	private IProductRepository productRepository;
 	
-	@Autowired
-	private ICustomerRepository customerRepository;
+	
 	
 	@Autowired
 	private ICartRepository cartRepository;
@@ -42,7 +41,6 @@ public class ProductServiceImp implements IProductService {
 			ICartRepository cartRepository) {
 		super();
 		this.productRepository = productRepository;
-		this.customerRepository = customerRepository;
 		this.cartRepository = cartRepository;
 	}
 
@@ -51,7 +49,6 @@ public class ProductServiceImp implements IProductService {
 		
 		Product product =new Product();
 		
-		Customer customer=customerRepository.findById(productDTO.getCustomerId()).orElse(null);
 
 
 		
@@ -59,7 +56,6 @@ public class ProductServiceImp implements IProductService {
 		product.setCategory(productDTO.getCategory());
 		product.setBrand(productDTO.getBrand());
 		product.setPrice(productDTO.getPrice());
-		product.setCustomer(customer);		
 		logger.info("Inserted Product Data Into Table " +productDTO);
 
 		return productRepository.save(product);

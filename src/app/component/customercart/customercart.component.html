@@ -1,4 +1,4 @@
-
+{{response|json}}
 <app-navbar></app-navbar>
  <button (click)="getall()">Get Cart</button> 
 
@@ -11,6 +11,7 @@
         <th>quantity</th>
         <th>totalAmount</th>
         <th>productId</th>
+        <th></th>
       </tr>
     </thead>
    
@@ -20,9 +21,10 @@
         <td>{{ admin.customerId }}</td>
         <td>{{ admin.quantity }}</td>
         <td>{{ admin.totalAmount }}</td>
-        <td>{{ "300"}}</td>
+        <td>{{ admin.productId }}</td>
+        <!-- <td>{{ "300"}}</td> -->
         <!-- <td><button click="order()">Place order</button></td> -->
-        <li><a class="header-button" routerLink="/customerorder" routerLinkActive="active">Place Order</a></li>
+        <td><a class="header-button" routerLink="/customerorder" routerLinkActive="active">Place Order</a></td>
       </tr>
     </tbody>
   </table>

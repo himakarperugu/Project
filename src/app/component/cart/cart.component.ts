@@ -70,14 +70,12 @@ export class CartComponent {
     const customerId: number = formData.form.value.customerId;
     const quantity: number = formData.form.value.quantity;
     const totalAmount: number = formData.form.value.totalAmount;
-    const productId: number = formData.form.value.productId;
   
     const updatedAdmin: Cart = {
       cartId:0,
    customerId:customerId,
    quantity: quantity,
    totalAmount:totalAmount,
-   productId:productId
    
     };
     
@@ -100,7 +98,6 @@ export class CartComponent {
     const customerId: number = formData.form.value.customerId;
     const quantity: number = formData.form.value.quantity;
     const totalAmount: number = formData.form.value.totalAmount;
-    const productId: number = formData.form.value.productId;
   
     const updatedAdmin: Cart = {
       
@@ -108,7 +105,6 @@ export class CartComponent {
    customerId:customerId,
    quantity: quantity,
    totalAmount:totalAmount,
-   productId:productId
     };
   
     this.cartService.updateMenu(updatedAdmin, this.adminKey)

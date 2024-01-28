@@ -18,7 +18,7 @@ export class CustomerorderComponent {
   deleteId!: number;
   getName!:String;
   getresponseName:any;
-  constructor(private jwtService:OrdersService,admintoken:CustomerService){
+  constructor(private jwtService:OrdersService,private admintoken:CustomerService){
 
     
     this.orderService=jwtService;
@@ -27,7 +27,8 @@ export class CustomerorderComponent {
       this.adminKey = genToken;
       // console.log(genToken);
       //  this.accessApi(this.adminKey);
-      this.getall();
+
+      
     });
     
    }
@@ -70,8 +71,8 @@ export class CustomerorderComponent {
 
 
   add(formData: any) {
-    const customerId: number = formData.form.value.customerId;
-    const orderDate: Date = formData.form.value.orderDate;
+    const customerId: number = this.admintoken.mainId;
+    const orderDate: Date = new Date();
     const deliveryAddress: string = formData.form.value.deliveryAddress;
     const paymentMethod: string = formData.form.value.paymentMethod;
   
@@ -97,6 +98,7 @@ export class CustomerorderComponent {
           // Handle error scenarios
         }
       );
+      this.getall()
   }
 
   // deleteById() {

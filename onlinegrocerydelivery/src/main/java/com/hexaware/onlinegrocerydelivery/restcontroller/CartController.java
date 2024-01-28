@@ -23,7 +23,7 @@ import jakarta.validation.Valid;
 
 
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:54682")
 @RestController
 @RequestMapping("/api/v1/cart")
 public class CartController {
@@ -41,6 +41,11 @@ public class CartController {
 	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	public CartDTO getById(@PathVariable int cartId) {
 		return service.getById(cartId);
+	}
+	@GetMapping("/getByCustomerId/{customerId}")
+	@PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+	public List<CartDTO> getByName(@PathVariable int customerId) {
+		return service.getByCustomerId(customerId);
 	}
 
 	@GetMapping("/getAllCart")

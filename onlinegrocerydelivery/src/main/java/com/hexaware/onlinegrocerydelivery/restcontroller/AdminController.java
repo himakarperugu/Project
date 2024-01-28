@@ -22,7 +22,7 @@ import com.hexaware.onlinegrocerydelivery.service.IAdminService;
 
 import jakarta.validation.Valid;
 //Author:Himakar
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:54682")
 @RestController
 @RequestMapping("/api/v1/Admin")
 public class AdminController {

@@ -23,7 +23,8 @@ export class CustomerproductComponent implements  OnInit{
   getresponseName:any;
   adminKey$!: Observable<any>;
   getCategory!: String;
-  quant!:number;
+  // quant:any;
+  quantities: { [productId: number]: number } = {};
 
 
   constructor(private jwtService: ProductService, private admintoken: CustomerService,private cartService:CartService,private router:Router) {
@@ -89,24 +90,43 @@ export class CustomerproductComponent implements  OnInit{
       console.log("get Name is success " + message);
     });
   }
+ 
 
-  add(product:any,price:any){
-    this.jwtService.productId=product;
-    this.jwtService.quant=this.quant;
-    this.jwtService.price=price;
-    console.log(this.jwtService.productId,this.jwtService.quant=this.quant,this.jwtService.price=price);
-    this.gotoCustomercart();
-    };
-    gotoCustomercart(){
-      this.router.navigate(["/customercart"])
-    }
-
-  //  getByCategory(){
-  //   this.jwtService.getCategory(this.getCategory,this.productKey).subscribe((message) => {
-  //     this.getresponseName=message
-  //     console.log("Get Category is success " + message);
-  //   });
+  // add(price:any){
+    
+  //   this.jwtService.quant=this.quant;
+  //   this.jwtService.price=price;
+    
+  //   console.log(this.jwtService.quant,this.jwtService.price=price);
+  //   this.gotoCustomercart();
+  //   };
+  //   gotoCustomercart(){
+  //     this.router.navigate(["/customercart"])
+  //   }
+  add(product: Product, quantity: number) {
+    const productId = product.productId;
   
-}
+    if (!this.quantities[productId]) {
+      this.quantities[productId] = 0;
+    }
+  
+    this.quantities[productId] += quantity;
+  
+    console.log('Quantities:', this.quantities);
+  
+    this.quantities[productId] = 1; 
+    this.gotoCustomercart();
+       };
+  
+    gotoCustomercart(){
+          this.router.navigate(["/customercart"])
+         }
+  }
+  
+  
+
+
+
+
 
   
