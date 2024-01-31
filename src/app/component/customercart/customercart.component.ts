@@ -49,7 +49,7 @@ export class CustomercartComponent {
       });
 
 
-      this.getall()
+      this.add()
 
     });
     
@@ -61,7 +61,7 @@ export class CustomercartComponent {
   }
   public accessApi(adminKey: any) {
     console.log('accessApi', adminKey); 
-    let response = this.cartService.getByCustomerId(this.custid,adminKey);
+    let response = this.cartService.getAll(adminKey);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); // Parse string to array

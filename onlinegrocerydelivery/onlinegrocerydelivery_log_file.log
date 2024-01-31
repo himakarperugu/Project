@@ -4878,3 +4878,429 @@ io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period
 2024-01-31T12:17:08.751+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
 2024-01-31T12:17:08.756+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
 2024-01-31T12:17:08.760+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:17:08.760+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:17:08.760+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:17:08.760+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:47.590+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:47.606+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:48.089+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:48.089+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:48.097+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:42:48.097+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:42:48.105+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:42:48.105+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:48.234+05:30  WARN 12436 --- [http-nio-8181-exec-6] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.hexaware.onlinegrocerydelivery.restcontroller.CartController
+2024-01-31T12:42:48.713+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:48.713+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:48.752+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:48.752+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:48.768+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:42:48.768+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:42:48.768+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:42:48.768+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.072+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:49.072+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.103+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:49.103+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.119+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:42:49.119+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:42:49.119+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:42:49.119+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.165+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:49.165+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.198+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:49.198+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:49.205+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:42:49.205+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:42:49.220+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:42:49.220+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:57.089+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:57.089+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:57.126+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:42:57.126+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:42:57.130+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:42:57.130+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:42:57.130+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:42:57.133+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:31.874+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T12:43:31.874+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T12:43:31.889+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:31.889+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:31.909+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:31.909+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:31.921+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:31.921+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:31.921+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:31.921+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:31.921+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.CustomerServiceImp         :  Fetched All The Customer Data 
+2024-01-31T12:43:31.990+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:31.992+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:32.009+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:32.009+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:32.017+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:32.017+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:32.017+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:32.017+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:32.032+05:30  WARN 12436 --- [http-nio-8181-exec-8] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.hexaware.onlinegrocerydelivery.restcontroller.CustomerController
+2024-01-31T12:43:38.414+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:38.414+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:38.430+05:30 ERROR 12436 --- [http-nio-8181-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractAllClaims(JwtService.java:82) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractClaim(JwtService.java:71) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractUsername(JwtService.java:61) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:37) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:351) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-01-31T12:43:38.587+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T12:43:38.587+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T12:43:40.438+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:40.438+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:40.465+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:40.467+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:40.469+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:40.469+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:40.469+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:40.469+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:40.485+05:30  INFO 12436 --- [http-nio-8181-exec-2] c.h.o.service.ProductServiceImp          :  Fetched All The Product Data 
+2024-01-31T12:43:45.094+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T12:43:45.094+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T12:43:45.109+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:45.109+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:45.125+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:45.125+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:45.144+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:45.144+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:45.144+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:45.144+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:46.730+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:46.730+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:46.741+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:46.741+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:46.756+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:46.756+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:46.756+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:46.756+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.368+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.368+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.377+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.377+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.400+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:47.400+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:47.400+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:47.400+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.551+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.551+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.576+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.577+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.577+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:47.577+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:47.577+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:47.577+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.762+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.762+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:43:47.773+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:08.989+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:48:09.005+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:48:09.370+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:22.620+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:48:22.620+05:30  INFO 12436 --- [http-nio-8181-exec-7] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:22.629+05:30 ERROR 12436 --- [http-nio-8181-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractAllClaims(JwtService.java:82) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractClaim(JwtService.java:71) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractUsername(JwtService.java:61) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:37) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:351) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-01-31T12:48:22.881+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T12:48:22.881+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T12:48:24.077+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:48:24.077+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:24.130+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T12:48:24.130+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:24.137+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T12:48:24.137+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T12:48:24.137+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T12:48:24.137+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T12:48:24.154+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.ProductServiceImp          :  Fetched All The Product Data 
+2024-01-31T13:55:27.106+05:30  WARN 12436 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56m2s709ms179µs300ns).
+2024-01-31T13:57:44.325+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T13:57:44.325+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T13:57:44.439+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T13:57:44.439+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T13:57:44.487+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T13:57:44.489+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T13:57:44.489+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T13:57:44.489+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T13:57:44.489+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T13:57:44.489+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T13:57:46.481+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T13:57:46.481+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T13:57:46.509+05:30  INFO 12436 --- [http-nio-8181-exec-6] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:50.854+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T14:11:50.870+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T14:11:51.219+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:51.219+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:51.269+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:51.269+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:51.286+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T14:11:51.286+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T14:11:51.286+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T14:11:51.286+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:51.304+05:30  INFO 12436 --- [http-nio-8181-exec-4] c.h.o.service.CustomerServiceImp         :  Fetched All The Customer Data 
+2024-01-31T14:11:51.444+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:51.453+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:51.581+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:51.581+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:51.593+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T14:11:51.593+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T14:11:51.593+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T14:11:51.593+05:30  INFO 12436 --- [http-nio-8181-exec-1] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:57.961+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:57.961+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:58.004+05:30 ERROR 12436 --- [http-nio-8181-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractAllClaims(JwtService.java:82) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractClaim(JwtService.java:71) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.service.JwtService.extractUsername(JwtService.java:61) ~[classes/:na]
+	at com.hexaware.onlinegrocerydelivery.filter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:37) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.1.jar:6.0.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:351) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-01-31T14:11:58.323+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T14:11:58.323+05:30  INFO 12436 --- [http-nio-8181-exec-10] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T14:11:58.913+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:58.915+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:58.971+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:11:58.971+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:58.979+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T14:11:58.979+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T14:11:58.979+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T14:11:58.979+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:11:59.003+05:30  INFO 12436 --- [http-nio-8181-exec-8] c.h.o.service.ProductServiceImp          :  Fetched All The Product Data 
+2024-01-31T14:12:04.105+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Generating token for customername: Prasad
+2024-01-31T14:12:04.105+05:30  INFO 12436 --- [http-nio-8181-exec-5] c.h.o.service.JwtService                 : Creating token for username: Prasad
+2024-01-31T14:12:04.140+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:12:04.140+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:04.156+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:12:04.156+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:04.164+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T14:12:04.164+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T14:12:04.164+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T14:12:04.164+05:30  INFO 12436 --- [http-nio-8181-exec-3] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:05.429+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:12:05.429+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:05.455+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting username from token
+2024-01-31T14:12:05.455+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:05.461+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Validating token for username: Prasad
+2024-01-31T14:12:05.461+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Checking if token is expired
+2024-01-31T14:12:05.461+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting expiration from token
+2024-01-31T14:12:05.461+05:30  INFO 12436 --- [http-nio-8181-exec-9] c.h.o.service.JwtService                 : Extracting all claims from token
+2024-01-31T14:12:49.505+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-01-31T14:12:49.701+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-01-31T14:12:49.720+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-01-31T14:12:49.757+05:30  WARN 12436 --- [RMI TCP Connection(74)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.8.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.8.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)
+2024-01-31T14:12:49.840+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-31T14:12:49.898+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-31T14:12:49.960+05:30  INFO 12436 --- [RMI TCP Connection(74)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
