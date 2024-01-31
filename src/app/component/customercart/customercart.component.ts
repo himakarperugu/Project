@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from 'src/app/model/Cart';
 import { CartService } from 'src/app/service/cart.service';
 import { CustomerService } from 'src/app/service/customer.service';
@@ -23,12 +23,33 @@ export class CustomercartComponent {
   getId!:number;
   quant!:number;
 
-  constructor(private jwtService:CartService,private admintoken:CustomerService,private variable:ProductService,private router:Router){
+  customerid:any;
+  idcustomer: any;
+  quantity: any;
+  custid: any;
+
+  constructor(private jwtService:CartService,private admintoken:CustomerService,private variable:ProductService,private router:Router,private activatedRoute: ActivatedRoute){
     this.cartService=jwtService;
     this.key=admintoken.Token;
+    console.log(this.key+"food");
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
-      this.add()
+      console.log(this.adminKey+"food by");
+      this.customerid=admintoken.customerId;
+      console.log("customer id is:"+this.customerid);
+
+
+
+      this.activatedRoute.params.subscribe((params) => {
+        this.custid=params['custid']
+        this.idcustomer=params['id']
+        this.quantity = params['quantity'];
+        console.log("customercart"+this.idcustomer,this.quantity,this.custid);
+        
+      });
+
+
+      this.getall()
 
     });
     
@@ -39,8 +60,8 @@ export class CustomercartComponent {
     
   }
   public accessApi(adminKey: any) {
-    console.log('accessApi', adminKey);  
-    let response = this.cartService.getAll(adminKey);
+    console.log('accessApi', adminKey); 
+    let response = this.cartService.getByCustomerId(this.custid,adminKey);
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); // Parse string to array

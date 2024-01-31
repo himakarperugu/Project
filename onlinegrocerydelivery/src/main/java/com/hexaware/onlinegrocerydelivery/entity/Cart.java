@@ -26,7 +26,7 @@ public class Cart {
 	
 	
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Customer customer;
 	
 	

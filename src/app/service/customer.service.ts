@@ -24,8 +24,10 @@ mainId:any
           let tokenString = "Bearer "+token;
 
          const headers =  new HttpHeaders().set("Authorization",tokenString);
-      console.log(this.customerId);
+      console.log(this.customerId+"service");
 
+
+      
         return this.http.get(this.baseURL+"customer/getAllCustomer",{headers,responseType:'text' as 'json'});
 
     }

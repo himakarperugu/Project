@@ -43,10 +43,12 @@ export class CartService {
       return this.http.get(`${this.baseURL}cart/getById/${Id}`,{headers});
     }
 
-    getByName(Id: number, token: any){
+    getByCustomerId(Id: number, token: any){
       const headers = new HttpHeaders().set('Authorization',` Bearer ${token}`);
       return this.http.get(`${this.baseURL}cart/getByCustomerId/${Id}`,{headers});
     }
 
+
+    
   
 }

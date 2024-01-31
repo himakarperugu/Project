@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customerdashboard',
@@ -7,10 +7,20 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./customerdashboard.component.css']
 })
 export class CustomerdashboardComponent {
-  constructor(private router:Router){}
+  customerid: any;
+  constructor(private router:Router,private activatedRoute: ActivatedRoute){
+
+    this.activatedRoute.params.subscribe((params) => {
+      this.customerid = params['id'];
+      console.log('customer ID customerdash:', this.customerid);
+      
+    });
+
+
+  }
 
   customerproduct(){
-  this.router.navigate(['/customerproduct'])
+  this.router.navigate(['/customerproduct',this.customerid])
   
 
  }

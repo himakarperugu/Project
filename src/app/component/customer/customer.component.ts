@@ -36,7 +36,8 @@ customerdetails:any
     response.subscribe((responseData: any) => {
       if (typeof responseData === 'string') {
         this.response = JSON.parse(responseData); 
-        console.log('Response Data:', this.response);
+        console.log('Response Data:', this.response+"hi");
+        console.log('Response Data:', this.response[0].customerId+"ok");
         // this.getbyname(token);
         
 
@@ -53,7 +54,7 @@ customerdetails:any
         );
 
         alert("Customer Login Successfull");
-        this.router.navigate(['customerdashboard'])
+        this.router.navigate(['customerdashboard',this.response[0].customerId])
 
       } else {
         console.log('Unexpected response type:', responseData);

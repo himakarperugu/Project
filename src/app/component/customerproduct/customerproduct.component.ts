@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/Product';
 import { CartService } from 'src/app/service/cart.service';
@@ -25,19 +25,28 @@ export class CustomerproductComponent implements  OnInit{
   getCategory!: String;
   // quant:any;
   quantities: { [productId: number]: number } = {};
+  customerid: any;
 
 
-  constructor(private jwtService: ProductService, private admintoken: CustomerService,private cartService:CartService,private router:Router) {
+  constructor(private jwtService: ProductService, private admintoken: CustomerService,private cartService:CartService,private router:Router,private activatedRoute: ActivatedRoute) {
     this.productService = jwtService;
+    this.activatedRoute.params.subscribe((params) => {
+      this.customerid = params['id'];
+      console.log('customer ID customerproduct:', this.customerid);
+      
+    });
+
     this.key = this.admintoken.Token;
     this.key.subscribe((genToken: any) => {
       this.adminKey = genToken;
      // console.log(this.adminKey)
     });
+    this.getall();
   }
   ngOnInit(): void {
     
   }
+  
   
 
 
@@ -103,24 +112,14 @@ export class CustomerproductComponent implements  OnInit{
   //   gotoCustomercart(){
   //     this.router.navigate(["/customercart"])
   //   }
-  add(product: Product, quantity: number) {
-    const productId = product.productId;
-  
-    if (!this.quantities[productId]) {
-      this.quantities[productId] = 0;
-    }
-  
-    this.quantities[productId] += quantity;
-  
-    console.log('Quantities:', this.quantities);
-  
-    this.quantities[productId] = 1; 
-    this.gotoCustomercart();
-       };
-  
-    gotoCustomercart(){
-          this.router.navigate(["/customercart"])
-         }
+  add(product: any, quantity: number) {
+    console.log(product, quantity);
+    this.gotoCustomercart(product, quantity);
+  }
+
+  gotoCustomercart(product: any, quantity: number) {
+    this.router.navigate(['/customercart',this.customerid, product.productId, quantity]);
+  }
   }
   
   

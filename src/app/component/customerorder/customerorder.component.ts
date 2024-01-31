@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Orders } from 'src/app/model/Orders';
 import { CustomerService } from 'src/app/service/customer.service';
 import { OrdersService } from 'src/app/service/orders.service';
@@ -18,7 +19,8 @@ export class CustomerorderComponent {
   deleteId!: number;
   getName!:String;
   getresponseName:any;
-  constructor(private jwtService:OrdersService,private admintoken:CustomerService){
+  customerid: any;
+  constructor(private jwtService:OrdersService,private admintoken:CustomerService,private activatedRoute: ActivatedRoute){
 
     
     this.orderService=jwtService;
@@ -27,6 +29,12 @@ export class CustomerorderComponent {
       this.adminKey = genToken;
       // console.log(genToken);
       //  this.accessApi(this.adminKey);
+
+      this.activatedRoute.params.subscribe((params) => {
+        this.customerid = params['id'];
+        console.log('customer ID customerdash:', this.customerid);
+        
+      });
 
       
     });
