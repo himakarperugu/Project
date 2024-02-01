@@ -1,11 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
 }
-
-
-
-
-
    
 .header {
     display: flex;
@@ -14,6 +10,7 @@ body {
     padding: 10px 0;
   }
   
+  
   .button-list {
     list-style: none;
     padding: 20px;
@@ -21,43 +18,32 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
-    /* background-image: url("../../../assets/back4.jpg"); */
-    /* background-size: cover; */
+  
     background-size: contain;
     background-size: 100% 100%;
 
 
   }
   
-  .restaurant-container
+  .container-container
   {
     display: flex;
     gap: 80px; 
-    /* width: 400px; 
-    padding: 50px; */
+
   }
   .cart-container{
     display: flex;
     gap: 80px; 
-    /* width: 400px; 
-    padding: 50px; */
+
   }
    .menu-container{
     display: flex;
     gap: 80px; 
-    /* width: 400px; 
-    padding: 50px; */
   }
   .ordcust-container{
     display: flex;
     gap: 80px; 
-    /* width: 400px; 
-    padding: 50px; */
   }
-
-
-
-
 
   .header-button {
     margin:10px;
@@ -75,7 +61,7 @@ body {
     height:50px;
     
     text-align:justify;
-    display: flex; /* Convert button to flexbox */
+    display: flex; 
     align-items: center;
     
   }
@@ -88,9 +74,8 @@ body {
     
   }
   
-  /* Example background images for buttons */
   .large-buttonrest {
-    width: 100%; /* Span two columns */
+    width: 100%; 
     flex: 0; /* Disable flex behavior */
     margin: 20px; /* Maintain consistent spacing */
     background-image: url("../../../assets/addrest.jpg");
@@ -194,47 +179,3 @@ body {
     display: flex;
     justify-content: center;
   }
-
-/* ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.custom-button button {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.custom-button button:hover {
-    background-color: #c82333;
-} */

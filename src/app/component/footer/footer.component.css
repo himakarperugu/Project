@@ -1,77 +1,38 @@
-/* Footer Styles */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
+    padding: 20px 0;
 }
 
-/* Container Styles */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* Column Styles */
-/* .col-md-6,
-.col-md-3 {
-    
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding-left: 5px;
-} */
-
-/* Social Links Styles */
 .social-links {
     list-style: none;
     padding: 0;
-    line-height: 30px;
- 
+    margin: 0;
 }
 
-/* .social-links li {
-    margin-right: 10px;
-} */
-
-
-i{
-    color: rgb(203,203,132);
-    padding-right: 10px;
+.social-links li {
+    margin-bottom: 10px;
 }
-i:hover{
+
+.social-links a {
     color: white;
-}
-/* Media Query Styles */
-/* @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .social-links {
-        justify-content: center; 
-    }
-} */
-
-/* li{
-    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block; /* Display each link on a new line */
 }
 
-p i{
-    margin-left: 20px;
-    padding-left: 20px;
-} */
-
-#contact{
-    display: flex; 
+.social-links i {
+    margin-right: 5px;
 }
-#follow,#copy,#write{
-    margin:10px 100px;
-}
-h3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
 
+#contact h3,
+#write h3 {
+    margin-bottom: 20px;
+}
+
+#footerheight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }

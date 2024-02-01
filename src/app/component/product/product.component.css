@@ -1,4 +1,3 @@
-/* Apply styles to the table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -15,8 +14,7 @@ table {
     background-color: #4CAF50;
     color: white;
   }
-  
-  /* Apply styles to the buttons */
+
   .btn {
     padding: 10px 20px;
     margin: 5px;
@@ -33,34 +31,32 @@ table {
     color: white;
   }
   
-  /* Apply styles to the forms */
+
   .form-group {
     margin-bottom: 15px;
   }
   
-  /* Apply styles to the custom buttons */
-  .custom-button {
-    margin-top: 20px;
-  }
-  
-  .transparent-button {
-    background-color: transparent;
-    border: 1px solid #4CAF50;
-    color: #4CAF50;
-  }
-  
-  /* Apply styles to the body */
+.custom-button {
+  text-align: center;
+  margin-top: 60px; 
+}
+.transparent-button {
+  background-color: transparent;
+  color: #398ce4; 
+  border: 1px solid #007bff;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
   body {
     padding: 20px;
     
   }
   
-  /* Apply styles to the container */
   .container {
     margin: 0 auto;
   }
   
-  /* Apply styles to the text-center class */
   .text-center {
     text-align: center;
   }

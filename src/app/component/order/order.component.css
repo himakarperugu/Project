@@ -1,11 +1,10 @@
-/* General Styles */
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    font-size: 14px; /* Adjust as needed */
+    font-size: 14px; 
 }
 
-/* Button Styles */
 button {
     background-color: #007bff;
     color: #fff;
@@ -38,16 +37,11 @@ th, td {
     text-align: center;
 }
 
-th {
-    background-color: #1477b5;
-    color: #141313;
-}
 
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Form Styles */
 .form-group {
     margin-bottom: 15px;
 }
@@ -58,10 +52,10 @@ tbody tr:nth-child(even) {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 14px; /* Adjust as needed */
+    font-size: 14px;
 }
 
-/* Button Styles */
+
 .btn {
     background-color: rgb(63, 140, 187);
     border-radius: 20px;
@@ -75,6 +69,17 @@ tbody tr:nth-child(even) {
     margin-top: 10px;
 }
 
+.custom-button {
+    text-align: center;
+    margin-top: 60px; 
+}
+.transparent-button {
+    background-color: transparent;
+    color: #398ce4; 
+    border: 1px solid #007bff;
+    padding: 8px 16px;
+    cursor: pointer;
+}
 .btn-success {
     background-color: rgb(79, 81, 79);
 }
@@ -87,29 +92,23 @@ tbody tr:nth-child(even) {
     background-color: rgb(63, 140, 187);
 }
 
-/* Center Text Styles */
 .text-center {
     text-align: center;
 }
 
-/* Container Styles */
 .container {
     margin: auto;
     width: 50%;
 }
 
-/* Optional: Styles for form error messages */
 span {
     color: red;
 }
 
-/* Optional: Additional styling for specific elements */
-/* For example, updateForm and deleteForm sections */
 .container.col-lg-4 {
     width: 40%;
 }
 
-/* Optional: Additional styling for the table */
 .table {
     background-color: #fff;
     margin-top: 20px;

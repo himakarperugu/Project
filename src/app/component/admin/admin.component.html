@@ -1,212 +1,33 @@
-<!-- FILEPATH: /c:/Users/himak/OneDrive/Desktop/test/grocerypal/src/app/component/security/security.component.html -->
-
-<!-- <h2><marquee behavior="scroll" direction="">Admin Login Page</marquee></h2>
-<div class="admin" *ngIf="!isLoggedIn">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <div>
-      <div id="adminpage" class="container col-lg-4">
-        <form #formData="ngForm" (ngSubmit)="login(formData)">
-          <fieldset>
-            <legend>Admin Login</legend>
-            <div class="form-group">
-              <label for="exampleInputEmail1">UserName:</label>
-              <input type="username" class="form-control" name="username" required #username="ngModel" ngModel placeholder="Enter a valid UserName" style="width: 100%">
-              <small id="userHelp" class="form-text text-muted"></small><br>
-              <span style="color:red" *ngIf="username.touched && username.invalid">UserName is required</span>
-            </div>
-            <br>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password:</label>
-              <input type="password" class="form-control" name="password" required #pwd="ngModel" ngModel placeholder="Enter a valid Password" style="width: 100%">
-              <span style="color:red" *ngIf="pwd.touched && pwd.invalid">Password is mandatory</span>
-            </div>
-            <br> <br>
-            <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="submit" class="btn btn-primary" [disabled]="formData.invalid">Login</button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="admin">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <div>
-      <div id="adminpage" class="container col-lg-4">
-        <form #formData="ngForm" (ngSubmit)="readFormData(formData)">
-          <fieldset>
-            <legend>Admin Login</legend>
-            <div class="form-group">
-              <label for="exampleInputEmail1">UserName:</label>
-              <input type="username" class="form-control" name="username" required #username="ngModel" ngModel placeholder="Enter a valid UserName" style="width: 100%">
-              <small id="userHelp" class="form-text text-muted"></small><br>
-              <span style="color:red" *ngIf="username.touched && username.invalid">UserName is required</span>
-            </div>
-            <br>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password:</label>
-              <input type="password" class="form-control" name="password" required #pwd="ngModel" ngModel placeholder="Enter a valid Password" style="width: 100%">
-              <span style="color:red" *ngIf="pwd.touched && pwd.invalid">Password is mandatory</span>
-              
-            </div>
-            <br> <br>
-            <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="submit" class="btn btn-primary" [disabled]="formData.invalid">Login</button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
+<div class="admin d-flex justify-content-center align-items-center">
+  <div>
+    
   
-  <!-- <div style="display: flex; justify-content: center; align-items: center;">
-    <div>
-      <button (click)="toggleForm()">Register For Admin</button><br> <br>
-      <form *ngIf="isFormVisible" #myform="ngForm" method="post" class="container col-md-4" (ngSubmit)="insertEmployee(myform.value)">
-        <fieldset>
-          <legend>Admin Register</legend>
-          <div class="form-group">
-            <label>User Name:</label>
-            <input type="text" class="form-control" #usernamecontrol="ngModel" name="userName" required ngModel style="width: 100%">
-            <span style="color: red;" *ngIf="usernamecontrol.touched && usernamecontrol.invalid">UserName is Mandatory</span>
+   <div id="adminpage" class="admin col-lg-4" >
+      <form #formData="ngForm" (ngSubmit)="readFormData(formData)" >
+        <fieldset class="mx-auto"  style="width: 450%;" >
+          <h2 style="text-align: center;">Admin Login</h2>
+          <br>
+          <br>
+          <br>
+          <div class="form-group" >
+            <label for="exaAmpleInputEmail1">UserName:</label>
+            <input type="username" class="form-control" name="username" required #username="ngModel" ngModel placeholder="Enter a valid UserName">
+            <small id="userHelp" class="form-text text-muted"></small>
+            <span style="color:red" *ngIf="username.touched && username.invalid">UserName is required</span>
           </div>
           <br>
           <div class="form-group">
-            <label>Password:</label>
-            <input type="password" class="form-control" #pwdcontrol="ngModel" name="password" required ngModel style="width: 100%">
-            <span style="color: red;" *ngIf="pwdcontrol.touched && pwdcontrol.invalid">Password is Mandatory</span>
+            <label for="exampleInputPassword1">Password:</label>
+            <input type="password" class="form-control" name="password" required #pwd="ngModel" ngModel placeholder="Enter a valid Password">
+            <span style="color:red" *ngIf="pwd.touched && pwd.invalid">Password is mandatory</span>
           </div>
-          <br>
-          <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="submit" class="btn btn-primary" [disabled]="myform.invalid">Submit</button>
-          <br>
-          <br>
-
-        </fieldset>
-      </form>
-    </div>
-  </div>
-  <br>
-  <div style="display: flex; justify-content: center; align-items: center;" class="text-center">
-    <button (click)="deleteForm()" class="btn btn-success">Delete By Id</button>
-  </div>
-  <div *ngIf="isdeleteFormVisible">
-    <div class="form-group">
-      <form style="display: flex; justify-content: center; align-items: center;" action="">
-        <fieldset>
-          <legend>Delete By Id</legend>
-  
-    <label for="deleteId">Enter Admin ID to Delete:</label> <br>
-    <input type="number" class="form-control" name="deleteId" [(ngModel)]="deleteId" required placeholder="Enter Existing Admin"> <br> <br>
-    <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="button" class="btn btn-danger" (click)="deleteById()">Delete</button>
-  
-  </fieldset>
-  </form>
-</div>
-</div>
-<br>
-<br>
-
-  
-  <div style="display: flex; justify-content: center; align-items: center;" class="text-center">
-    <button (click)="getForm()" class="btn btn-success">Get By Id</button>
-  </div>
-  
-  <div *ngIf="isgetFormVisible">
-    <div class="form-group">
-      <form style="display: flex; justify-content: center; align-items: center;" action="">
-        <fieldset>
-          <legend>Get By Id</legend>
-          <label for="deleteId">Enter ID to Get Details</label> <br> <br>
-          <input type="number" class="form-control" name="deleteId" [(ngModel)]="getId" required>
           <br> <br>
-          <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="button" class="btn btn-primary btn-sm" (click)="getById()">get</button> <br>
+         
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+          <button type="submit" style="text-align: center;" class="btn btn-primary" [disabled]="formData.invalid">Login</button>
         </fieldset>
       </form>
-      <div *ngIf="getresponse">
-        <h2>Admin Details</h2>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Admin ID</th>
-              <th>User Name</th>
-              <th>Password</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{ getresponse.adminId }}</td>
-              <td>{{ getresponse.userName }}</td>
-              <td>{{ getresponse.password }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <br>
-      <br>
-      <div style="display: flex; justify-content: center; align-items: center;" class="text-center">
-        <button (click)="getFormName()" class="btn btn-success">Get By Name</button>
-      </div>
-      <div *ngIf="isgetFormNameVisible">
-        <form style="display: flex; justify-content: center; align-items: center;" action="">
-          <fieldset>
-            <legend>Get by Name</legend>
-            <div class="form-group">
-              <label for="deleteId">Enter Name to Get Details</label> <br>
-              <input type="text" class="form-control" name="deleteId" [(ngModel)]="getName" required> <br>
-            </div>
-            <br>
-            <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold" type="button" class="btn btn-primary btn-sm" (click)="getByName()">get</button> <br>
-          </fieldset>
-        </form>
-        {{getresponseName|json}}
-        <div *ngIf="getresponseName">
-          <h2>Admin Details</h2>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Admin ID</th>
-                <th>User Name</th>
-                <th>Password</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{ getresponseName.adminId }}</td>
-                <td>{{ getresponseName.userName }}</td>
-                <td>{{ getresponseName.password }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <br>
-      <br>
-      <div style="display: flex; justify-content: center; align-items: center;" class="text-center">
-        <button (click)="updateForm()" class="btn btn-success ">Update Admin</button>
-      </div>
-      <div *ngIf="isupdateFormVisible" class="container  col-lg-4">
-        <form style="display: flex; justify-content: center; align-items: center;" #formData=ngForm  (ngSubmit)="update(formData)" >
-          <fieldset>
-            <legend>Update Admin</legend>
-            <div class="form-group">
-              Admin Id:<br><input type="number" class="form-control" name="AdminId"  required  #AdminId="ngModel"  ngModel> 
-              <span style="color:red"  *ngIf="username.touched && username.invalid" >UserName is required</span>
-            </div> <br>
-            <div class="form-group">
-              AdminName: <br><input type="username" class="form-control" name="username"  required  #username="ngModel"  ngModel>
-              <span style="color:red"  *ngIf="username.touched && username.invalid" >UserName is required</span>
-            </div> <br>
-            <div class="form-group">
-              Password: <br><input type="text" class="form-control"  name="password"  required  #pwd="ngModel"   ngModel>
-              <span style="color:red"   *ngIf="pwd.touched && pwd.invalid" >Password is mandatory</span>
-            </div> <br>
-            <button style="background-color:  rgb(63, 140, 187);border-radius: 20px; font-size: larger;box-shadow:0px 2px 5px white;color: white;width: 150px;height: 40px;font-weight: bold"  type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
-            <br>
-          </fieldset>
-        </form>
-      </div>
-      <br>
     </div>
   </div>
-</div> -->
-
+</div>
