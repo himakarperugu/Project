@@ -1,5 +1,6 @@
 package com.hexaware.onlinegrocerydelivery.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,14 @@ import com.hexaware.onlinegrocerydelivery.dto.OrderDTO;
 import com.hexaware.onlinegrocerydelivery.entity.Cart;
 import com.hexaware.onlinegrocerydelivery.entity.Customer;
 import com.hexaware.onlinegrocerydelivery.entity.Orders;
+import com.hexaware.onlinegrocerydelivery.entity.Product;
 import com.hexaware.onlinegrocerydelivery.exception.AdminNotFoundException;
 import com.hexaware.onlinegrocerydelivery.exception.OrderNotFoundException;
 import com.hexaware.onlinegrocerydelivery.repository.ICustomerRepository;
 import com.hexaware.onlinegrocerydelivery.repository.IOrderRepository;
+
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 //Author:sakitha
 
 @Service
@@ -31,6 +37,10 @@ public class OrderServiceImp implements IOrderService {
 	private IOrderRepository orderrepository;
 	@Autowired
 	private ICustomerRepository customerrepository1;
+	@Autowired
+	private JavaMailSender mailSender;
+	@Value("${spring.mail.username}") 
+	private String fromMail;
 	
 	public IOrderRepository getOrderrepository() {
 		return orderrepository;
@@ -53,13 +63,16 @@ public class OrderServiceImp implements IOrderService {
 			
 			Orders orders =new Orders();
 			Customer customer=customerrepository1.findById(orderDTO.getCustomerId()).orElse(null);
-					
+			Product product=new Product();
 			
 			orders.setOrderId(orderDTO.getOrderId());
 			orders.setCustomer(customer);
 			orders.setOrderDate(orderDTO.getOrderDate());
 			orders.setDeliveryAddress(orderDTO.getDeliveryAddress());
 			orders.setPaymentMethod(orderDTO.getPaymentMethod());
+			
+			sendMail(customer.getEmail(), orders.getDeliveryAddress(), orders.getPaymentMethod(), orders.getOrderDate(), product.getProductName(),customer.getCustomerName());  
+			orderrepository.save(orders);
 			
 			
 			
@@ -159,6 +172,14 @@ public class OrderServiceImp implements IOrderService {
 	    } else {
 	        logger.warn("Orders with Order ID " + orderId + " not found. No Deletion Operation is performed.");
 	    }
+	}
+	public void sendMail(String email,String deliveryAddress, String paymentMethod, LocalDate orderDate, String productName, String customerName) {
+		SimpleMailMessage messsage = new SimpleMailMessage();
+	messsage.setFrom(fromMail);
+	messsage.setSubject("Welcome to GroceryPal : "+ customerName );
+	messsage.setText(""+ productName + customerName); 
+	messsage.setTo(email);
+	mailSender.send(messsage);
 	}
 
 
