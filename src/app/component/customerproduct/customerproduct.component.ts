@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Cart } from 'src/app/model/Cart';
 import { Product } from 'src/app/model/Product';
 import { CartService } from 'src/app/service/cart.service';
 import { CustomerService } from 'src/app/service/customer.service';
@@ -112,15 +113,52 @@ export class CustomerproductComponent implements  OnInit{
   //   gotoCustomercart(){
   //     this.router.navigate(["/customercart"])
   //   }
+  // add(product: any, quantity: number) {
+  //   console.log(product, quantity);
+  //   this.gotoCustomercart(product, quantity);
+  // }
+
+  // gotoCustomercart(product: any, quantity: number) {
+  //   this.router.navigate(['/customercart',this.customerid, product.productId, quantity]);
+  // }
+
+
   add(product: any, quantity: number) {
     console.log(product, quantity);
-    this.gotoCustomercart(product, quantity);
-  }
 
-  gotoCustomercart(product: any, quantity: number) {
-    this.router.navigate(['/customercart',this.customerid, product.productId, quantity]);
-  }
-  }
+    // Construct a Cart object using the properties from the product and quantity
+    const cartToAdd: Cart = {
+        cartId: 0, // assuming cartId is not relevant here
+        customerId: this.customerid, // You may need to obtain the customerId from your component
+        quantity: quantity,
+        totalAmount: product.price * quantity
+    };
+
+    // Call the add method from CartService
+    this.cartService.add(cartToAdd, this.adminKey)
+        .subscribe(
+            (addedCart: Cart) => {
+                console.log('Added Cart:', addedCart);
+                alert("Added to cart with cartId " + addedCart.cartId);
+               this.router.navigate(['/customercart',this.customerid]);
+
+            },
+            (error: any) => {
+                console.error('Error adding cart: ', error);
+            }
+        );
+}
+
+
+
+
+
+
+   }
+
+
+
+  
   
   
 

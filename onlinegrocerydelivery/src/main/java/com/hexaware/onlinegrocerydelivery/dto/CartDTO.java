@@ -13,11 +13,13 @@ public class CartDTO {
 	
 	
 	private int cartId;
+	
 	@NotNull(message="Id should not be null")
 	private int customerId;
 	
 	@Positive(message = "Quantity should be a positive number")
 	private int quantity;
+	
     @Min(value = 1, message = "Total amount must be a positive number")
 	private long totalAmount;
     

@@ -20,7 +20,7 @@ export class CartService {
   
     }
 
-    add(id:number, token: string): Observable<Cart> {
+    add(id:Cart, token: string): Observable<Cart> {
       const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
       return this.http.post<Cart>(`${this.baseURL}cart/addCart`,id,  { headers });
     }

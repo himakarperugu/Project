@@ -42,9 +42,8 @@ export class CustomercartComponent {
 
       this.activatedRoute.params.subscribe((params) => {
         this.custid=params['custid']
-        this.idcustomer=params['id']
-        this.quantity = params['quantity'];
-        console.log("customercart"+this.idcustomer,this.quantity,this.custid);
+        
+        console.log("customercart"+this.idcustomer);
         
       });
 

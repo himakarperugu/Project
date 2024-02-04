@@ -41,6 +41,38 @@ public class CartServiceImp implements ICartService {
         this.productRepository = productRepository;
     }
 
+//    @Override
+//    public Cart addCart(CartDTO cartDTO) {
+//        Customer customer = customerRepository.findById(cartDTO.getCustomerId()).orElse(null);
+//
+//        if (customer == null) {
+//            throw new CustomerNotFoundException(HttpStatus.NOT_FOUND,
+//                    " Customer with CustomerId : " + cartDTO.getCustomerId() + " Not Found ");
+//        }
+//
+//        // Check if a Cart already exists for this Customer
+//        List<Cart> existingCarts = cartRepository.findByCustomerId(cartDTO.getCustomerId());
+//
+//        if (!existingCarts.isEmpty()) {
+//            // If a Cart already exists, update the first one
+//            Cart existingCart = existingCarts.get(0);
+//            existingCart.setQuantity(cartDTO.getQuantity());
+//            existingCart.setTotalAmount(cartDTO.getTotalAmount());
+//            return cartRepository.save(existingCart);
+//        } else {
+//            // If no Cart exists, create a new one
+//            Cart cart = new Cart();
+//            cart.setCustomer(customer);
+//            cart.setCartId(cartDTO.getCartId());
+//            cart.setCustomerId(cartDTO.getCustomerId());
+//            cart.setQuantity(cartDTO.getQuantity());
+//            cart.setTotalAmount(cartDTO.getTotalAmount());
+//            return cartRepository.save(cart);
+//        }
+//    }
+    
+    
+    //new code for add code to add new element insead of replacing exliting data 
     @Override
     public Cart addCart(CartDTO cartDTO) {
         Customer customer = customerRepository.findById(cartDTO.getCustomerId()).orElse(null);
@@ -50,17 +82,24 @@ public class CartServiceImp implements ICartService {
                     " Customer with CustomerId : " + cartDTO.getCustomerId() + " Not Found ");
         }
 
-        // Check if a Cart already exists for this Customer
+        // Retrieve existing carts for the customer
         List<Cart> existingCarts = cartRepository.findByCustomerId(cartDTO.getCustomerId());
 
         if (!existingCarts.isEmpty()) {
-            // If a Cart already exists, update the first one
-            Cart existingCart = existingCarts.get(0);
-            existingCart.setQuantity(cartDTO.getQuantity());
-            existingCart.setTotalAmount(cartDTO.getTotalAmount());
-            return cartRepository.save(existingCart);
+            // If carts exist, create a new cart and append it to the existing list
+            Cart newCart = new Cart();
+            newCart.setCustomer(customer);
+            newCart.setCartId(cartDTO.getCartId());
+            newCart.setCustomerId(cartDTO.getCustomerId());
+            newCart.setQuantity(cartDTO.getQuantity());
+            newCart.setTotalAmount(cartDTO.getTotalAmount());
+
+            existingCarts.add(newCart);
+
+            // Save the updated list of carts
+            return cartRepository.saveAll(existingCarts).get(existingCarts.size() - 1); // Return the last added cart
         } else {
-            // If no Cart exists, create a new one
+            // If no carts exist, create a new one
             Cart cart = new Cart();
             cart.setCustomer(customer);
             cart.setCartId(cartDTO.getCartId());
@@ -70,6 +109,9 @@ public class CartServiceImp implements ICartService {
             return cartRepository.save(cart);
         }
     }
+
+    
+    
     @Override
     public List<CartDTO> getByCustomerId(int customerId) {
     	List<Cart> cartList = cartRepository.findCustomerByCustomerId(customerId);
